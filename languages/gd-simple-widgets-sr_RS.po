@@ -1,0 +1,274 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GD Simple Widgets\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Serbian\n"
+"X-Poedit-Country: SERBIA\n"
+
+#: admin/info.php:3
+msgid "Info"
+msgstr "Инфо"
+
+#: admin/info.php:7
+msgid "Version"
+msgstr "Верзија"
+
+#: admin/info.php:8
+msgid "release date"
+msgstr "датум објављивања"
+
+#: admin/info.php:12
+msgid "Change Log"
+msgstr "Лист Измена"
+
+#: admin/info.php:13
+msgid "detailed list of changes"
+msgstr "детаљна листа измена"
+
+#: admin/info.php:14
+msgid "show"
+msgstr "прикажи"
+
+#: admin/info.php:18
+msgid "Links"
+msgstr "Линкови"
+
+#: admin/info.php:23
+msgid "official plugin page"
+msgstr "официјална плагин страна"
+
+#: admin/info.php:24
+#: admin/info.php:29
+#: admin/info.php:34
+#: admin/info.php:39
+#: admin/info.php:63
+#: admin/info.php:68
+#: admin/info.php:73
+#: admin/info.php:78
+#: admin/info.php:83
+msgid "visit"
+msgstr "посети"
+
+#: admin/info.php:28
+msgid "discussions group"
+msgstr "дискусиона група"
+
+#: admin/info.php:33
+msgid "wordpress plugin page"
+msgstr "вордпрес плагин страна"
+
+#: admin/info.php:37
+msgid "Donate"
+msgstr "Донирај"
+
+#: admin/info.php:38
+msgid "help further development"
+msgstr "помозите даљи развој"
+
+#: admin/info.php:43
+msgid "Pro Edition"
+msgstr "Про Верзија"
+
+#: admin/info.php:47
+#: admin/info.php:61
+msgid "Official Website"
+msgstr "Официјални Вебсајт"
+
+#: admin/info.php:48
+msgid "extended commercial version"
+msgstr "комерцијална верзија"
+
+#: admin/info.php:62
+msgid "golden dragon official web portal"
+msgstr "голден драгон официјални веб портал"
+
+#: admin/info.php:67
+msgid "a wordpress rating system"
+msgstr "вордпресс рејтинг систем"
+
+#: admin/info.php:72
+msgid "wordpress development"
+msgstr "вордпрес развој"
+
+#: admin/info.php:76
+msgid "Support Forum"
+msgstr "Форум За Подршку"
+
+#: admin/info.php:77
+msgid "development discussion forum"
+msgstr "форум за разговоре о развоју"
+
+#: admin/info.php:82
+msgid "announcements and theme demo"
+msgstr "најаве и демо теме"
+
+#: admin/panel.php:3
+msgid "collection of simple sidebar widgets"
+msgstr "колекција једноставних сајдбар виџета"
+
+#: admin/settings.php:2
+msgid "Available Widgets"
+msgstr "Расположиви Виџети"
+
+#: admin/settings.php:4
+#: admin/settings.php:37
+msgid "Unchecked widgets will not be available on the Widgets panel."
+msgstr "Виџети који нису селектовани неће бити видљиви на Виџет панелу."
+
+#: admin/settings.php:30
+#: admin/settings.php:53
+#: admin/settings.php:75
+msgid "Save"
+msgstr "Сними"
+
+#: admin/settings.php:35
+msgid "Default WordPress Widgets"
+msgstr "Стандардни Вордпресс Виџети"
+
+#: admin/settings.php:58
+msgid "Other Settings"
+msgstr "Друга подешавања"
+
+#: widgets/gdsw-most-commented/basic.php:2
+#: widgets/gdsw-posts-authors/basic.php:2
+#: widgets/gdsw-recent-comments/basic.php:2
+#: widgets/gdsw-recent-posts/basic.php:2
+msgid "Title"
+msgstr "Наслов"
+
+#: widgets/gdsw-most-commented/basic.php:6
+#: widgets/gdsw-recent-posts/basic.php:6
+msgid "Posts to show"
+msgstr "Чланка за приказ"
+
+#: widgets/gdsw-most-commented/basic.php:12
+#: widgets/gdsw-posts-authors/basic.php:12
+#: widgets/gdsw-recent-comments/basic.php:12
+#: widgets/gdsw-recent-posts/basic.php:12
+msgid "Hide widget if no results found"
+msgstr "Сакриј виџет ако нема резултата"
+
+#: widgets/gdsw-most-commented/display.php:2
+#: widgets/gdsw-posts-authors/display.php:2
+#: widgets/gdsw-recent-comments/display.php:2
+#: widgets/gdsw-recent-posts/display.php:2
+msgid "Additional CSS class"
+msgstr "Додана ЦСС класа"
+
+#: widgets/gdsw-most-commented/display.php:6
+msgid "Show comments count"
+msgstr "Прикажи број коментара"
+
+#: widgets/gdsw-most-commented/filter.php:2
+msgid "Filter by post publish date"
+msgstr "Филтер по датуму објављивања"
+
+#: widgets/gdsw-most-commented/filter.php:5
+msgid "All posts"
+msgstr "Сви постови"
+
+#: widgets/gdsw-most-commented/filter.php:6
+msgid "Last week"
+msgstr "Последња недеља"
+
+#: widgets/gdsw-most-commented/filter.php:7
+msgid "Last month"
+msgstr "Последњи месец"
+
+#: widgets/gdsw-most-commented/filter.php:8
+msgid "Last year"
+msgstr "Последња година"
+
+#: widgets/gdsw-most-commented/filter.php:13
+#: widgets/gdsw-posts-authors/filter.php:2
+#: widgets/gdsw-recent-comments/filter.php:12
+#: widgets/gdsw-recent-posts/filter.php:2
+msgid "Filter by category"
+msgstr "Филтер категорије"
+
+#: widgets/gdsw-most-commented/filter.php:17
+#: widgets/gdsw-posts-authors/filter.php:6
+#: widgets/gdsw-recent-comments/filter.php:16
+#: widgets/gdsw-recent-posts/filter.php:6
+msgid "comma separated list of category ids"
+msgstr "зарезом раздвојена листа ид-ијева категорија"
+
+#: widgets/gdsw-most-commented/filter.php:18
+#: widgets/gdsw-posts-authors/filter.php:7
+#: widgets/gdsw-recent-comments/filter.php:17
+#: widgets/gdsw-recent-posts/filter.php:7
+msgid "leave empty to include all categories"
+msgstr "оставите празно да укључи све категорије"
+
+#: widgets/gdsw-posts-authors/basic.php:6
+msgid "Authors to show"
+msgstr "Аутора за приказ"
+
+#: widgets/gdsw-posts-authors/display.php:6
+#: widgets/gdsw-recent-comments/display.php:6
+msgid "Display author's gravatar"
+msgstr "Прикажи граватар аутора"
+
+#: widgets/gdsw-posts-authors/display.php:12
+#: widgets/gdsw-recent-comments/display.php:12
+msgid "Gravatar dimension (px)"
+msgstr "Димензије граватара (px)"
+
+#: widgets/gdsw-posts-authors/display.php:16
+msgid "Show posts count"
+msgstr "Прикажи број чланака"
+
+#: widgets/gdsw-posts-authors/display.php:22
+msgid "Show author's full name"
+msgstr "Прикажи пуно име аутора"
+
+#: widgets/gdsw-posts-authors/filter.php:11
+msgid "Minimum published posts"
+msgstr "Минимум објављених чланака"
+
+#: widgets/gdsw-recent-comments/basic.php:6
+msgid "Comments to show"
+msgstr "Коментара за приказ"
+
+#: widgets/gdsw-recent-comments/filter.php:2
+msgid "Filter by type"
+msgstr "Филтер по типу"
+
+#: widgets/gdsw-recent-comments/filter.php:5
+msgid "Comments only"
+msgstr "Само коментари"
+
+#: widgets/gdsw-recent-comments/filter.php:6
+msgid "Pings only"
+msgstr "Само пингови"
+
+#: widgets/gdsw-recent-comments/filter.php:7
+msgid "Comments and pings"
+msgstr "Коментари и пингови"
+
+#: widgets/gdsw-most-commented.php:13
+msgid "Most commented posts."
+msgstr "Чланци са највише кометара"
+
+#: widgets/gdsw-posts-authors.php:16
+msgid "List of posts authors."
+msgstr "Листа аутора чланака."
+
+#: widgets/gdsw-recent-comments.php:15
+msgid "Expanded widget with recent comments."
+msgstr "Проширен виџет са последњим коментарима."
+
+#: widgets/gdsw-recent-posts.php:11
+msgid "Expanded widget with recent posts."
+msgstr "Проширен виџет са последњим чланцима."
+
+#: gd-simple-widgets.php:117
+msgid "Settings"
+msgstr "Подешавања"
+
