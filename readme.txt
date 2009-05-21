@@ -19,6 +19,9 @@ This plugin contains several widgets with simple functionality. Some of them are
 * gdWS Most Commented
 * gdWS Post Authors
 
+= Warning =
+Plugin will work only with WordPress 2.8. Older versions of WP are not supported.
+
 = Included Languages =
 * English
 * Serbian
