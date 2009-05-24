@@ -1,7 +1,7 @@
 === GD Simple Widgets ===
 Contributors: gdragon
 Donate link: http://www.dev4press.com/donate/
-Version: 0.6.0
+Version: 0.7.0
 Tags: gdragon, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter
 Requires at least: 2.8.0
 Tested up to: 2.8.0
@@ -18,6 +18,7 @@ This plugin contains several widgets with simple functionality. Some of them are
 * gdWS Recent Posts
 * gdWS Most Commented
 * gdWS Post Authors
+* gdWS Future Posts
 
 = Warning =
 Plugin will work only with WordPress 2.8. Older versions of WP are not supported.

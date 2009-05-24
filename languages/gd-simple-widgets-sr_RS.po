@@ -81,8 +81,8 @@ msgid "Official Website"
 msgstr "Официјални Вебсајт"
 
 #: admin/info.php:48
-msgid "extended commercial version"
-msgstr "комерцијална верзија"
+msgid "extended premium version"
+msgstr "допуњена премијум верзија"
 
 #: admin/info.php:62
 msgid "golden dragon official web portal"
@@ -117,24 +117,25 @@ msgid "Available Widgets"
 msgstr "Расположиви Виџети"
 
 #: admin/settings.php:4
-#: admin/settings.php:37
+#: admin/settings.php:42
 msgid "Unchecked widgets will not be available on the Widgets panel."
 msgstr "Виџети који нису селектовани неће бити видљиви на Виџет панелу."
 
-#: admin/settings.php:30
-#: admin/settings.php:53
-#: admin/settings.php:75
+#: admin/settings.php:35
+#: admin/settings.php:58
+#: admin/settings.php:80
 msgid "Save"
 msgstr "Сними"
 
-#: admin/settings.php:35
+#: admin/settings.php:40
 msgid "Default WordPress Widgets"
 msgstr "Стандардни Вордпресс Виџети"
 
-#: admin/settings.php:58
+#: admin/settings.php:63
 msgid "Other Settings"
 msgstr "Друга подешавања"
 
+#: widgets/gdsw-future-posts/basic.php:2
 #: widgets/gdsw-most-commented/basic.php:2
 #: widgets/gdsw-posts-authors/basic.php:2
 #: widgets/gdsw-recent-comments/basic.php:2
@@ -142,11 +143,13 @@ msgstr "Друга подешавања"
 msgid "Title"
 msgstr "Наслов"
 
+#: widgets/gdsw-future-posts/basic.php:6
 #: widgets/gdsw-most-commented/basic.php:6
 #: widgets/gdsw-recent-posts/basic.php:6
 msgid "Posts to show"
 msgstr "Чланка за приказ"
 
+#: widgets/gdsw-future-posts/basic.php:12
 #: widgets/gdsw-most-commented/basic.php:12
 #: widgets/gdsw-posts-authors/basic.php:12
 #: widgets/gdsw-recent-comments/basic.php:12
@@ -154,12 +157,37 @@ msgstr "Чланка за приказ"
 msgid "Hide widget if no results found"
 msgstr "Сакриј виџет ако нема резултата"
 
+#: widgets/gdsw-future-posts/display.php:2
 #: widgets/gdsw-most-commented/display.php:2
 #: widgets/gdsw-posts-authors/display.php:2
 #: widgets/gdsw-recent-comments/display.php:2
 #: widgets/gdsw-recent-posts/display.php:2
 msgid "Additional CSS class"
 msgstr "Додана ЦСС класа"
+
+#: widgets/gdsw-future-posts/filter.php:2
+#: widgets/gdsw-most-commented/filter.php:13
+#: widgets/gdsw-posts-authors/filter.php:2
+#: widgets/gdsw-recent-comments/filter.php:12
+#: widgets/gdsw-recent-posts/filter.php:2
+msgid "Filter by category"
+msgstr "Филтер категорије"
+
+#: widgets/gdsw-future-posts/filter.php:6
+#: widgets/gdsw-most-commented/filter.php:17
+#: widgets/gdsw-posts-authors/filter.php:6
+#: widgets/gdsw-recent-comments/filter.php:16
+#: widgets/gdsw-recent-posts/filter.php:6
+msgid "comma separated list of category ids"
+msgstr "зарезом раздвојена листа ид-ијева категорија"
+
+#: widgets/gdsw-future-posts/filter.php:7
+#: widgets/gdsw-most-commented/filter.php:18
+#: widgets/gdsw-posts-authors/filter.php:7
+#: widgets/gdsw-recent-comments/filter.php:17
+#: widgets/gdsw-recent-posts/filter.php:7
+msgid "leave empty to include all categories"
+msgstr "оставите празно да укључи све категорије"
 
 #: widgets/gdsw-most-commented/display.php:6
 msgid "Show comments count"
@@ -184,27 +212,6 @@ msgstr "Последњи месец"
 #: widgets/gdsw-most-commented/filter.php:8
 msgid "Last year"
 msgstr "Последња година"
-
-#: widgets/gdsw-most-commented/filter.php:13
-#: widgets/gdsw-posts-authors/filter.php:2
-#: widgets/gdsw-recent-comments/filter.php:12
-#: widgets/gdsw-recent-posts/filter.php:2
-msgid "Filter by category"
-msgstr "Филтер категорије"
-
-#: widgets/gdsw-most-commented/filter.php:17
-#: widgets/gdsw-posts-authors/filter.php:6
-#: widgets/gdsw-recent-comments/filter.php:16
-#: widgets/gdsw-recent-posts/filter.php:6
-msgid "comma separated list of category ids"
-msgstr "зарезом раздвојена листа ид-ијева категорија"
-
-#: widgets/gdsw-most-commented/filter.php:18
-#: widgets/gdsw-posts-authors/filter.php:7
-#: widgets/gdsw-recent-comments/filter.php:17
-#: widgets/gdsw-recent-posts/filter.php:7
-msgid "leave empty to include all categories"
-msgstr "оставите празно да укључи све категорије"
 
 #: widgets/gdsw-posts-authors/basic.php:6
 msgid "Authors to show"
@@ -252,6 +259,10 @@ msgstr "Само пингови"
 msgid "Comments and pings"
 msgstr "Коментари и пингови"
 
+#: widgets/gdsw-future-posts.php:11
+msgid "Display scheduled posts."
+msgstr "Прикажи заказане чланке."
+
 #: widgets/gdsw-most-commented.php:13
 msgid "Most commented posts."
 msgstr "Чланци са највише кометара"
@@ -268,7 +279,7 @@ msgstr "Проширен виџет са последњим коментарим
 msgid "Expanded widget with recent posts."
 msgstr "Проширен виџет са последњим чланцима."
 
-#: gd-simple-widgets.php:117
+#: gd-simple-widgets.php:121
 msgid "Settings"
 msgstr "Подешавања"
 

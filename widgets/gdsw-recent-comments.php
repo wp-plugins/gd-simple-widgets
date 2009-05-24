@@ -77,6 +77,7 @@ class gdswRecentComments extends WP_Widget {
 
         $sql = sprintf("SELECT DISTINCT %s FROM %s%s ORDER BY c.comment_date_gmt DESC LIMIT %s",
             join(", ", $select), join(" ", $from), $where, $instance["count"]);
+        wp_gdsw_log_sql("widget_gdws_recent_comments", $sql);
         return $wpdb->get_results($sql);
     }
 

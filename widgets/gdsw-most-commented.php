@@ -82,6 +82,7 @@ class gdswMostCommented extends WP_Widget {
 
         $sql = sprintf("SELECT DISTINCT %s FROM %s WHERE %s ORDER BY p.comment_count DESC LIMIT %s",
             join(", ", $select), join(" ", $from), join(" AND ", $where), $instance["count"]);
+        wp_gdsw_log_sql("widget_gdws_most_commented", $sql);
         return $wpdb->get_results($sql);
     }
 

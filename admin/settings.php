@@ -25,6 +25,11 @@
                     <td class="t"></td>
                     <td class="t options"><input<?php if ($options["widgets_posts_authors"] == 1) echo " checked"; ?>  type="checkbox" name="widgets_posts_authors" /></td>
                 </tr>
+                <tr>
+                    <td class="first b">gdSW Future Posts</td>
+                    <td class="t"></td>
+                    <td class="t options"><input<?php if ($options["widgets_future_posts"] == 1) echo " checked"; ?>  type="checkbox" name="widgets_future_posts" /></td>
+                </tr>
             </tbody></table>
         </div>
         <div style="text-align: right">

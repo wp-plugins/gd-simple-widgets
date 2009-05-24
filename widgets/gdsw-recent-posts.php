@@ -43,6 +43,7 @@ class gdswRecentPosts extends WP_Widget {
 
         include(GDSIMPLEWIDGETS_PATH.'widgets/gdsw-recent-posts/basic.php');
         include(GDSIMPLEWIDGETS_PATH.'widgets/gdsw-recent-posts/filter.php');
+        include(GDSIMPLEWIDGETS_PATH.'widgets/gdsw-recent-posts/display.php');
     }
 
     function results($instance) {
@@ -68,6 +69,7 @@ class gdswRecentPosts extends WP_Widget {
 
         $sql = sprintf("SELECT DISTINCT %s FROM %s%s ORDER BY p.post_date_gmt DESC LIMIT %s",
             join(", ", $select), join(" ", $from), $where, $instance["count"]);
+        wp_gdsw_log_sql("widget_gdws_recent_posts", $sql);
         return $wpdb->get_results($sql);
     }
 

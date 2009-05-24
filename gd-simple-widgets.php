@@ -4,7 +4,7 @@
 Plugin Name: GD Simple Widgets
 Plugin URI: http://www.dev4press.com/plugin/gd-simple-widgets/
 Description: Collection of simple sidebar widgets used to extend the standard built in WP widgets.
-Version: 0.6.0
+Version: 0.7.0
 Author: Milan Petrovic
 Author URI: http://www.dev4press.com/
 
@@ -37,6 +37,7 @@ require_once(dirname(__FILE__)."/widgets/gdsw-recent-comments.php");
 require_once(dirname(__FILE__)."/widgets/gdsw-recent-posts.php");
 require_once(dirname(__FILE__)."/widgets/gdsw-most-commented.php");
 require_once(dirname(__FILE__)."/widgets/gdsw-posts-authors.php");
+require_once(dirname(__FILE__)."/widgets/gdsw-future-posts.php");
 
 if (!class_exists('GDSimpleWidgets')) {
     class GDSimpleWidgets {
@@ -52,11 +53,13 @@ if (!class_exists('GDSimpleWidgets')) {
         function GDSimpleWidgets() {
             $gdd = new GDSWDefaults();
             $this->default_options = $gdd->default_options;
-            define('GDSIMPLEWIDGETS_INSTALLED', $this->default_options["version"]." ".$this->default_options["status"]);
+            define('GDSIMPLEWIDGETS_INSTALLED',$this->default_options["edition"]."_". $this->default_options["version"]." ".$this->default_options["status"]);
 
             $this->install_plugin();
             $this->plugin_path_url();
             $this->actions_filters();
+
+            define("GDSIMPLEWIDGETS_DEBUG_SQL", $this->o["debug_into_file"] == 1);
         }
 
         function install_plugin() {
@@ -99,6 +102,7 @@ if (!class_exists('GDSimpleWidgets')) {
             if ($this->o["widgets_recent_posts"] == 1) register_widget("gdswRecentPosts");
             if ($this->o["widgets_most_commented"] == 1) register_widget("gdswMostCommented");
             if ($this->o["widgets_posts_authors"] == 1) register_widget("gdswPostsAuthors");
+            if ($this->o["widgets_future_posts"] == 1) register_widget("gdswFuturePosts");
 
             if ($this->o["default_recent_comments"] == 0) unregister_widget("WP_Widget_Recent_Comments");
             if ($this->o["default_recent_posts"] == 0) unregister_widget("WP_Widget_Recent_Posts");
@@ -140,6 +144,7 @@ if (!class_exists('GDSimpleWidgets')) {
                 $this->save_setting_checkbox("widgets_recent_posts");
                 $this->save_setting_checkbox("widgets_most_commented");
                 $this->save_setting_checkbox("widgets_posts_authors");
+                $this->save_setting_checkbox("widgets_future_posts");
                 $this->save_setting_checkbox("default_recent_comments");
                 $this->save_setting_checkbox("default_recent_posts");
 
@@ -177,7 +182,7 @@ if (!class_exists('GDSimpleWidgets')) {
         }
     }
 
-    $gdsw_debug = new gdDebugGDSW(STARRATING_LOG_PATH);
+    $gdsw_debug = new gdDebugGDSW(GDSIMPLEWIDGETS_LOG_PATH);
     $gdsw = new GDSimpleWidgets();
 
     function wp_gdsw_dump($msg, $obj, $block = "none", $mode = "a+") {
@@ -185,6 +190,10 @@ if (!class_exists('GDSimpleWidgets')) {
             global $gdsw_debug;
             $gdsw_debug->dump($msg, $obj, $block, $mode);
         }
+    }
+
+    function wp_gdsw_log_sql($msg, $obj, $block = "none", $mode = "a+") {
+        if (GDSIMPLEWIDGETS_DEBUG_SQL) wp_gdsw_dump($msg, $obj, $block, $mode);
     }
 }
 

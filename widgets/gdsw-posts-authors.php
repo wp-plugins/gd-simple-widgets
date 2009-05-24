@@ -81,6 +81,7 @@ class gdswPostsAuthors extends WP_Widget {
 
         $sql = sprintf("SELECT DISTINCT %s FROM %s WHERE %s GROUP BY u.ID HAVING count(*) > %s ORDER BY count(*) DESC LIMIT %s",
             join(", ", $select), join(" ", $from), join(" AND ", $where), $instance["filter_min_posts"], $instance["count"]);
+        wp_gdsw_log_sql("widget_gdws_posts_authors", $sql);
         return $wpdb->get_results($sql);
     }
 

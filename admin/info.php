@@ -46,7 +46,7 @@
             <table><tbody>
                 <tr class="first">
                     <td class="first b"><?php _e("Official Website", "gd-simple-widgets"); ?></td>
-                    <td class="t"><?php _e("extended commercial version", "gd-simple-widgets"); ?></td>
+                    <td class="t"><?php _e("extended premium version", "gd-simple-widgets"); ?></td>
                     <td class="b options" style="color: red; font-weight: bold;">soon</td>
                 </tr>
             </tbody></table>
