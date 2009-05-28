@@ -82,12 +82,12 @@ class gdswMostCommented extends WP_Widget {
 
         $sql = sprintf("SELECT DISTINCT %s FROM %s WHERE %s ORDER BY p.comment_count DESC LIMIT %s",
             join(", ", $select), join(" ", $from), join(" AND ", $where), $instance["count"]);
-        wp_gdsw_log_sql("widget_gdws_most_commented", $sql);
+        wp_gdsw_log_sql("widget_gdws_popular_posts", $sql);
         return $wpdb->get_results($sql);
     }
 
     function render($results, $instance) {
-        echo '<div class="gdsw-most-commented '.$instance["display_css"].'"><ul>';
+        echo '<div class="gdsw-popular-posts '.$instance["display_css"].'"><ul>';
         foreach ($results as $r) {
             echo '<li>';
             echo sprintf('<a href="%s" class="gdsw-url">%s</a>', get_comment_link($r->ID), $r->post_title);

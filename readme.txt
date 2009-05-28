@@ -1,7 +1,7 @@
 === GD Simple Widgets ===
 Contributors: gdragon
 Donate link: http://www.dev4press.com/donate/
-Version: 0.7.0
+Version: 0.8.0
 Tags: gdragon, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter
 Requires at least: 2.8.0
 Tested up to: 2.8.0
@@ -19,6 +19,7 @@ This plugin contains several widgets with simple functionality. Some of them are
 * gdWS Most Commented
 * gdWS Post Authors
 * gdWS Future Posts
+* gdWS Popular Posts
 
 = Warning =
 Plugin will work only with WordPress 2.8. Older versions of WP are not supported.
@@ -28,16 +29,18 @@ Plugin will work only with WordPress 2.8. Older versions of WP are not supported
 * Serbian
 
 == Installation ==
+* Upload folder `gd-simple-widgets` to the `/wp-content/plugins/` directory
+* Activate the plugin through the 'Plugins' menu in WordPress
+* Main settings panel is iin the Settings menu or in GD Press Tools menu (if this plugin is installed)
+* Activated widgets on the settings panel will be visible on widgets panel
 
 = Requirements =
 * PHP: 4.4.x or 5.x.x
 * mySQL: 4.0, 4.1 or 5.x
 * WordPress: 2.8.0 or newer
 
-* Upload folder `gd-simple-widgets` to the `/wp-content/plugins/` directory
-* Activate the plugin through the 'Plugins' menu in WordPress
-* Main settings panel is iin the Settings menu or in GD Press Tools menu (if this plugin is installed)
-* Activated widgets on the settings panel will be visible on widgets panel
+= Widgets =
+* gdWS Popular Posts requires GD Press Tools 1.2.0 or later.
 
 == Frequently Asked Questions ==
 Nothing here yet.
@@ -59,6 +62,7 @@ Nothing here yet.
 
 = Support =
 * Forum: http://forum.gdragon.info/viewforum.php?f=24
+* Plugin Infos: http://info.dev4press.com/gd-simple-widgets/
 
 = Communities =
 * Google Code: http://code.google.com/p/gd-simple-widgets/

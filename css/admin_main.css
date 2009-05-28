@@ -91,7 +91,11 @@ p.sub {
 .gdrgrid table { width: 100%; }
 .gdrgrid table tr.first th, .gdrgrid table tr.first td { border-top: medium none; }
 .gdrgrid td.first, .gdrgrid td.last { width: 1px; }
-.gdrgrid td.options { text-align: right; white-space: normal; }
+.gdrgrid td.options { text-align: right; white-space: normal; padding-right: 0; }
 .gdrgrid table tr.first th { color: #990000; font-weight: bold; }
 .gdrgrid div.inside { margin: 10px; }
+.gdrgrid .disabled { color: gray; }
+.gdrgrid td.t { white-space: normal; padding-bottom: 3px; }
 /* front grid */
+
+.gdrgrid td.options input { padding: 2px; margin: 0; border: 1px solid black; }

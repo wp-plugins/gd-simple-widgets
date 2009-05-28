@@ -28,6 +28,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 if (!class_exists('gdFunctionsGDSW')) {
     class gdFunctionsGDSW {
+        function get_update_url($options, $url) {
+            $url = sprintf("http://info.dev4press.com/update/index.php?ver=%s&pdt=%s&blg=%s",
+                $options["version"], urlencode($options["product_id"]), urlencode($url));
+            return $url;
+        }
+
         function prefill_zeros($text, $len) {
             $count = strlen($text);
             $zeros = "";

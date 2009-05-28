@@ -77,7 +77,7 @@ class gdswRecentPosts extends WP_Widget {
         echo '<div class="gdsw-recent-posts '.$instance["display_css"].'"><ul>';
         foreach ($results as $r) {
             echo '<li>';
-            echo sprintf('<a href="%s">%s</a>', get_permalink($r->ID), $r->post_title);
+            echo sprintf('<a href="%s" class="gdsw-url">%s</a>', get_permalink($r->ID), $r->post_title);
             echo '</li>';
         }
         echo '</ul></div>';

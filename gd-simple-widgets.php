@@ -4,7 +4,7 @@
 Plugin Name: GD Simple Widgets
 Plugin URI: http://www.dev4press.com/plugin/gd-simple-widgets/
 Description: Collection of simple sidebar widgets used to extend the standard built in WP widgets.
-Version: 0.7.0
+Version: 0.8.0
 Author: Milan Petrovic
 Author URI: http://www.dev4press.com/
 
@@ -38,6 +38,7 @@ require_once(dirname(__FILE__)."/widgets/gdsw-recent-posts.php");
 require_once(dirname(__FILE__)."/widgets/gdsw-most-commented.php");
 require_once(dirname(__FILE__)."/widgets/gdsw-posts-authors.php");
 require_once(dirname(__FILE__)."/widgets/gdsw-future-posts.php");
+require_once(dirname(__FILE__)."/widgets/gdsw-popular-posts.php");
 
 if (!class_exists('GDSimpleWidgets')) {
     class GDSimpleWidgets {
@@ -89,12 +90,24 @@ if (!class_exists('GDSimpleWidgets')) {
         }
 
         function actions_filters() {
+            add_action('init', array(&$this, 'init'));
             add_action('wp_head', array(&$this, 'wp_head'));
             add_action('admin_init', array(&$this, 'admin_init'));
             add_action('admin_menu', array(&$this, 'admin_menu'));
             add_action('admin_head', array(&$this, 'admin_head'));
             add_action('widgets_init', array(&$this, 'widgets_init'));
-            add_filter('plugin_action_links', array(&$this, 'plugin_links'), 10, 2 );
+
+            add_filter('plugin_action_links_gd-simple-widgets/gd-simple-widgets.php', array(&$this, 'plugin_links'), 10, 2 );
+            add_action('after_plugin_row_gd-simple-widgets/gd-simple-widgets.php', array(&$this,'plugin_check_version'), 10, 2);
+        }
+
+        function init() {
+            $this->o["lock_popular_posts"] = 1;
+            if (defined("PRESSTOOLS_INSTALLED")) {
+                $version = str_replace(".", "", substr(PRESSTOOLS_INSTALLED, 0, 5));
+                if ($version >= 120) $this->o["lock_popular_posts"] = 0;
+            }
+            if ($this->o["lock_popular_posts"] == 1) $this->o["widgets_popular_posts"] = 0;
         }
 
         function widgets_init() {
@@ -103,6 +116,7 @@ if (!class_exists('GDSimpleWidgets')) {
             if ($this->o["widgets_most_commented"] == 1) register_widget("gdswMostCommented");
             if ($this->o["widgets_posts_authors"] == 1) register_widget("gdswPostsAuthors");
             if ($this->o["widgets_future_posts"] == 1) register_widget("gdswFuturePosts");
+            if ($this->o["widgets_popular_posts"] == 1) register_widget("gdswPopularPosts");
 
             if ($this->o["default_recent_comments"] == 0) unregister_widget("WP_Widget_Recent_Comments");
             if ($this->o["default_recent_posts"] == 0) unregister_widget("WP_Widget_Recent_Posts");
@@ -115,14 +129,21 @@ if (!class_exists('GDSimpleWidgets')) {
         }
 
         function plugin_links($links, $file) {
-            static $this_plugin;
-            if (!$this_plugin) $this_plugin = plugin_basename(__FILE__);
-
-            if ($file == $this_plugin){
-                $settings_link = '<a href="admin.php?page=gd-simple-widgets">'.__("Settings", "gd-simple-widgets").'</a>';
-                array_unshift($links, $settings_link);
-            }
+            $settings_link = '<a href="admin.php?page=gd-simple-widgets">'.__("Settings", "gd-simple-widgets").'</a>';
+            array_unshift($links, $settings_link);
             return $links;
+        }
+
+        function plugin_check_version($file, $plugin_data) {
+            $current = get_option('update_plugins');
+            if (!isset($current->response[$file])) return false;
+
+            $columns = $this->wp_version < 28 ? 5 : 3;
+            $url = gdFunctionsGDPT::get_update_url($this->o, get_option('home'));
+            $update = wp_remote_fopen($url);
+            echo '<td colspan="'.$columns.'" class="gdr-plugin-update">';
+            echo $update;
+            echo '</td>';
         }
 
         function admin_init() {
@@ -145,6 +166,7 @@ if (!class_exists('GDSimpleWidgets')) {
                 $this->save_setting_checkbox("widgets_most_commented");
                 $this->save_setting_checkbox("widgets_posts_authors");
                 $this->save_setting_checkbox("widgets_future_posts");
+                $this->save_setting_checkbox("widgets_popular_posts");
                 $this->save_setting_checkbox("default_recent_comments");
                 $this->save_setting_checkbox("default_recent_posts");
 
