@@ -34,6 +34,16 @@ if (!class_exists('gdFunctionsGDSW')) {
             return $url;
         }
 
+        function trim_to_words($text, $words_count = 10) {
+            $words = explode(' ', $text, $words_count + 1);
+            if (count($words) > $words_count) {
+                array_pop($words);
+                array_push($words, '...');
+                $text = implode(' ', $words);
+            }
+            return $text;
+        }
+
         function prefill_zeros($text, $len) {
             $count = strlen($text);
             $zeros = "";

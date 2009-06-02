@@ -173,6 +173,30 @@ msgstr "Сакриј виџет ако нема резултата"
 msgid "Additional CSS class"
 msgstr "Додана ЦСС класа"
 
+#: widgets/gdsw-future-posts/display.php:6
+#: widgets/gdsw-popular-posts/display.php:12
+#: widgets/gdsw-recent-posts/display.php:6
+msgid "Short excerpt from the post"
+msgstr "Прикажи кратак текст чланка"
+
+#: widgets/gdsw-future-posts/display.php:12
+#: widgets/gdsw-popular-posts/display.php:18
+#: widgets/gdsw-recent-posts/display.php:12
+msgid "Excerpt words limit"
+msgstr "Број речи у тексту"
+
+#: widgets/gdsw-future-posts/display.php:16
+#: widgets/gdsw-popular-posts/display.php:22
+#: widgets/gdsw-recent-posts/display.php:16
+msgid "Display post date"
+msgstr "Прикажи датум чланка"
+
+#: widgets/gdsw-future-posts/display.php:22
+#: widgets/gdsw-popular-posts/display.php:28
+#: widgets/gdsw-recent-posts/display.php:22
+msgid "Post date format"
+msgstr "Формат датума"
+
 #: widgets/gdsw-future-posts/filter.php:2
 #: widgets/gdsw-most-commented/filter.php:13
 #: widgets/gdsw-popular-posts/filter.php:24
@@ -322,7 +346,7 @@ msgstr "Само пингови"
 msgid "Comments and pings"
 msgstr "Коментари и пингови"
 
-#: widgets/gdsw-future-posts.php:11
+#: widgets/gdsw-future-posts.php:15
 msgid "Display scheduled posts."
 msgstr "Прикажи заказане чланке."
 
@@ -330,15 +354,15 @@ msgstr "Прикажи заказане чланке."
 msgid "Most commented posts."
 msgstr "Чланци са највише кометара"
 
-#: widgets/gdsw-popular-posts.php:15
+#: widgets/gdsw-popular-posts.php:19
 msgid "Display popular posts."
 msgstr "Прикажи популарне чланке."
 
-#: widgets/gdsw-popular-posts.php:116
+#: widgets/gdsw-popular-posts.php:124
 msgid "view"
 msgstr "посета"
 
-#: widgets/gdsw-popular-posts.php:116
+#: widgets/gdsw-popular-posts.php:124
 msgid "views"
 msgstr "посете"
 
@@ -350,7 +374,7 @@ msgstr "Листа аутора чланака."
 msgid "Expanded widget with recent comments."
 msgstr "Проширен виџет са последњим коментарима."
 
-#: widgets/gdsw-recent-posts.php:11
+#: widgets/gdsw-recent-posts.php:15
 msgid "Expanded widget with recent posts."
 msgstr "Проширен виџет са последњим чланцима."
 

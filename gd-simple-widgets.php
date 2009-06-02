@@ -3,8 +3,8 @@
 /*
 Plugin Name: GD Simple Widgets
 Plugin URI: http://www.dev4press.com/plugin/gd-simple-widgets/
-Description: Collection of simple sidebar widgets used to extend the standard built in WP widgets.
-Version: 0.8.0
+Description: Collection of powerful, easy to use widgets that expand default widgets. Plugin also adds few more must-have widgets for posts, authors and comments.
+Version: 1.0.0
 Author: Milan Petrovic
 Author URI: http://www.dev4press.com/
 

@@ -53,9 +53,7 @@ class gdswMostCommented extends WP_Widget {
     function results($instance) {
         global $wpdb, $table_prefix;
 
-        $select = array(
-            "p.ID", "p.post_title", "p.comment_count"
-        );
+        $select = array("p.ID", "p.post_title", "p.comment_count");
         $from = array(sprintf("%sposts p", $table_prefix));
         $where = array("p.post_status = 'publish'", "p.comment_count > 0");
 

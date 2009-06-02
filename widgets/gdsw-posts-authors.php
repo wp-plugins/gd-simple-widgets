@@ -60,9 +60,7 @@ class gdswPostsAuthors extends WP_Widget {
     function results($instance) {
         global $wpdb, $table_prefix;
 
-        $select = array(
-            "u.ID", "u.display_name", "u.user_email", "count(*) as posts"
-        );
+        $select = array("u.ID", "u.display_name", "u.user_email", "count(*) as posts");
         $from = array();
         $where = array("p.post_status = 'publish'", "p.post_type = 'post'");
 

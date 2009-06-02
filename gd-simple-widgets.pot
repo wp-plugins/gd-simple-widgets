@@ -160,6 +160,30 @@ msgstr ""
 msgid "Additional CSS class"
 msgstr ""
 
+#: widgets/gdsw-future-posts/display.php:6
+#: widgets/gdsw-popular-posts/display.php:12
+#: widgets/gdsw-recent-posts/display.php:6
+msgid "Short excerpt from the post"
+msgstr ""
+
+#: widgets/gdsw-future-posts/display.php:12
+#: widgets/gdsw-popular-posts/display.php:18
+#: widgets/gdsw-recent-posts/display.php:12
+msgid "Excerpt words limit"
+msgstr ""
+
+#: widgets/gdsw-future-posts/display.php:16
+#: widgets/gdsw-popular-posts/display.php:22
+#: widgets/gdsw-recent-posts/display.php:16
+msgid "Display post date"
+msgstr ""
+
+#: widgets/gdsw-future-posts/display.php:22
+#: widgets/gdsw-popular-posts/display.php:28
+#: widgets/gdsw-recent-posts/display.php:22
+msgid "Post date format"
+msgstr ""
+
 #: widgets/gdsw-future-posts/filter.php:2
 #: widgets/gdsw-most-commented/filter.php:13
 #: widgets/gdsw-popular-posts/filter.php:24
@@ -309,7 +333,7 @@ msgstr ""
 msgid "Comments and pings"
 msgstr ""
 
-#: widgets/gdsw-future-posts.php:11
+#: widgets/gdsw-future-posts.php:15
 msgid "Display scheduled posts."
 msgstr ""
 
@@ -317,15 +341,15 @@ msgstr ""
 msgid "Most commented posts."
 msgstr ""
 
-#: widgets/gdsw-popular-posts.php:15
+#: widgets/gdsw-popular-posts.php:19
 msgid "Display popular posts."
 msgstr ""
 
-#: widgets/gdsw-popular-posts.php:116
+#: widgets/gdsw-popular-posts.php:124
 msgid "view"
 msgstr ""
 
-#: widgets/gdsw-popular-posts.php:116
+#: widgets/gdsw-popular-posts.php:124
 msgid "views"
 msgstr ""
 
@@ -337,7 +361,7 @@ msgstr ""
 msgid "Expanded widget with recent comments."
 msgstr ""
 
-#: widgets/gdsw-recent-posts.php:11
+#: widgets/gdsw-recent-posts.php:15
 msgid "Expanded widget with recent posts."
 msgstr ""
 

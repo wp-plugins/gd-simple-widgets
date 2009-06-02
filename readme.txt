@@ -1,17 +1,17 @@
 === GD Simple Widgets ===
 Contributors: gdragon
 Donate link: http://www.dev4press.com/donate/
-Version: 0.8.0
-Tags: gdragon, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter
+Version: 1.0.0
+Tags: gdragon, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter, excerpt, scheduled
 Requires at least: 2.8.0
 Tested up to: 2.8.0
 Stable tag: trunk
 
-Collection of simple sidebar widgets used to extend the standard built in WP widgets.
+Collection of powerful, easy to use widgets that expand default widgets. Plugin also adds few more must-have widgets for posts, authors and comments.
 
 == Description ==
 
-This plugin contains several widgets with simple functionality. Some of them are based on standard WordPress widgets but with extended options and rendering. You can also disable default WordPress widgets if you choose to use Simple Widgets versions.
+This plugin contains powerful widgets with simple options to set. Some of them are based on standard WordPress widgets but with extended options and rendering. You can also disable default WordPress widgets if you choose to use Simple Widgets versions.
 
 = List Of Widgets =
 * gdWS Recent Comments
@@ -49,6 +49,7 @@ Nothing here yet.
 1. Main settings panel
 2. Recent Comments widget
 3. Posts Authors widget
+4. Popular Posts widget
 
 == Configuration ==
 Nothing here yet.

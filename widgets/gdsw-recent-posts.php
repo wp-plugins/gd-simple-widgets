@@ -5,7 +5,11 @@ class gdswRecentPosts extends WP_Widget {
         "title" => "Recent Posts",
         "count" => 10,
         "filter_category" => "",
-        "display_css" => ""
+        "display_css" => "",
+        "display_excerpt" => 0,
+        "display_excerpt_length" => 15,
+        "display_post_date" => 0,
+        "display_post_date_format" => "F j, Y"
     );
 
     function gdswRecentPosts() {
@@ -34,6 +38,10 @@ class gdswRecentPosts extends WP_Widget {
         $instance['hide_empty'] = isset($new_instance['hide_empty']) ? 1 : 0;
         $instance['filter_category'] = strip_tags(stripslashes($new_instance['filter_category']));
         $instance['display_css'] = trim(strip_tags(stripslashes($new_instance['display_css'])));
+        $instance['display_excerpt'] = isset($new_instance['display_excerpt']) ? 1 : 0;
+        $instance['display_excerpt_length'] = intval(strip_tags(stripslashes($new_instance['display_excerpt_length'])));
+        $instance['display_post_date'] = isset($new_instance['display_post_date']) ? 1 : 0;
+        $instance['display_post_date_format'] = trim(strip_tags(stripslashes($new_instance['display_post_date_format'])));
 
         return $instance;
     }
@@ -49,9 +57,7 @@ class gdswRecentPosts extends WP_Widget {
     function results($instance) {
         global $wpdb, $table_prefix;
 
-        $select = array(
-            "p.ID", "p.post_title"
-        );
+        $select = array("p.ID", "p.post_title", "p.post_content", "p.post_excerpt", "p.post_date");
         $from = array();
         $where = array();
 
@@ -78,6 +84,16 @@ class gdswRecentPosts extends WP_Widget {
         foreach ($results as $r) {
             echo '<li>';
             echo sprintf('<a href="%s" class="gdsw-url">%s</a>', get_permalink($r->ID), $r->post_title);
+            if ($instance["display_post_date"] == 1) echo sprintf(' <span class="gdws-date">[%s]</span>', mysql2date($instance["display_post_date_format"], $r->post_date));
+            if ($instance["display_excerpt"] == 1) {
+                $text = trim($r->post_excerpt);
+                if ($text == "") {
+                    $text = str_replace(']]>', ']]&gt;', $r->post_content);
+                    $text = strip_tags($text);
+                    $text = gdFunctionsGDSW::trim_to_words($text, $instance["display_excerpt_length"]);
+                }
+                echo sprintf('<p class="gdws-excerpt">%s</p>', $text);
+            }
             echo '</li>';
         }
         echo '</ul></div>';

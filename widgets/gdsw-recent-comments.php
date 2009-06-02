@@ -56,10 +56,8 @@ class gdswRecentComments extends WP_Widget {
     function results($instance) {
         global $wpdb, $table_prefix;
 
-        $select = array(
-            "c.comment_ID", "c.comment_author", "c.comment_author_email", "c.comment_author_url",
-            "p.ID", "p.post_title"
-        );
+        $select = array("c.comment_ID", "c.comment_author", "c.comment_author_email", 
+            "c.comment_author_url", "p.ID", "p.post_title");
         $from = array();
         $where = array();
 
