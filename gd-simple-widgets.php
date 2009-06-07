@@ -4,7 +4,7 @@
 Plugin Name: GD Simple Widgets
 Plugin URI: http://www.dev4press.com/plugin/gd-simple-widgets/
 Description: Collection of powerful, easy to use widgets that expand default widgets. Plugin also adds few more must-have widgets for posts, authors and comments.
-Version: 1.0.0
+Version: 1.1.0
 Author: Milan Petrovic
 Author URI: http://www.dev4press.com/
 
@@ -28,6 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>
 
 require_once(dirname(__FILE__)."/config.php");
 require_once(dirname(__FILE__)."/code/defaults.php");
+require_once(dirname(__FILE__)."/code/widget.php");
 
 require_once(dirname(__FILE__)."/gdragon/gd_debug.php");
 require_once(dirname(__FILE__)."/gdragon/gd_functions.php");
@@ -40,6 +41,8 @@ require_once(dirname(__FILE__)."/widgets/gdsw-posts-authors.php");
 require_once(dirname(__FILE__)."/widgets/gdsw-future-posts.php");
 require_once(dirname(__FILE__)."/widgets/gdsw-popular-posts.php");
 
+require_once(dirname(__FILE__)."/integration.php");
+
 if (!class_exists('GDSimpleWidgets')) {
     class GDSimpleWidgets {
         var $plugin_url;
@@ -48,6 +51,7 @@ if (!class_exists('GDSimpleWidgets')) {
         var $admin_page;
 
         var $o;
+        var $l;
 
         var $default_options;
 
@@ -102,6 +106,12 @@ if (!class_exists('GDSimpleWidgets')) {
         }
 
         function init() {
+            $this->l = get_locale();
+            if(!empty($this->l)) {
+                $moFile = dirname(__FILE__)."/languages/gd-simple-widgets-".$this->l.".mo";
+                if (@file_exists($moFile) && is_readable($moFile)) load_textdomain('gd-simple-widgets', $moFile);
+            }
+
             $this->o["lock_popular_posts"] = 1;
             if (defined("PRESSTOOLS_INSTALLED")) {
                 $version = str_replace(".", "", substr(PRESSTOOLS_INSTALLED, 0, 5));
@@ -139,7 +149,7 @@ if (!class_exists('GDSimpleWidgets')) {
             if (!isset($current->response[$file])) return false;
 
             $columns = $this->wp_version < 28 ? 5 : 3;
-            $url = gdFunctionsGDPT::get_update_url($this->o, get_option('home'));
+            $url = gdFunctionsGDSW::get_update_url($this->o, get_option('home'));
             $update = wp_remote_fopen($url);
             echo '<td colspan="'.$columns.'" class="gdr-plugin-update">';
             echo $update;
@@ -167,6 +177,8 @@ if (!class_exists('GDSimpleWidgets')) {
                 $this->save_setting_checkbox("widgets_posts_authors");
                 $this->save_setting_checkbox("widgets_future_posts");
                 $this->save_setting_checkbox("widgets_popular_posts");
+                $this->save_setting_checkbox("widgets_random_posts");
+                $this->save_setting_checkbox("widgets_related_posts");
                 $this->save_setting_checkbox("default_recent_comments");
                 $this->save_setting_checkbox("default_recent_posts");
 

@@ -1,7 +1,7 @@
 === GD Simple Widgets ===
 Contributors: gdragon
 Donate link: http://www.dev4press.com/donate/
-Version: 1.0.0
+Version: 1.1.0
 Tags: gdragon, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter, excerpt, scheduled
 Requires at least: 2.8.0
 Tested up to: 2.8.0
@@ -23,10 +23,6 @@ This plugin contains powerful widgets with simple options to set. Some of them a
 
 = Warning =
 Plugin will work only with WordPress 2.8. Older versions of WP are not supported.
-
-= Included Languages =
-* English
-* Serbian
 
 == Installation ==
 * Upload folder `gd-simple-widgets` to the `/wp-content/plugins/` directory

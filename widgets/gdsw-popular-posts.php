@@ -1,9 +1,11 @@
 <?php
 
-class gdswPopularPosts extends WP_Widget {
+class gdswPopularPosts extends gdsw_Widget {
+    var $folder_name = "gdsw-popular-posts";
     var $defaults = array(
         "title" => "Popular Posts",
         "count" => 10,
+        "hide_empty" => 0,
         "filter_recency" => "allp",
         "filter_type" => "postpage",
         "filter_category" => "",
@@ -22,29 +24,18 @@ class gdswPopularPosts extends WP_Widget {
         $this->WP_Widget('gdswpopularposts', 'gdSW Popular Posts', $widget_ops, $control_ops);
     }
 
-    function widget($args, $instance) {
-        global $gdsr, $userdata;
-        extract($args, EXTR_SKIP);
-
-        $results = $this->results($instance);
-        if (count($results) == 0 && $instance["hide_empty"] == 1) return;
-
-        echo $before_widget.$before_title.$instance['title'].$after_title;
-        echo $this->render($results, $instance);
-        echo $after_widget;
-    }
-
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
 
         $instance['title'] = strip_tags(stripslashes($new_instance['title']));
         $instance['count'] = intval(strip_tags(stripslashes($new_instance['count'])));
         $instance['hide_empty'] = isset($new_instance['hide_empty']) ? 1 : 0;
+        $instance['display_css'] = trim(strip_tags(stripslashes($new_instance['display_css'])));
+
         $instance['filter_recency'] = $new_instance['filter_recency'];
         $instance['filter_category'] = strip_tags(stripslashes($new_instance['filter_category']));
         $instance['filter_type'] = $new_instance['filter_type'];
         $instance['filter_views'] = $new_instance['filter_views'];
-        $instance['display_css'] = trim(strip_tags(stripslashes($new_instance['display_css'])));
         $instance['display_views'] = isset($new_instance['display_views']) ? 1 : 0;
         $instance['display_excerpt'] = isset($new_instance['display_excerpt']) ? 1 : 0;
         $instance['display_excerpt_length'] = intval(strip_tags(stripslashes($new_instance['display_excerpt_length'])));
@@ -54,22 +45,28 @@ class gdswPopularPosts extends WP_Widget {
         return $instance;
     }
 
-    function form($instance) {
-        $instance = wp_parse_args((array)$instance, $this->defaults);
-
-        include(GDSIMPLEWIDGETS_PATH.'widgets/gdsw-popular-posts/basic.php');
-        include(GDSIMPLEWIDGETS_PATH.'widgets/gdsw-popular-posts/filter.php');
-        include(GDSIMPLEWIDGETS_PATH.'widgets/gdsw-popular-posts/display.php');
+    function prepare($results) {
+        if (count($results) == 0) return array();
+        foreach ($results as $row) {
+            if ($instance["display_post_date"] == 1) $r->post_date = mysql2date($instance["display_post_date_format"], $r->post_date);
+            if ($instance["display_excerpt"] == 1) $r->excerpt = $this->get_excerpt($instance, $r);
+        }
+        return $results;
     }
 
     function results($instance) {
         global $wpdb, $table_prefix;
 
         $order = "";
-        $select = array("p.ID", "p.post_title", "p.post_content", "p.post_excerpt", "p.post_date");
+        $select = array("p.ID", "p.post_title");
         $from = array(sprintf("%sposts p inner join %sgdpt_posts_views v on p.ID = v.post_id", $table_prefix, $table_prefix));
         $where = array("p.post_status = 'publish'");
-
+        if ($instance["display_post_date"] == 1) $select[] = "p.post_date";
+        if ($instance["display_excerpt"] == 1) {
+            $select[] = "p.post_content";
+            $select[] = "p.post_excerpt";
+            $select[] = "'' as excerpt";
+        }
         if ($instance["filter_type"] != "postpage") $where[] = sprintf("p.post_type = '%s'", $instance["filter_type"]);
 
         switch ($instance["filter_views"]) {
@@ -114,7 +111,7 @@ class gdswPopularPosts extends WP_Widget {
         $sql = sprintf("SELECT DISTINCT %s FROM %s WHERE %s ORDER BY %s LIMIT %s",
             join(", ", $select), join(" ", $from), join(" AND ", $where), $order, $instance["count"]);
         wp_gdsw_log_sql("widget_gdws_popular_posts", $sql);
-        return $wpdb->get_results($sql);
+        return $this->prepare($instance, $wpdb->get_results($sql));
     }
 
     function render($results, $instance) {
@@ -123,16 +120,8 @@ class gdswPopularPosts extends WP_Widget {
             echo '<li>';
             echo sprintf('<a href="%s" class="gdsw-url">%s</a>', get_permalink($r->ID), $r->post_title);
             if ($instance["display_views"] == 1) echo sprintf(" (%s %s)", $r->views, $r->views == 1 ? __("view", "gd-simple-widgets") : __("views", "gd-simple-widgets"));
-            if ($instance["display_post_date"] == 1) echo sprintf(' <span class="gdws-date">[%s]</span>', mysql2date($instance["display_post_date_format"], $r->post_date));
-            if ($instance["display_excerpt"] == 1) {
-                $text = trim($r->post_excerpt);
-                if ($text == "") {
-                    $text = str_replace(']]>', ']]&gt;', $r->post_content);
-                    $text = strip_tags($text);
-                    $text = gdFunctionsGDSW::trim_to_words($text, $instance["display_excerpt_length"]);
-                }
-                echo sprintf('<p class="gdws-excerpt">%s</p>', $text);
-            }
+            if ($instance["display_post_date"] == 1) echo sprintf(' <span class="gdws-date">[%s]</span>', $r->post_date);
+            if ($instance["display_excerpt"] == 1) echo sprintf('<p class="gdws-excerpt">%s</p>', $r->excerpt);
             echo '</li>';
         }
         echo '</ul></div>';

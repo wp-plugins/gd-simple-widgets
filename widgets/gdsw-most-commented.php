@@ -1,9 +1,11 @@
 <?php
 
-class gdswMostCommented extends WP_Widget {
+class gdswMostCommented extends gdsw_Widget {
+    var $folder_name = "gdsw-most-commented";
     var $defaults = array(
         "title" => "Most Commented",
         "count" => 10,
+        "hide_empty" => 0,
         "filter_published" => "allp",
         "filter_category" => "",
         "display_css" => "",
@@ -16,38 +18,19 @@ class gdswMostCommented extends WP_Widget {
         $this->WP_Widget('gdswmostcommented', 'gdSW Most Commented', $widget_ops, $control_ops);
     }
 
-    function widget($args, $instance) {
-        global $gdsr, $userdata;
-        extract($args, EXTR_SKIP);
-
-        $results = $this->results($instance);
-        if (count($results) == 0 && $instance["hide_empty"] == 1) return;
-
-        echo $before_widget.$before_title.$instance['title'].$after_title;
-        echo $this->render($results, $instance);
-        echo $after_widget;
-    }
-
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
 
         $instance['title'] = strip_tags(stripslashes($new_instance['title']));
         $instance['count'] = intval(strip_tags(stripslashes($new_instance['count'])));
         $instance['hide_empty'] = isset($new_instance['hide_empty']) ? 1 : 0;
+        $instance['display_css'] = trim(strip_tags(stripslashes($new_instance['display_css'])));
+
         $instance['filter_published'] = $new_instance['filter_published'];
         $instance['filter_category'] = strip_tags(stripslashes($new_instance['filter_category']));
-        $instance['display_css'] = trim(strip_tags(stripslashes($new_instance['display_css'])));
         $instance['display_comments_count'] = isset($new_instance['display_comments_count']) ? 1 : 0;
 
         return $instance;
-    }
-
-    function form($instance) {
-        $instance = wp_parse_args((array)$instance, $this->defaults);
-
-        include(GDSIMPLEWIDGETS_PATH.'widgets/gdsw-most-commented/basic.php');
-        include(GDSIMPLEWIDGETS_PATH.'widgets/gdsw-most-commented/filter.php');
-        include(GDSIMPLEWIDGETS_PATH.'widgets/gdsw-most-commented/display.php');
     }
 
     function results($instance) {
@@ -81,7 +64,7 @@ class gdswMostCommented extends WP_Widget {
         $sql = sprintf("SELECT DISTINCT %s FROM %s WHERE %s ORDER BY p.comment_count DESC LIMIT %s",
             join(", ", $select), join(" ", $from), join(" AND ", $where), $instance["count"]);
         wp_gdsw_log_sql("widget_gdws_popular_posts", $sql);
-        return $wpdb->get_results($sql);
+        return $this->prepare($instance, $wpdb->get_results($sql));
     }
 
     function render($results, $instance) {
