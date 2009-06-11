@@ -1,1 +1,2 @@
-.gdsw-posts-authors td, .gdsw-recent-comments td { vertical-align: top; }
+.gdsw-widget td { vertical-align: top; }
+.gdsw-widget img { padding-right: 4px; }

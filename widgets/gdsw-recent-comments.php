@@ -41,7 +41,7 @@ class gdswRecentComments extends gdsw_Widget {
         $select = array("c.comment_ID", "c.comment_author", "c.comment_author_email", 
             "c.comment_author_url", "p.ID", "p.post_title");
         $from = array();
-        $where = array();
+        $where = array("comment_approved" => "1");
 
         $from[] = sprintf("%scomments c INNER JOIN %sposts p ON c.comment_post_ID = p.ID", $table_prefix, $table_prefix);
         if ($instance["filter_type"] == "ping") $where[] = "comment_type = 'pingback'";
@@ -62,7 +62,7 @@ class gdswRecentComments extends gdsw_Widget {
     }
 
     function render($results, $instance) {
-        echo '<div class="gdsw-recent-comments '.$instance["display_css"].'"><ul>';
+        echo '<div class="gdsw-widget gdsw-recent-comments '.$instance["display_css"].'"><ul>';
         foreach ($results as $r) {
             echo '<li>';
             if ($instance["display_gravatar"] == 1) {

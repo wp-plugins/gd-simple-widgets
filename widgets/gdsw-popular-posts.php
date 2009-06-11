@@ -45,15 +45,6 @@ class gdswPopularPosts extends gdsw_Widget {
         return $instance;
     }
 
-    function prepare($results) {
-        if (count($results) == 0) return array();
-        foreach ($results as $row) {
-            if ($instance["display_post_date"] == 1) $r->post_date = mysql2date($instance["display_post_date_format"], $r->post_date);
-            if ($instance["display_excerpt"] == 1) $r->excerpt = $this->get_excerpt($instance, $r);
-        }
-        return $results;
-    }
-
     function results($instance) {
         global $wpdb, $table_prefix;
 
@@ -71,16 +62,16 @@ class gdswPopularPosts extends gdsw_Widget {
 
         switch ($instance["filter_views"]) {
             case "all":
-                $select[] = "v.usr_views + v.vst_views AS views";
-                $order = "v.usr_views + v.vst_views DESC";
+                $select[] = "sum(v.usr_views + v.vst_views) AS views";
+                $order = "sum(v.usr_views + v.vst_views) DESC";
                 break;
             case "users":
-                $select[] = "v.usr_views AS views";
-                $order = "v.usr_views DESC";
+                $select[] = "sum(v.usr_views) AS views";
+                $order = "sum(v.usr_views) DESC";
                 break;
             case "visitors":
-                $select[] = "v.vst_views AS views";
-                $order = "v.vst_views DESC";
+                $select[] = "sum(v.vst_views) AS views";
+                $order = "sum(v.vst_views) DESC";
                 break;
         }
 
@@ -108,14 +99,14 @@ class gdswPopularPosts extends gdsw_Widget {
             $where[] = sprintf("DATE_SUB(CURDATE(), INTERVAL %s DAY) < STR_TO_DATE(v.day,'%s')", $days, '%Y-%m-%d');
         }
 
-        $sql = sprintf("SELECT DISTINCT %s FROM %s WHERE %s ORDER BY %s LIMIT %s",
+        $sql = sprintf("SELECT DISTINCT %s FROM %s WHERE %s GROUP BY p.ID ORDER BY %s LIMIT %s",
             join(", ", $select), join(" ", $from), join(" AND ", $where), $order, $instance["count"]);
         wp_gdsw_log_sql("widget_gdws_popular_posts", $sql);
         return $this->prepare($instance, $wpdb->get_results($sql));
     }
 
     function render($results, $instance) {
-        echo '<div class="gdsw-future-posts '.$instance["display_css"].'"><ul>';
+        echo '<div class="gdsw-widget gdsw-future-posts '.$instance["display_css"].'"><ul>';
         foreach ($results as $r) {
             echo '<li>';
             echo sprintf('<a href="%s" class="gdsw-url">%s</a>', get_permalink($r->ID), $r->post_title);

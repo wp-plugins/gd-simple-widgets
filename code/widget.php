@@ -37,7 +37,7 @@ class gdsw_Widget extends WP_Widget {
         return $results;
     }
 
-    function results($result) { }
+    function results($instance) { }
 
     function render($results, $instance) { }
 

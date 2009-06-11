@@ -67,7 +67,7 @@ class gdswPostsAuthors extends gdsw_Widget {
     }
 
     function render($results, $instance) {
-        echo '<div class="gdsw-posts-authors '.$instance["display_css"].'"><ul>';
+        echo '<div class="gdsw-widget gdsw-posts-authors '.$instance["display_css"].'"><ul>';
         foreach ($results as $r) {
             echo '<li>';
             if ($instance["display_gravatar"] == 1) {
