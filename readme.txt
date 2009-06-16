@@ -1,7 +1,7 @@
 === GD Simple Widgets ===
 Contributors: gdragon
 Donate link: http://www.dev4press.com/donate/
-Version: 1.1.1
+Version: 1.1.2
 Tags: gdragon, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter, excerpt, scheduled
 Requires at least: 2.8
 Tested up to: 2.8

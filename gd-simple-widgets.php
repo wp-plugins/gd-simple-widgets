@@ -4,7 +4,7 @@
 Plugin Name: GD Simple Widgets
 Plugin URI: http://www.dev4press.com/plugin/gd-simple-widgets/
 Description: Collection of powerful, easy to use widgets that expand default widgets. Plugin also adds few more must-have widgets for posts, authors and comments.
-Version: 1.1.1
+Version: 1.1.2
 Author: Milan Petrovic
 Author URI: http://www.dev4press.com/
 
@@ -80,6 +80,7 @@ if (!class_exists('GDSimpleWidgets')) {
                 $this->o["date"] = $this->default_options["date"];
                 $this->o["status"] = $this->default_options["status"];
                 $this->o["build"] = $this->default_options["build"];
+                $this->o["product_id"] = $this->default_options["product_id"];
 
                 update_option('gd-simple-widgets', $this->o);
             }
@@ -145,15 +146,14 @@ if (!class_exists('GDSimpleWidgets')) {
         }
 
         function plugin_check_version($file, $plugin_data) {
-            $current = get_option('update_plugins');
+            $current = get_transient('update_plugins');
             if (!isset($current->response[$file])) return false;
 
-            $columns = $this->wp_version < 28 ? 5 : 3;
             $url = gdFunctionsGDSW::get_update_url($this->o, get_option('home'));
             $update = wp_remote_fopen($url);
-            echo '<td colspan="'.$columns.'" class="gdr-plugin-update">';
+            echo '<td colspan="3" class="gdr-plugin-update"><div class="gdr-plugin-update-message">';
             echo $update;
-            echo '</td>';
+            echo '</div></td>';
         }
 
         function admin_init() {
@@ -205,7 +205,7 @@ if (!class_exists('GDSimpleWidgets')) {
                 wp_admin_css('css/dashboard');
                 echo('<link rel="stylesheet" href="'.$this->plugin_url.'css/admin_main.css" type="text/css" media="screen" />');
             }
-            if ($this->admin_page == "widgets.php" || $this->admin_page == "themes.php") {
+            if ($this->admin_page == "widgets.php" || $this->admin_page == "themes.php" || $this->admin_page == "plugins.php") {
                 echo('<link rel="stylesheet" href="'.$this->plugin_url.'css/admin_widgets.css" type="text/css" media="screen" />');
             }
         }

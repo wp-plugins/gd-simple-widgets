@@ -33,3 +33,21 @@
     font-size: 8px;
     font-style: italic;
 }
+
+.gdr-plugin-update {
+    text-align: left;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.gdr-plugin-update-message {
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    margin: 5px;
+    padding: 4px 6px;
+    background-color: #f5f5f5;
+    border: 1px solid #CC0000;
+    font-size: 11px;
+}
