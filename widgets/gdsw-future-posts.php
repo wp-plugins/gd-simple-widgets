@@ -73,7 +73,7 @@ class gdswFuturePosts extends gdsw_Widget {
         echo '<div class="gdsw-widget gdsw-future-posts '.$instance["display_css"].'"><ul>';
         foreach ($results as $r) {
             echo '<li>';
-            echo sprintf('<a href="%s">%s</a>', get_permalink($r->ID), $r->post_title);
+            echo $r->post_title;
             if ($instance["display_post_date"] == 1) echo sprintf(' <span class="gdws-date">[%s]</span>', $r->post_date);
             if ($instance["display_excerpt"] == 1) echo sprintf('<p class="gdws-excerpt">%s</p>', $r->excerpt);
             echo '</li>';

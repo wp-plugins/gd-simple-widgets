@@ -4,7 +4,7 @@
 Plugin Name: GD Simple Widgets
 Plugin URI: http://www.dev4press.com/plugin/gd-simple-widgets/
 Description: Collection of powerful, easy to use widgets that expand default widgets. Plugin also adds few more must-have widgets for posts, authors and comments.
-Version: 1.1.2
+Version: 1.2.0
 Author: Milan Petrovic
 Author URI: http://www.dev4press.com/
 
@@ -40,6 +40,7 @@ require_once(dirname(__FILE__)."/widgets/gdsw-most-commented.php");
 require_once(dirname(__FILE__)."/widgets/gdsw-posts-authors.php");
 require_once(dirname(__FILE__)."/widgets/gdsw-future-posts.php");
 require_once(dirname(__FILE__)."/widgets/gdsw-popular-posts.php");
+require_once(dirname(__FILE__)."/widgets/gdsw-random-posts.php");
 
 require_once(dirname(__FILE__)."/integration.php");
 
@@ -128,6 +129,7 @@ if (!class_exists('GDSimpleWidgets')) {
             if ($this->o["widgets_posts_authors"] == 1) register_widget("gdswPostsAuthors");
             if ($this->o["widgets_future_posts"] == 1) register_widget("gdswFuturePosts");
             if ($this->o["widgets_popular_posts"] == 1) register_widget("gdswPopularPosts");
+            if ($this->o["widgets_random_posts"] == 1) register_widget("gdswRandomPosts");
 
             if ($this->o["default_recent_comments"] == 0) unregister_widget("WP_Widget_Recent_Comments");
             if ($this->o["default_recent_posts"] == 0) unregister_widget("WP_Widget_Recent_Posts");
@@ -181,6 +183,7 @@ if (!class_exists('GDSimpleWidgets')) {
                 $this->save_setting_checkbox("widgets_related_posts");
                 $this->save_setting_checkbox("default_recent_comments");
                 $this->save_setting_checkbox("default_recent_posts");
+                $this->save_setting_checkbox("default_random_posts");
 
                 update_option("gd-simple-widgets", $this->o);
                 wp_redirect_self();

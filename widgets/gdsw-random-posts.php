@@ -1,27 +1,26 @@
 <?php
 
-class gdswPopularPosts extends gdsw_Widget {
-    var $folder_name = "gdsw-popular-posts";
+class gdswRandomPosts extends gdsw_Widget {
+    var $folder_name = "gdsw-random-posts";
     var $defaults = array(
-        "title" => "Popular Posts",
+        "title" => "Random Posts",
         "count" => 10,
-        "hide_empty" => 0,
-        "filter_recency" => "allp",
-        "filter_type" => "postpage",
         "filter_category" => "",
-        "filter_views" => "all",
+        "filter_recency" => "allp",
+        "filter_type" => "post",
+        "hide_empty" => 0,
         "display_css" => "",
-        "display_views" => 1,
         "display_excerpt" => 0,
         "display_excerpt_length" => 15,
         "display_post_date" => 0,
         "display_post_date_format" => "F j, Y"
     );
 
-    function gdswPopularPosts() {
-        $widget_ops = array('classname' => 'widget_gdsw_popularposts', 'description' => __("Display popular posts.", "gd-simple-widgets"));
+    function gdswRandomPosts() {
+        $widget_ops = array('classname' => 'widget_gdsw_randomposts',
+            'description' => __("Display random posts.", "gd-simple-widgets"));
         $control_ops = array('width' => 400);
-        $this->WP_Widget('gdswpopularposts', 'gdSW Popular Posts', $widget_ops, $control_ops);
+        $this->WP_Widget('gdswrandomposts', 'gdSW Random Posts', $widget_ops, $control_ops);
     }
 
     function update($new_instance, $old_instance) {
@@ -35,8 +34,6 @@ class gdswPopularPosts extends gdsw_Widget {
         $instance['filter_recency'] = $new_instance['filter_recency'];
         $instance['filter_category'] = strip_tags(stripslashes($new_instance['filter_category']));
         $instance['filter_type'] = $new_instance['filter_type'];
-        $instance['filter_views'] = $new_instance['filter_views'];
-        $instance['display_views'] = isset($new_instance['display_views']) ? 1 : 0;
         $instance['display_excerpt'] = isset($new_instance['display_excerpt']) ? 1 : 0;
         $instance['display_excerpt_length'] = intval(strip_tags(stripslashes($new_instance['display_excerpt_length'])));
         $instance['display_post_date'] = isset($new_instance['display_post_date']) ? 1 : 0;
@@ -50,7 +47,7 @@ class gdswPopularPosts extends gdsw_Widget {
 
         $order = "";
         $select = array("p.ID", "p.post_title");
-        $from = array(sprintf("%sposts p inner join %sgdpt_posts_views v on p.ID = v.post_id", $table_prefix, $table_prefix));
+        $from = array(sprintf("%sposts p", $table_prefix));
         $where = array("p.post_status = 'publish'");
         if ($instance["display_post_date"] == 1) $select[] = "p.post_date";
         if ($instance["display_excerpt"] == 1) {
@@ -60,21 +57,6 @@ class gdswPopularPosts extends gdsw_Widget {
         }
         if ($instance["filter_type"] != "postpage") $where[] = sprintf("p.post_type = '%s'", $instance["filter_type"]);
 
-        switch ($instance["filter_views"]) {
-            case "all":
-                $select[] = "sum(v.usr_views + v.vst_views) AS views";
-                $order = "sum(v.usr_views + v.vst_views) DESC";
-                break;
-            case "users":
-                $select[] = "sum(v.usr_views) AS views";
-                $order = "sum(v.usr_views) DESC";
-                break;
-            case "visitors":
-                $select[] = "sum(v.vst_views) AS views";
-                $order = "sum(v.vst_views) DESC";
-                break;
-        }
-
         if ($instance["filter_category"] != "") {
             $from[] = sprintf("INNER JOIN %sterm_relationships tr ON tr.object_id = p.ID", $table_prefix);
             $from[] = sprintf("INNER JOIN %sterm_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id", $table_prefix);
@@ -82,39 +64,33 @@ class gdswPopularPosts extends gdsw_Widget {
         }
         if ($instance["filter_recency"] != "allp") {
             $days = 0;
-            if ($instance["filter_recency"] != "tday") {
-                $where[] = "v.day = ".date("Y-m-d");
-            } else {
-                switch ($instance["filter_recency"]) {
-                    case "lday":
-                        $days = 1;
-                        break;
-                    case "lwek":
-                        $days = 7;
-                        break;
-                    case "lmnt":
-                        $days = 31;
-                        break;
-                    case "lyea":
-                        $days = 365;
-                        break;
-                }
-                $where[] = sprintf("DATE_SUB(CURDATE(), INTERVAL %s DAY) < STR_TO_DATE(v.day, '%s')", $days, '%Y-%m-%d');
+            switch ($instance["filter_recency"]) {
+                case "lday":
+                    $days = 1;
+                    break;
+                case "lwek":
+                    $days = 7;
+                    break;
+                case "lmnt":
+                    $days = 31;
+                    break;
+                case "lyea":
+                    $days = 365;
+                    break;
             }
+            $where[] = sprintf("DATE_SUB(CURDATE(), INTERVAL %s DAY) < p.post_date", $days);
         }
-
-        $sql = sprintf("SELECT DISTINCT %s FROM %s WHERE %s GROUP BY p.ID ORDER BY %s LIMIT %s",
-            join(", ", $select), join(" ", $from), join(" AND ", $where), $order, $instance["count"]);
-        wp_gdsw_log_sql("widget_gdws_popular_posts", $sql);
+        $sql = sprintf("SELECT DISTINCT %s FROM %s WHERE %s ORDER BY RAND() LIMIT %s",
+            join(", ", $select), join(" ", $from), join(" AND ", $where), $instance["count"]);
+        wp_gdsw_log_sql("widget_gdws_random_posts", $sql);
         return $this->prepare($instance, $wpdb->get_results($sql));
     }
 
     function render($results, $instance) {
-        echo '<div class="gdsw-widget gdsw-future-posts '.$instance["display_css"].'"><ul>';
+        echo '<div class="gdsw-widget gdsw-random-posts '.$instance["display_css"].'"><ul>';
         foreach ($results as $r) {
             echo '<li>';
             echo sprintf('<a href="%s" class="gdsw-url">%s</a>', get_permalink($r->ID), $r->post_title);
-            if ($instance["display_views"] == 1) echo sprintf(" (%s %s)", $r->views, $r->views == 1 ? __("view", "gd-simple-widgets") : __("views", "gd-simple-widgets"));
             if ($instance["display_post_date"] == 1) echo sprintf(' <span class="gdws-date">[%s]</span>', $r->post_date);
             if ($instance["display_excerpt"] == 1) echo sprintf('<p class="gdws-excerpt">%s</p>', $r->excerpt);
             echo '</li>';
