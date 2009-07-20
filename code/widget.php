@@ -26,8 +26,6 @@ class gdsw_Widget extends WP_Widget {
         include(GDSIMPLEWIDGETS_PATH.'widgets/'.$this->folder_name.'/display.php');
     }
 
-    function update($new_instance, $old_instance) { }
-
     function prepare($instance, $results) {
         if (count($results) == 0) return array();
         foreach ($results as $r) {
@@ -37,16 +35,20 @@ class gdsw_Widget extends WP_Widget {
         return $results;
     }
 
+    function update($new_instance, $old_instance) { }
+
     function results($instance) { }
 
     function render($results, $instance) { }
 
     function get_excerpt($instance, $r) {
         $text = trim($r->post_excerpt);
+
         if ($text == "") {
             $text = str_replace(']]>', ']]&gt;', $r->post_content);
             $text = strip_tags($text);
         }
+
         $text = gdFunctionsGDSW::trim_to_words($text, $instance["display_excerpt_length"]);
         return $text;
     }

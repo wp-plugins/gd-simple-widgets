@@ -2,11 +2,11 @@
 
 class GDSWDefaults {
     var $default_options = array(
-        "version" => "1.2.0",
-        "date" => "2009.06.22.",
+        "version" => "1.2.1",
+        "date" => "2009.07.21.",
         "status" => "Stable",
         "product_id" => "gd-simple-widgets",
-        "build" => 45,
+        "build" => 46,
         "edition" => "free",
         "load_default_css" => 1,
         "debug_into_file" => 0,
@@ -24,7 +24,7 @@ class GDSWDefaults {
         "default_recent_posts" => 1
     );
 
-    function GDSWDefaults() {}
+    function GDSWDefaults() { }
 }
 
 ?>
