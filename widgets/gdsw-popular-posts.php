@@ -110,7 +110,7 @@ class gdswPopularPosts extends gdsw_Widget {
     }
 
     function render($results, $instance) {
-        echo '<div class="gdsw-widget gdsw-future-posts '.$instance["display_css"].'"><ul>';
+        echo '<div class="gdsw-widget gdsw-popular-posts '.$instance["display_css"].'"><ul>';
         foreach ($results as $r) {
             echo '<li>';
             echo sprintf('<a href="%s" class="gdsw-url">%s</a>', get_permalink($r->ID), $r->post_title);

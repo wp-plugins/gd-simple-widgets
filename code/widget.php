@@ -18,6 +18,12 @@ class gdsw_Widget extends WP_Widget {
         echo $after_widget;
     }
 
+    function simple_render($instance = array()) {
+        $instance = shortcode_atts($this->defaults, $instance);
+        $results = $this->results($instance);
+        return $this->render($results, $instance);
+    }
+
     function form($instance) {
         $instance = wp_parse_args((array)$instance, $this->defaults);
 
