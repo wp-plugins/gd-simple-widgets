@@ -1,10 +1,10 @@
 === GD Simple Widgets ===
 Contributors: gdragon
 Donate link: http://www.dev4press.com/donate/
-Version: 1.3.0
+Version: 1.3.1
 Tags: gdragon, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter, excerpt, scheduled
 Requires at least: 2.8
-Tested up to: 2.8.2
+Tested up to: 2.8.3
 Stable tag: trunk
 
 Collection of powerful, easy to use widgets that expand default widgets. Plugin also adds few more must-have widgets for posts, authors and comments.
@@ -49,6 +49,10 @@ Nothing here yet.
 4. Popular Posts widget
 
 == Changelog ==
+= 1.3.1 =
+* Fixes to some of the functions
+* Few other small changes
+
 = 1.3.0 =
 * Functions for getting data and rendering
 * Fixed some minor bugs and problems
