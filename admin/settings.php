@@ -78,12 +78,12 @@
         <div class="table">
             <table><tbody>
                 <tr class="first">
-                    <td class="first b">Load default CSS file</td>
+                    <td class="first b"><?php _e("Load default CSS file", "gd-simple-widgets"); ?></td>
                     <td class="t"></td>
                     <td class="t options"><input<?php if ($options["load_default_css"] == 1) echo " checked"; ?> type="checkbox" name="load_default_css" /></td>
                 </tr>
                 <tr>
-                    <td class="first b">Write debug info into file</td>
+                    <td class="first b"><?php _e("Write debug info into file", "gd-simple-widgets"); ?></td>
                     <td class="t"></td>
                     <td class="t options"><input<?php if ($options["debug_into_file"] == 1) echo " checked"; ?> type="checkbox" name="debug_into_file" /></td>
                 </tr>

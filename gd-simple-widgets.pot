@@ -126,6 +126,14 @@ msgstr ""
 msgid "Other Settings"
 msgstr ""
 
+#: admin/settings.php:80
+msgid "Load default CSS file"
+msgstr ""
+
+#: admin/settings.php:85
+msgid "Write debug info into file"
+msgstr ""
+
 #: widgets/gdsw-future-posts/basic.php:2
 #: widgets/gdsw-most-commented/basic.php:2
 #: widgets/gdsw-popular-posts/basic.php:2
@@ -133,6 +141,7 @@ msgstr ""
 #: widgets/gdsw-random-posts/basic.php:2
 #: widgets/gdsw-recent-comments/basic.php:2
 #: widgets/gdsw-recent-posts/basic.php:2
+#: widgets/gdsw-related-posts/basic.php:2
 msgid "Title"
 msgstr ""
 
@@ -141,6 +150,7 @@ msgstr ""
 #: widgets/gdsw-popular-posts/basic.php:6
 #: widgets/gdsw-random-posts/basic.php:6
 #: widgets/gdsw-recent-posts/basic.php:6
+#: widgets/gdsw-related-posts/basic.php:6
 msgid "Posts to show"
 msgstr ""
 
@@ -151,6 +161,7 @@ msgstr ""
 #: widgets/gdsw-random-posts/basic.php:12
 #: widgets/gdsw-recent-comments/basic.php:12
 #: widgets/gdsw-recent-posts/basic.php:12
+#: widgets/gdsw-related-posts/basic.php:12
 msgid "Hide widget if no results found"
 msgstr ""
 
@@ -161,6 +172,7 @@ msgstr ""
 #: widgets/gdsw-random-posts/display.php:2
 #: widgets/gdsw-recent-comments/display.php:2
 #: widgets/gdsw-recent-posts/display.php:2
+#: widgets/gdsw-related-posts/display.php:2
 msgid "Additional CSS class"
 msgstr ""
 
@@ -168,6 +180,7 @@ msgstr ""
 #: widgets/gdsw-popular-posts/display.php:12
 #: widgets/gdsw-random-posts/display.php:6
 #: widgets/gdsw-recent-posts/display.php:6
+#: widgets/gdsw-related-posts/display.php:6
 msgid "Short excerpt from the post"
 msgstr ""
 
@@ -175,6 +188,7 @@ msgstr ""
 #: widgets/gdsw-popular-posts/display.php:18
 #: widgets/gdsw-random-posts/display.php:12
 #: widgets/gdsw-recent-posts/display.php:12
+#: widgets/gdsw-related-posts/display.php:12
 msgid "Excerpt words limit"
 msgstr ""
 
@@ -182,6 +196,7 @@ msgstr ""
 #: widgets/gdsw-popular-posts/display.php:22
 #: widgets/gdsw-random-posts/display.php:16
 #: widgets/gdsw-recent-posts/display.php:16
+#: widgets/gdsw-related-posts/display.php:16
 msgid "Display post date"
 msgstr ""
 
@@ -189,6 +204,7 @@ msgstr ""
 #: widgets/gdsw-popular-posts/display.php:28
 #: widgets/gdsw-random-posts/display.php:22
 #: widgets/gdsw-recent-posts/display.php:22
+#: widgets/gdsw-related-posts/display.php:22
 msgid "Post date format"
 msgstr ""
 
@@ -199,6 +215,7 @@ msgstr ""
 #: widgets/gdsw-random-posts/filter.php:24
 #: widgets/gdsw-recent-comments/filter.php:12
 #: widgets/gdsw-recent-posts/filter.php:2
+#: widgets/gdsw-related-posts/filter.php:24
 msgid "Filter by category"
 msgstr ""
 
@@ -209,6 +226,7 @@ msgstr ""
 #: widgets/gdsw-random-posts/filter.php:28
 #: widgets/gdsw-recent-comments/filter.php:16
 #: widgets/gdsw-recent-posts/filter.php:6
+#: widgets/gdsw-related-posts/filter.php:28
 msgid "comma separated list of category ids"
 msgstr ""
 
@@ -219,6 +237,7 @@ msgstr ""
 #: widgets/gdsw-random-posts/filter.php:29
 #: widgets/gdsw-recent-comments/filter.php:17
 #: widgets/gdsw-recent-posts/filter.php:7
+#: widgets/gdsw-related-posts/filter.php:29
 msgid "leave empty to include all categories"
 msgstr ""
 
@@ -237,18 +256,21 @@ msgstr ""
 #: widgets/gdsw-most-commented/filter.php:6
 #: widgets/gdsw-popular-posts/filter.php:8
 #: widgets/gdsw-random-posts/filter.php:7
+#: widgets/gdsw-related-posts/filter.php:7
 msgid "Last week"
 msgstr ""
 
 #: widgets/gdsw-most-commented/filter.php:7
 #: widgets/gdsw-popular-posts/filter.php:9
 #: widgets/gdsw-random-posts/filter.php:8
+#: widgets/gdsw-related-posts/filter.php:8
 msgid "Last month"
 msgstr ""
 
 #: widgets/gdsw-most-commented/filter.php:8
 #: widgets/gdsw-popular-posts/filter.php:10
 #: widgets/gdsw-random-posts/filter.php:9
+#: widgets/gdsw-related-posts/filter.php:9
 msgid "Last year"
 msgstr ""
 
@@ -258,11 +280,13 @@ msgstr ""
 
 #: widgets/gdsw-popular-posts/filter.php:2
 #: widgets/gdsw-random-posts/filter.php:2
+#: widgets/gdsw-related-posts/filter.php:2
 msgid "Filter by date"
 msgstr ""
 
 #: widgets/gdsw-popular-posts/filter.php:5
 #: widgets/gdsw-random-posts/filter.php:5
+#: widgets/gdsw-related-posts/filter.php:5
 msgid "All time"
 msgstr ""
 
@@ -272,27 +296,32 @@ msgstr ""
 
 #: widgets/gdsw-popular-posts/filter.php:7
 #: widgets/gdsw-random-posts/filter.php:6
+#: widgets/gdsw-related-posts/filter.php:6
 msgid "Last 24 hours"
 msgstr ""
 
 #: widgets/gdsw-popular-posts/filter.php:15
 #: widgets/gdsw-random-posts/filter.php:14
 #: widgets/gdsw-recent-comments/filter.php:2
+#: widgets/gdsw-related-posts/filter.php:14
 msgid "Filter by type"
 msgstr ""
 
 #: widgets/gdsw-popular-posts/filter.php:18
 #: widgets/gdsw-random-posts/filter.php:17
+#: widgets/gdsw-related-posts/filter.php:17
 msgid "Both posts and pages"
 msgstr ""
 
 #: widgets/gdsw-popular-posts/filter.php:19
 #: widgets/gdsw-random-posts/filter.php:18
+#: widgets/gdsw-related-posts/filter.php:18
 msgid "Only posts"
 msgstr ""
 
 #: widgets/gdsw-popular-posts/filter.php:20
 #: widgets/gdsw-random-posts/filter.php:19
+#: widgets/gdsw-related-posts/filter.php:19
 msgid "Only pages"
 msgstr ""
 

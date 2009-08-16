@@ -82,8 +82,8 @@ class gdswPopularPosts extends gdsw_Widget {
         }
         if ($instance["filter_recency"] != "allp") {
             $days = 0;
-            if ($instance["filter_recency"] != "tday") {
-                $where[] = "v.day = ".date("Y-m-d");
+            if ($instance["filter_recency"] == "tday") {
+                $where[] = "v.day = '".date("Y-m-d")."'";
             } else {
                 switch ($instance["filter_recency"]) {
                     case "lday":
