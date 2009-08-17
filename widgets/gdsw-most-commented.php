@@ -68,14 +68,15 @@ class gdswMostCommented extends gdsw_Widget {
     }
 
     function render($results, $instance) {
-        echo '<div class="gdsw-widget gdsw-popular-posts '.$instance["display_css"].'"><ul>';
+        $render = '<div class="gdsw-widget gdsw-popular-posts '.$instance["display_css"].'"><ul>';
         foreach ($results as $r) {
-            echo '<li>';
-            echo sprintf('<a href="%s" class="gdsw-url">%s</a>', get_comment_link($r->ID), $r->post_title);
-            if ($instance["display_comments_count"] == 1) echo sprintf(" [%s]", $r->comment_count);
-            echo '</li>';
+            $render.= '<li>';
+            $render.= sprintf('<a href="%s" class="gdsw-url">%s</a>', get_comment_link($r->ID), $r->post_title);
+            if ($instance["display_comments_count"] == 1) $render.= sprintf(" [%s]", $r->comment_count);
+            $render.= '</li>';
         }
-        echo '</ul></div>';
+        $render.= '</ul></div>';
+        return $render;
     }
 }
 

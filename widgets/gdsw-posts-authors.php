@@ -67,23 +67,24 @@ class gdswPostsAuthors extends gdsw_Widget {
     }
 
     function render($results, $instance) {
-        echo '<div class="gdsw-widget gdsw-posts-authors '.$instance["display_css"].'"><ul>';
+        $render = '<div class="gdsw-widget gdsw-posts-authors '.$instance["display_css"].'"><ul>';
         foreach ($results as $r) {
-            echo '<li>';
+            $render.= '<li>';
             if ($instance["display_gravatar"] == 1) {
-                echo '<table><tr><td>';
-                echo sprintf('<a href="%s" class="gdsw-url">%s</a>', get_author_posts_url($r->ID), get_avatar($r->user_email, $instance["display_gravatar_size"]));
-                echo '</td><td>';
+                $render.= '<table><tr><td>';
+                $render.= sprintf('<a href="%s" class="gdsw-url">%s</a>', get_author_posts_url($r->ID), get_avatar($r->user_email, $instance["display_gravatar_size"]));
+                $render.= '</td><td>';
             }
             $name = "";
             if ($instance["display_full_name"] == 1) $name = trim($r->first_name." ".$r->last_name);
             if ($name == "") $name = $r->display_name;
-            echo sprintf('<a href="%s" class="gdsw-url">%s</a>', get_author_posts_url($r->ID), $name);
-            if ($instance["display_posts_count"] == 1) echo sprintf(" [%s]", $r->posts);
-            if ($instance["display_gravatar"] == 1) echo '</td></tr></table>';
-            echo '</li>';
+            $render.= sprintf('<a href="%s" class="gdsw-url">%s</a>', get_author_posts_url($r->ID), $name);
+            if ($instance["display_posts_count"] == 1) $render.= sprintf(" [%s]", $r->posts);
+            if ($instance["display_gravatar"] == 1) $render.= '</td></tr></table>';
+            $render.= '</li>';
         }
-        echo '</ul></div>';
+        $render.= '</ul></div>';
+        return $render;
     }
 }
 

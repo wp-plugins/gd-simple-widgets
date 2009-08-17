@@ -70,15 +70,16 @@ class gdswFuturePosts extends gdsw_Widget {
     }
 
     function render($results, $instance) {
-        echo '<div class="gdsw-widget gdsw-future-posts '.$instance["display_css"].'"><ul>';
+        $render = '<div class="gdsw-widget gdsw-future-posts '.$instance["display_css"].'"><ul>';
         foreach ($results as $r) {
-            echo '<li>';
-            echo $r->post_title;
-            if ($instance["display_post_date"] == 1) echo sprintf(' <span class="gdws-date">[%s]</span>', $r->post_date);
-            if ($instance["display_excerpt"] == 1) echo sprintf('<p class="gdws-excerpt">%s</p>', $r->excerpt);
-            echo '</li>';
+            $render.= '<li>';
+            $render.= $r->post_title;
+            if ($instance["display_post_date"] == 1) $render.= sprintf(' <span class="gdws-date">[%s]</span>', $r->post_date);
+            if ($instance["display_excerpt"] == 1) $render.= sprintf('<p class="gdws-excerpt">%s</p>', $r->excerpt);
+            $render.= '</li>';
         }
-        echo '</ul></div>';
+        $render.= '</ul></div>';
+        return $render;
     }
 }
 

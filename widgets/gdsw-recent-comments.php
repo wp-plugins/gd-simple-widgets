@@ -62,22 +62,23 @@ class gdswRecentComments extends gdsw_Widget {
     }
 
     function render($results, $instance) {
-        echo '<div class="gdsw-widget gdsw-recent-comments '.$instance["display_css"].'"><ul>';
+        $render = '<div class="gdsw-widget gdsw-recent-comments '.$instance["display_css"].'"><ul>';
         foreach ($results as $r) {
-            echo '<li>';
+            $render.= '<li>';
             if ($instance["display_gravatar"] == 1) {
-                echo '<table><tr><td>';
-                echo sprintf('<a href="%s" rel="external nofollow" class="gdsw-url">%s</a>', $r->comment_author_url, get_avatar($r->comment_author_email, $instance["display_gravatar_size"]));
-                echo '</td><td>';
+                $render.= '<table><tr><td>';
+                $render.= sprintf('<a href="%s" rel="external nofollow" class="gdsw-url">%s</a>', $r->comment_author_url, get_avatar($r->comment_author_email, $instance["display_gravatar_size"]));
+                $render.= '</td><td>';
             }
             if ($r->comment_author_url != "" && $r->comment_author_url != "http://") {
-                echo sprintf('<a href="%s" rel="external nofollow" class="gdsw-url">%s</a>', $r->comment_author_url, $r->comment_author);
-            } else echo $r->comment_author;
-            echo sprintf(' on <a href="%s" class="gdsw-url">%s</a>', get_comment_link($r->comment_ID), $r->post_title);
-            if ($instance["display_gravatar"] == 1) echo '</td></tr></table>';
-            echo '</li>';
+                $render.= sprintf('<a href="%s" rel="external nofollow" class="gdsw-url">%s</a>', $r->comment_author_url, $r->comment_author);
+            } else $render.= $r->comment_author;
+            $render.= sprintf(' on <a href="%s" class="gdsw-url">%s</a>', get_comment_link($r->comment_ID), $r->post_title);
+            if ($instance["display_gravatar"] == 1) $render.= '</td></tr></table>';
+            $render.= '</li>';
         }
-        echo '</ul></div>';
+        $render.= '</ul></div>';
+        return $render;
     }
 }
 
