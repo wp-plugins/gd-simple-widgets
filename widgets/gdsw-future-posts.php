@@ -60,8 +60,7 @@ class gdswFuturePosts extends gdsw_Widget {
             $where[] = sprintf("tt.term_id in (%s)", $instance["filter_category"]);
         }
 
-        if (count($where) > 0) $where = " WHERE ".join(" AND ", $where);
-        else $where = "";
+        $where = count($where) > 0 ? " WHERE ".join(" AND ", $where) : "";
 
         $sql = sprintf("SELECT DISTINCT %s FROM %s%s ORDER BY p.post_date_gmt ASC LIMIT %s",
             join(", ", $select), join(" ", $from), $where, $instance["count"]);

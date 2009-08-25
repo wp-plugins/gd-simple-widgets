@@ -71,9 +71,9 @@ class gdswRecentComments extends gdsw_Widget {
                 $render.= '</td><td>';
             }
             if ($r->comment_author_url != "" && $r->comment_author_url != "http://") {
-                $render.= sprintf('<a href="%s" rel="external nofollow" class="gdsw-url">%s</a>', $r->comment_author_url, $r->comment_author);
+                $render.= sprintf('<a href="%s" rel="external nofollow" class="gdsw-url gdsw-url-author">%s</a>', $r->comment_author_url, $r->comment_author);
             } else $render.= $r->comment_author;
-            $render.= sprintf(' on <a href="%s" class="gdsw-url">%s</a>', get_comment_link($r->comment_ID), $r->post_title);
+            $render.= sprintf(' on <a href="%s" class="gdsw-url gdsw-url-post">%s</a>', get_comment_link($r->comment_ID), $r->post_title);
             if ($instance["display_gravatar"] == 1) $render.= '</td></tr></table>';
             $render.= '</li>';
         }

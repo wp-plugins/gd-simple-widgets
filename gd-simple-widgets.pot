@@ -95,7 +95,7 @@ msgstr ""
 msgid "announcements and theme demo"
 msgstr ""
 
-#: admin/panel.php:3
+#: admin/panel.php:8
 msgid "collection of simple sidebar widgets"
 msgstr ""
 
@@ -104,33 +104,33 @@ msgid "Available Widgets"
 msgstr ""
 
 #: admin/settings.php:4
-#: admin/settings.php:54
+#: admin/settings.php:59
 msgid "Unchecked widgets will not be available on the Widgets panel."
 msgstr ""
 
-#: admin/settings.php:41
+#: admin/settings.php:46
 msgid "is required."
 msgstr ""
 
-#: admin/settings.php:47
-#: admin/settings.php:70
-#: admin/settings.php:92
+#: admin/settings.php:52
+#: admin/settings.php:75
+#: admin/settings.php:97
 msgid "Save"
 msgstr ""
 
-#: admin/settings.php:52
+#: admin/settings.php:57
 msgid "Default WordPress Widgets"
 msgstr ""
 
-#: admin/settings.php:75
+#: admin/settings.php:80
 msgid "Other Settings"
 msgstr ""
 
-#: admin/settings.php:80
+#: admin/settings.php:85
 msgid "Load default CSS file"
 msgstr ""
 
-#: admin/settings.php:85
+#: admin/settings.php:90
 msgid "Write debug info into file"
 msgstr ""
 
@@ -215,7 +215,6 @@ msgstr ""
 #: widgets/gdsw-random-posts/filter.php:24
 #: widgets/gdsw-recent-comments/filter.php:12
 #: widgets/gdsw-recent-posts/filter.php:2
-#: widgets/gdsw-related-posts/filter.php:24
 msgid "Filter by category"
 msgstr ""
 
@@ -226,7 +225,6 @@ msgstr ""
 #: widgets/gdsw-random-posts/filter.php:28
 #: widgets/gdsw-recent-comments/filter.php:16
 #: widgets/gdsw-recent-posts/filter.php:6
-#: widgets/gdsw-related-posts/filter.php:28
 msgid "comma separated list of category ids"
 msgstr ""
 
@@ -237,7 +235,6 @@ msgstr ""
 #: widgets/gdsw-random-posts/filter.php:29
 #: widgets/gdsw-recent-comments/filter.php:17
 #: widgets/gdsw-recent-posts/filter.php:7
-#: widgets/gdsw-related-posts/filter.php:29
 msgid "leave empty to include all categories"
 msgstr ""
 
@@ -256,21 +253,18 @@ msgstr ""
 #: widgets/gdsw-most-commented/filter.php:6
 #: widgets/gdsw-popular-posts/filter.php:8
 #: widgets/gdsw-random-posts/filter.php:7
-#: widgets/gdsw-related-posts/filter.php:7
 msgid "Last week"
 msgstr ""
 
 #: widgets/gdsw-most-commented/filter.php:7
 #: widgets/gdsw-popular-posts/filter.php:9
 #: widgets/gdsw-random-posts/filter.php:8
-#: widgets/gdsw-related-posts/filter.php:8
 msgid "Last month"
 msgstr ""
 
 #: widgets/gdsw-most-commented/filter.php:8
 #: widgets/gdsw-popular-posts/filter.php:10
 #: widgets/gdsw-random-posts/filter.php:9
-#: widgets/gdsw-related-posts/filter.php:9
 msgid "Last year"
 msgstr ""
 
@@ -280,13 +274,11 @@ msgstr ""
 
 #: widgets/gdsw-popular-posts/filter.php:2
 #: widgets/gdsw-random-posts/filter.php:2
-#: widgets/gdsw-related-posts/filter.php:2
 msgid "Filter by date"
 msgstr ""
 
 #: widgets/gdsw-popular-posts/filter.php:5
 #: widgets/gdsw-random-posts/filter.php:5
-#: widgets/gdsw-related-posts/filter.php:5
 msgid "All time"
 msgstr ""
 
@@ -296,32 +288,27 @@ msgstr ""
 
 #: widgets/gdsw-popular-posts/filter.php:7
 #: widgets/gdsw-random-posts/filter.php:6
-#: widgets/gdsw-related-posts/filter.php:6
 msgid "Last 24 hours"
 msgstr ""
 
 #: widgets/gdsw-popular-posts/filter.php:15
 #: widgets/gdsw-random-posts/filter.php:14
 #: widgets/gdsw-recent-comments/filter.php:2
-#: widgets/gdsw-related-posts/filter.php:14
 msgid "Filter by type"
 msgstr ""
 
 #: widgets/gdsw-popular-posts/filter.php:18
 #: widgets/gdsw-random-posts/filter.php:17
-#: widgets/gdsw-related-posts/filter.php:17
 msgid "Both posts and pages"
 msgstr ""
 
 #: widgets/gdsw-popular-posts/filter.php:19
 #: widgets/gdsw-random-posts/filter.php:18
-#: widgets/gdsw-related-posts/filter.php:18
 msgid "Only posts"
 msgstr ""
 
 #: widgets/gdsw-popular-posts/filter.php:20
 #: widgets/gdsw-random-posts/filter.php:19
-#: widgets/gdsw-related-posts/filter.php:19
 msgid "Only pages"
 msgstr ""
 
@@ -387,6 +374,26 @@ msgstr ""
 msgid "Comments and pings"
 msgstr ""
 
+#: widgets/gdsw-related-posts/basic.php:18
+msgid "Show only on single post page"
+msgstr ""
+
+#: widgets/gdsw-related-posts/filter.php:2
+msgid "Use to get relations"
+msgstr ""
+
+#: widgets/gdsw-related-posts/filter.php:5
+msgid "Tags and Categories"
+msgstr ""
+
+#: widgets/gdsw-related-posts/filter.php:6
+msgid "Categories only"
+msgstr ""
+
+#: widgets/gdsw-related-posts/filter.php:7
+msgid "Tags only"
+msgstr ""
+
 #: widgets/gdsw-future-posts.php:18
 msgid "Display scheduled posts."
 msgstr ""
@@ -423,11 +430,11 @@ msgstr ""
 msgid "Expanded widget with recent posts."
 msgstr ""
 
-#: widgets/gdsw-related-posts.php:13
+#: widgets/gdsw-related-posts.php:19
 msgid "Display related posts."
 msgstr ""
 
-#: gd-simple-widgets.php:144
+#: gd-simple-widgets.php:152
 msgid "Settings"
 msgstr ""
 

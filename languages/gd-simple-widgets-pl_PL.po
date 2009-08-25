@@ -1,53 +1,48 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: GD Simple Widgets 1.4.0\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: GD Simple Widgets\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Team Blogos <wordpress@blogos.dk>\n"
-"Language-Team: Team Blogos <wordpress@blogos.dk>\n"
+"Last-Translator: Daniel Frużyński <daniel [A-T] poradnik-webmastera.com>\n"
+"Language-Team: Daniel Fruzynski <daniel [A-T] poradnik-webmastera.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2;plural=n != 1;\n"
-"X-Poedit-Language: Danish\n"
-"X-Poedit-Country: DENMARK\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: POLAND\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_c;_e;__ngettext:1,2;__ngettext_noop:1,2;_n:1,2;_n_noop:1,2;_nc:1,2\n"
-"X-Poedit-Basepath: d:\\wordpress\\plugins\\gd-simple-widgets\n"
-"X-Poedit-SearchPath-0: d:\\wordpress\\plugins\\gd-simple-widgets\n"
 
 #: admin/info.php:3
 msgid "Info"
-msgstr "Info"
+msgstr "Informacje"
 
 #: admin/info.php:7
 msgid "Version"
-msgstr "Version"
+msgstr "Wersja"
 
 #: admin/info.php:8
 msgid "release date"
-msgstr "Udgivelsesdato"
+msgstr "data opublikowania"
 
 #: admin/info.php:12
 msgid "Change Log"
-msgstr "Log over ændringer"
+msgstr "Log zmian"
 
 #: admin/info.php:13
 msgid "detailed list of changes"
-msgstr "detaljeret liste over ændringer"
+msgstr "szczegółowa lista zmian"
 
 #: admin/info.php:14
 msgid "show"
-msgstr "vis"
+msgstr "pokaż"
 
 #: admin/info.php:18
 msgid "Links"
-msgstr "Links"
+msgstr "Linki"
 
 #: admin/info.php:23
 msgid "official plugin page"
-msgstr "Pluginnets officielle side"
+msgstr "oficjalna strona pluginu"
 
 #: admin/info.php:24
 #: admin/info.php:29
@@ -59,99 +54,99 @@ msgstr "Pluginnets officielle side"
 #: admin/info.php:78
 #: admin/info.php:83
 msgid "visit"
-msgstr "besøg"
+msgstr "odwiedź"
 
 #: admin/info.php:28
 msgid "discussions group"
-msgstr "diskussionsgruppe"
+msgstr "grupa dyskusyjna"
 
 #: admin/info.php:33
 msgid "wordpress plugin page"
-msgstr "WordPress' pluginside"
+msgstr "strona pluginu na wordpress"
 
 #: admin/info.php:37
 msgid "Donate"
-msgstr "Donér"
+msgstr "Ofiara"
 
 #: admin/info.php:38
 msgid "help further development"
-msgstr "støt fortsat udvikling"
+msgstr "wspomóż dalszy rozwój"
 
 #: admin/info.php:43
 msgid "Pro Edition"
-msgstr "Pro-udgave"
+msgstr "Wersja Pro"
 
 #: admin/info.php:47
 #: admin/info.php:61
 msgid "Official Website"
-msgstr "Officiel webside"
+msgstr "Oficjalna strona"
 
 #: admin/info.php:48
 msgid "extended premium version"
-msgstr "udvidet luksus-version"
+msgstr "rozszerz do wersji premium"
 
 #: admin/info.php:62
 msgid "golden dragon official web portal"
-msgstr "Gylden Drages officielle webportal"
+msgstr "oficjalny portal golden dragon"
 
 #: admin/info.php:67
 msgid "a wordpress rating system"
-msgstr "Et bedømmelsessystem til WordPress"
+msgstr "system ocen dla wordpress'a"
 
 #: admin/info.php:72
 msgid "wordpress development"
-msgstr "udvikling i WordPress"
+msgstr "rozwój wordpress'a"
 
 #: admin/info.php:76
 msgid "Support Forum"
-msgstr "Supportforum"
+msgstr "Forum wsparcia"
 
 #: admin/info.php:77
 msgid "development discussion forum"
-msgstr "Diskussionsforum vedr. udvikling"
+msgstr "forum dyskusyjne programistów"
 
 #: admin/info.php:82
 msgid "announcements and theme demo"
-msgstr "nyheder og tema-demo"
+msgstr "ogłoszenia i demo motywu"
 
-#: admin/panel.php:8
+#: admin/panel.php:3
 msgid "collection of simple sidebar widgets"
-msgstr "samling af simple sidepanel-widgets"
+msgstr "kolekcja prostych widgetów"
 
 #: admin/settings.php:2
 msgid "Available Widgets"
-msgstr "Tilgængelige widgets"
+msgstr "Dostępne widgety"
 
 #: admin/settings.php:4
-#: admin/settings.php:59
+#: admin/settings.php:54
 msgid "Unchecked widgets will not be available on the Widgets panel."
-msgstr "Umarkerede widgets er ikke tilgængelige i widget-kontrolpanelet"
+msgstr "Odznaczone widgety nie będą dostępne na stronie konfiguracji widgetów."
 
-#: admin/settings.php:46
+#: admin/settings.php:41
 msgid "is required."
-msgstr "kræves."
+msgstr "jest wymagany."
+
+#: admin/settings.php:47
+#: admin/settings.php:70
+#: admin/settings.php:92
+msgid "Save"
+msgstr "Zapisz"
 
 #: admin/settings.php:52
-#: admin/settings.php:75
-#: admin/settings.php:97
-msgid "Save"
-msgstr "Gem"
-
-#: admin/settings.php:57
 msgid "Default WordPress Widgets"
-msgstr "Standard-WordPress-widgets"
+msgstr "Domyślne widgety WordPress"
+
+#: admin/settings.php:75
+msgid "Other Settings"
+msgstr "Inne ustawienia"
 
 #: admin/settings.php:80
-msgid "Other Settings"
-msgstr "Andre indstillinger"
+msgid "Load default CSS file"
+msgstr "Załaduj domyślny plik CSS"
 
 #: admin/settings.php:85
-msgid "Load default CSS file"
-msgstr "Indlæst standard-CSS-fil"
-
-#: admin/settings.php:90
 msgid "Write debug info into file"
-msgstr "Skriv debug-info til fil"
+msgstr "Zapisuj informacje debugowania do pliku"
 
 #: widgets/gdsw-future-posts/basic.php:2
 #: widgets/gdsw-most-commented/basic.php:2
@@ -162,7 +157,7 @@ msgstr "Skriv debug-info til fil"
 #: widgets/gdsw-recent-posts/basic.php:2
 #: widgets/gdsw-related-posts/basic.php:2
 msgid "Title"
-msgstr "Titel"
+msgstr "Tytuł"
 
 #: widgets/gdsw-future-posts/basic.php:6
 #: widgets/gdsw-most-commented/basic.php:6
@@ -171,7 +166,7 @@ msgstr "Titel"
 #: widgets/gdsw-recent-posts/basic.php:6
 #: widgets/gdsw-related-posts/basic.php:6
 msgid "Posts to show"
-msgstr "Indlæg, der skal vises"
+msgstr "Wpisy do wyświetlenia"
 
 #: widgets/gdsw-future-posts/basic.php:12
 #: widgets/gdsw-most-commented/basic.php:12
@@ -182,7 +177,7 @@ msgstr "Indlæg, der skal vises"
 #: widgets/gdsw-recent-posts/basic.php:12
 #: widgets/gdsw-related-posts/basic.php:12
 msgid "Hide widget if no results found"
-msgstr "Skjul widget, hvis ingen resultater"
+msgstr "Ukryj widget jeżeli nie ma nic do wyświetlenia"
 
 #: widgets/gdsw-future-posts/display.php:2
 #: widgets/gdsw-most-commented/display.php:2
@@ -193,7 +188,7 @@ msgstr "Skjul widget, hvis ingen resultater"
 #: widgets/gdsw-recent-posts/display.php:2
 #: widgets/gdsw-related-posts/display.php:2
 msgid "Additional CSS class"
-msgstr "Ekstra CSS-class"
+msgstr "Dodatkowa klasa CSS"
 
 #: widgets/gdsw-future-posts/display.php:6
 #: widgets/gdsw-popular-posts/display.php:12
@@ -201,7 +196,7 @@ msgstr "Ekstra CSS-class"
 #: widgets/gdsw-recent-posts/display.php:6
 #: widgets/gdsw-related-posts/display.php:6
 msgid "Short excerpt from the post"
-msgstr "Kort uddrag af indlægget"
+msgstr "Pokazuj fragment wpisu"
 
 #: widgets/gdsw-future-posts/display.php:12
 #: widgets/gdsw-popular-posts/display.php:18
@@ -209,7 +204,7 @@ msgstr "Kort uddrag af indlægget"
 #: widgets/gdsw-recent-posts/display.php:12
 #: widgets/gdsw-related-posts/display.php:12
 msgid "Excerpt words limit"
-msgstr "Max antal ord i uddrag"
+msgstr "Limit długości fragmentu w słowach"
 
 #: widgets/gdsw-future-posts/display.php:16
 #: widgets/gdsw-popular-posts/display.php:22
@@ -217,7 +212,7 @@ msgstr "Max antal ord i uddrag"
 #: widgets/gdsw-recent-posts/display.php:16
 #: widgets/gdsw-related-posts/display.php:16
 msgid "Display post date"
-msgstr "Vis indlæggenes dato"
+msgstr "Pokaż datę wpisu"
 
 #: widgets/gdsw-future-posts/display.php:22
 #: widgets/gdsw-popular-posts/display.php:28
@@ -225,7 +220,7 @@ msgstr "Vis indlæggenes dato"
 #: widgets/gdsw-recent-posts/display.php:22
 #: widgets/gdsw-related-posts/display.php:22
 msgid "Post date format"
-msgstr "Datoformat i indlæg"
+msgstr "Format daty wpisu"
 
 #: widgets/gdsw-future-posts/filter.php:2
 #: widgets/gdsw-most-commented/filter.php:13
@@ -234,8 +229,9 @@ msgstr "Datoformat i indlæg"
 #: widgets/gdsw-random-posts/filter.php:24
 #: widgets/gdsw-recent-comments/filter.php:12
 #: widgets/gdsw-recent-posts/filter.php:2
+#: widgets/gdsw-related-posts/filter.php:24
 msgid "Filter by category"
-msgstr "Filtrér på kategori"
+msgstr "Filtruj wg kategorii"
 
 #: widgets/gdsw-future-posts/filter.php:6
 #: widgets/gdsw-most-commented/filter.php:17
@@ -244,8 +240,9 @@ msgstr "Filtrér på kategori"
 #: widgets/gdsw-random-posts/filter.php:28
 #: widgets/gdsw-recent-comments/filter.php:16
 #: widgets/gdsw-recent-posts/filter.php:6
+#: widgets/gdsw-related-posts/filter.php:28
 msgid "comma separated list of category ids"
-msgstr "kommasepareret liste med kategori-id'er"
+msgstr "lista id kategorii rozdzielona przecinkami"
 
 #: widgets/gdsw-future-posts/filter.php:7
 #: widgets/gdsw-most-commented/filter.php:18
@@ -254,206 +251,197 @@ msgstr "kommasepareret liste med kategori-id'er"
 #: widgets/gdsw-random-posts/filter.php:29
 #: widgets/gdsw-recent-comments/filter.php:17
 #: widgets/gdsw-recent-posts/filter.php:7
+#: widgets/gdsw-related-posts/filter.php:29
 msgid "leave empty to include all categories"
-msgstr "udfyldes ikke, hvis alle kategorier skal med"
+msgstr "pozostaw puste aby użyć wszystkich kategorii"
 
 #: widgets/gdsw-most-commented/display.php:6
 msgid "Show comments count"
-msgstr "Vis antal kommentarer"
+msgstr "Pokaż ilość komentarzy"
 
 #: widgets/gdsw-most-commented/filter.php:2
 msgid "Filter by post publish date"
-msgstr "Filtrér med indlægs udgivelsesdato"
+msgstr "Filtruj po dacie publikacji wpisu"
 
 #: widgets/gdsw-most-commented/filter.php:5
 msgid "All posts"
-msgstr "Alle indlæg"
+msgstr "Wszystkie wpisy"
 
 #: widgets/gdsw-most-commented/filter.php:6
 #: widgets/gdsw-popular-posts/filter.php:8
 #: widgets/gdsw-random-posts/filter.php:7
+#: widgets/gdsw-related-posts/filter.php:7
 msgid "Last week"
-msgstr "Seneste uge"
+msgstr "Ostatni tydzień"
 
 #: widgets/gdsw-most-commented/filter.php:7
 #: widgets/gdsw-popular-posts/filter.php:9
 #: widgets/gdsw-random-posts/filter.php:8
+#: widgets/gdsw-related-posts/filter.php:8
 msgid "Last month"
-msgstr "Seneste måned"
+msgstr "Ostatni miesiąc"
 
 #: widgets/gdsw-most-commented/filter.php:8
 #: widgets/gdsw-popular-posts/filter.php:10
 #: widgets/gdsw-random-posts/filter.php:9
+#: widgets/gdsw-related-posts/filter.php:9
 msgid "Last year"
-msgstr "Seneste år"
+msgstr "Ostatni rok"
 
 #: widgets/gdsw-popular-posts/display.php:6
 msgid "Show number of views"
-msgstr "Vis antal visninger"
+msgstr "Pokaż ilość wyświetleń"
 
 #: widgets/gdsw-popular-posts/filter.php:2
 #: widgets/gdsw-random-posts/filter.php:2
+#: widgets/gdsw-related-posts/filter.php:2
 msgid "Filter by date"
-msgstr "Filtrér på dato"
+msgstr "Filtruj po dacie"
 
 #: widgets/gdsw-popular-posts/filter.php:5
 #: widgets/gdsw-random-posts/filter.php:5
+#: widgets/gdsw-related-posts/filter.php:5
 msgid "All time"
-msgstr "Alt"
+msgstr "Cały czas"
 
 #: widgets/gdsw-popular-posts/filter.php:6
 msgid "Today only"
-msgstr "Kun i dag"
+msgstr "Tylko dzisiaj"
 
 #: widgets/gdsw-popular-posts/filter.php:7
 #: widgets/gdsw-random-posts/filter.php:6
+#: widgets/gdsw-related-posts/filter.php:6
 msgid "Last 24 hours"
-msgstr "Sidste 24 timer"
+msgstr "Ostatnie 24 godziny"
 
 #: widgets/gdsw-popular-posts/filter.php:15
 #: widgets/gdsw-random-posts/filter.php:14
 #: widgets/gdsw-recent-comments/filter.php:2
+#: widgets/gdsw-related-posts/filter.php:14
 msgid "Filter by type"
-msgstr "Filtrér på type"
+msgstr "Filtruj po typie"
 
 #: widgets/gdsw-popular-posts/filter.php:18
 #: widgets/gdsw-random-posts/filter.php:17
+#: widgets/gdsw-related-posts/filter.php:17
 msgid "Both posts and pages"
-msgstr "Både indlæg og sider"
+msgstr "Wpisy i strony"
 
 #: widgets/gdsw-popular-posts/filter.php:19
 #: widgets/gdsw-random-posts/filter.php:18
+#: widgets/gdsw-related-posts/filter.php:18
 msgid "Only posts"
-msgstr "Kun indlæg"
+msgstr "Tylko wpisy"
 
 #: widgets/gdsw-popular-posts/filter.php:20
 #: widgets/gdsw-random-posts/filter.php:19
+#: widgets/gdsw-related-posts/filter.php:19
 msgid "Only pages"
-msgstr "Kun sider"
+msgstr "Tylko strony"
 
 #: widgets/gdsw-popular-posts/filter.php:31
 msgid "using this will eliminate all pages from results"
-msgstr "Brugen heraf vil fjerne alle sider fra resultaterne"
+msgstr "użycie tego wyeliminuje wszystkie strony z wyników"
 
 #: widgets/gdsw-popular-posts/filter.php:35
 msgid "Include views from"
-msgstr "Inkludér visninger fra"
+msgstr "Uwzględnij wyświetlenia"
 
 #: widgets/gdsw-popular-posts/filter.php:38
 msgid "Both users and visitors"
-msgstr "Både brugere og besøgende"
+msgstr "Użytkownicy i odwiedzający"
 
 #: widgets/gdsw-popular-posts/filter.php:39
 msgid "Only users"
-msgstr "Kun brugere"
+msgstr "Tylko użytkownicy"
 
 #: widgets/gdsw-popular-posts/filter.php:40
 msgid "Only visitors"
-msgstr "Kun besøgende"
+msgstr "Tylko odwiedzający"
 
 #: widgets/gdsw-posts-authors/basic.php:6
 msgid "Authors to show"
-msgstr "Forfattere, der skal vises"
+msgstr "Autorzy do pokazania"
 
 #: widgets/gdsw-posts-authors/display.php:6
 #: widgets/gdsw-recent-comments/display.php:6
 msgid "Display author's gravatar"
-msgstr "Vis forfatters gravatar"
+msgstr "Pokaż grawatara autora"
 
 #: widgets/gdsw-posts-authors/display.php:12
 #: widgets/gdsw-recent-comments/display.php:12
 msgid "Gravatar dimension (px)"
-msgstr "Gravatar-størrelse (px)"
+msgstr "Rozdzielczość grawatara (px)"
 
 #: widgets/gdsw-posts-authors/display.php:16
 msgid "Show posts count"
-msgstr "Vis antal indlæg"
+msgstr "Pokaż ilość wpisów"
 
 #: widgets/gdsw-posts-authors/display.php:22
 msgid "Show author's full name"
-msgstr "Vis forfatters fulde navn"
+msgstr "Pokaż pełną nazwę autora"
 
 #: widgets/gdsw-posts-authors/filter.php:11
 msgid "Minimum published posts"
-msgstr "Min. udgivne indlæg"
+msgstr "Minimalna ilość opublikowanych postów"
 
 #: widgets/gdsw-recent-comments/basic.php:6
 msgid "Comments to show"
-msgstr "Kommentarer, der skal vises"
+msgstr "Komentarze do pokazania"
 
 #: widgets/gdsw-recent-comments/filter.php:5
 msgid "Comments only"
-msgstr "Kun kommentarer"
+msgstr "Tylko komentarze"
 
 #: widgets/gdsw-recent-comments/filter.php:6
 msgid "Pings only"
-msgstr "Kun pingbacks"
+msgstr "Tylko pingi"
 
 #: widgets/gdsw-recent-comments/filter.php:7
 msgid "Comments and pings"
-msgstr "Kommentarer og pingbacks"
-
-#: widgets/gdsw-related-posts/basic.php:18
-msgid "Show only on single post page"
-msgstr "Vis kun på sider med enkelt-indlæg"
-
-#: widgets/gdsw-related-posts/filter.php:2
-msgid "Use to get relations"
-msgstr "Brug for at få relationer"
-
-#: widgets/gdsw-related-posts/filter.php:5
-msgid "Tags and Categories"
-msgstr "Tags og kategorier"
-
-#: widgets/gdsw-related-posts/filter.php:6
-msgid "Categories only"
-msgstr "Kun kategorier"
-
-#: widgets/gdsw-related-posts/filter.php:7
-msgid "Tags only"
-msgstr "Kun tags"
+msgstr "Komentarze i pingi"
 
 #: widgets/gdsw-future-posts.php:18
 msgid "Display scheduled posts."
-msgstr "Vis planlagte indlæg."
+msgstr "Wyświetla zaplanowane wpisy."
 
 #: widgets/gdsw-most-commented.php:15
 msgid "Most commented posts."
-msgstr "Mest-kommenterede indlæg."
+msgstr "Najmocniej komentowane wpisy."
 
 #: widgets/gdsw-popular-posts.php:21
 msgid "Display popular posts."
-msgstr "Vis populære indlæg."
+msgstr "Wyświetla popularne wpisy."
 
 #: widgets/gdsw-popular-posts.php:116
 msgid "view"
-msgstr "visning"
+msgstr "pokaż"
 
 #: widgets/gdsw-popular-posts.php:116
 msgid "views"
-msgstr "besøg"
+msgstr "wyświetlenia"
 
 #: widgets/gdsw-posts-authors.php:18
 msgid "List of posts authors."
-msgstr "Liste med indlægsforfattere."
+msgstr "Lista wpisów autorów."
 
 #: widgets/gdsw-random-posts.php:20
 msgid "Display random posts."
-msgstr "Vis tilfældige indlæg."
+msgstr "Wyświetla losowe wpisy."
 
 #: widgets/gdsw-recent-comments.php:16
 msgid "Expanded widget with recent comments."
-msgstr "Udvidet widget med nye kommentarer."
+msgstr "Rozbudowany widget z ostatnimi komentarzami."
 
 #: widgets/gdsw-recent-posts.php:17
 msgid "Expanded widget with recent posts."
-msgstr "Udvidet widget med nye indlæg."
+msgstr "Rozbudowany widget z ostatnimi wpisami."
 
-#: widgets/gdsw-related-posts.php:19
+#: widgets/gdsw-related-posts.php:13
 msgid "Display related posts."
-msgstr "Vis relaterede indlæg."
+msgstr "Wyświetla powiązane wpisy."
 
-#: gd-simple-widgets.php:152
+#: gd-simple-widgets.php:144
 msgid "Settings"
-msgstr "Indstillinger"
+msgstr "Ustawienia"
 

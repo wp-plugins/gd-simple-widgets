@@ -5,10 +5,10 @@ class gdswRandomPosts extends gdsw_Widget {
     var $defaults = array(
         "title" => "Random Posts",
         "count" => 10,
+        "hide_empty" => 0,
         "filter_category" => "",
         "filter_recency" => "allp",
         "filter_type" => "post",
-        "hide_empty" => 0,
         "display_css" => "",
         "display_excerpt" => 0,
         "display_excerpt_length" => 15,

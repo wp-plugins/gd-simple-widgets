@@ -108,7 +108,7 @@ msgstr "форум за разговоре о развоју"
 msgid "announcements and theme demo"
 msgstr "најаве и демо теме"
 
-#: admin/panel.php:3
+#: admin/panel.php:8
 msgid "collection of simple sidebar widgets"
 msgstr "колекција једноставних сајдбар виџета"
 
@@ -117,33 +117,33 @@ msgid "Available Widgets"
 msgstr "Расположиви Виџети"
 
 #: admin/settings.php:4
-#: admin/settings.php:54
+#: admin/settings.php:59
 msgid "Unchecked widgets will not be available on the Widgets panel."
 msgstr "Виџети који нису селектовани неће бити видљиви на Виџет панелу."
 
-#: admin/settings.php:41
+#: admin/settings.php:46
 msgid "is required."
 msgstr "је неопходан"
 
-#: admin/settings.php:47
-#: admin/settings.php:70
-#: admin/settings.php:92
+#: admin/settings.php:52
+#: admin/settings.php:75
+#: admin/settings.php:97
 msgid "Save"
 msgstr "Сними"
 
-#: admin/settings.php:52
+#: admin/settings.php:57
 msgid "Default WordPress Widgets"
 msgstr "Стандардни Вордпресс Виџети"
 
-#: admin/settings.php:75
+#: admin/settings.php:80
 msgid "Other Settings"
 msgstr "Друга подешавања"
 
-#: admin/settings.php:80
+#: admin/settings.php:85
 msgid "Load default CSS file"
 msgstr "Учитај ЦСС фајл"
 
-#: admin/settings.php:85
+#: admin/settings.php:90
 msgid "Write debug info into file"
 msgstr "Упиши дебаг информације у фајл"
 
@@ -228,7 +228,6 @@ msgstr "Формат датума"
 #: widgets/gdsw-random-posts/filter.php:24
 #: widgets/gdsw-recent-comments/filter.php:12
 #: widgets/gdsw-recent-posts/filter.php:2
-#: widgets/gdsw-related-posts/filter.php:24
 msgid "Filter by category"
 msgstr "Филтер категорије"
 
@@ -239,7 +238,6 @@ msgstr "Филтер категорије"
 #: widgets/gdsw-random-posts/filter.php:28
 #: widgets/gdsw-recent-comments/filter.php:16
 #: widgets/gdsw-recent-posts/filter.php:6
-#: widgets/gdsw-related-posts/filter.php:28
 msgid "comma separated list of category ids"
 msgstr "зарезом раздвојена листа ид-ијева категорија"
 
@@ -250,7 +248,6 @@ msgstr "зарезом раздвојена листа ид-ијева кате�
 #: widgets/gdsw-random-posts/filter.php:29
 #: widgets/gdsw-recent-comments/filter.php:17
 #: widgets/gdsw-recent-posts/filter.php:7
-#: widgets/gdsw-related-posts/filter.php:29
 msgid "leave empty to include all categories"
 msgstr "оставите празно да укључи све категорије"
 
@@ -269,21 +266,18 @@ msgstr "Сви постови"
 #: widgets/gdsw-most-commented/filter.php:6
 #: widgets/gdsw-popular-posts/filter.php:8
 #: widgets/gdsw-random-posts/filter.php:7
-#: widgets/gdsw-related-posts/filter.php:7
 msgid "Last week"
 msgstr "Последња недеља"
 
 #: widgets/gdsw-most-commented/filter.php:7
 #: widgets/gdsw-popular-posts/filter.php:9
 #: widgets/gdsw-random-posts/filter.php:8
-#: widgets/gdsw-related-posts/filter.php:8
 msgid "Last month"
 msgstr "Последњи месец"
 
 #: widgets/gdsw-most-commented/filter.php:8
 #: widgets/gdsw-popular-posts/filter.php:10
 #: widgets/gdsw-random-posts/filter.php:9
-#: widgets/gdsw-related-posts/filter.php:9
 msgid "Last year"
 msgstr "Последња година"
 
@@ -293,13 +287,11 @@ msgstr "Прикажи број посета"
 
 #: widgets/gdsw-popular-posts/filter.php:2
 #: widgets/gdsw-random-posts/filter.php:2
-#: widgets/gdsw-related-posts/filter.php:2
 msgid "Filter by date"
 msgstr "Филтер по датуму"
 
 #: widgets/gdsw-popular-posts/filter.php:5
 #: widgets/gdsw-random-posts/filter.php:5
-#: widgets/gdsw-related-posts/filter.php:5
 msgid "All time"
 msgstr "Сви чланци"
 
@@ -309,32 +301,27 @@ msgstr "Само данас"
 
 #: widgets/gdsw-popular-posts/filter.php:7
 #: widgets/gdsw-random-posts/filter.php:6
-#: widgets/gdsw-related-posts/filter.php:6
 msgid "Last 24 hours"
 msgstr "Последњих 24 сата"
 
 #: widgets/gdsw-popular-posts/filter.php:15
 #: widgets/gdsw-random-posts/filter.php:14
 #: widgets/gdsw-recent-comments/filter.php:2
-#: widgets/gdsw-related-posts/filter.php:14
 msgid "Filter by type"
 msgstr "Филтер по типу"
 
 #: widgets/gdsw-popular-posts/filter.php:18
 #: widgets/gdsw-random-posts/filter.php:17
-#: widgets/gdsw-related-posts/filter.php:17
 msgid "Both posts and pages"
 msgstr "И чланци и стране"
 
 #: widgets/gdsw-popular-posts/filter.php:19
 #: widgets/gdsw-random-posts/filter.php:18
-#: widgets/gdsw-related-posts/filter.php:18
 msgid "Only posts"
 msgstr "Само чланци"
 
 #: widgets/gdsw-popular-posts/filter.php:20
 #: widgets/gdsw-random-posts/filter.php:19
-#: widgets/gdsw-related-posts/filter.php:19
 msgid "Only pages"
 msgstr "Само стране"
 
@@ -400,6 +387,26 @@ msgstr "Само пингови"
 msgid "Comments and pings"
 msgstr "Коментари и пингови"
 
+#: widgets/gdsw-related-posts/basic.php:18
+msgid "Show only on single post page"
+msgstr "Само на страни са чланком"
+
+#: widgets/gdsw-related-posts/filter.php:2
+msgid "Use to get relations"
+msgstr "Користи за релације"
+
+#: widgets/gdsw-related-posts/filter.php:5
+msgid "Tags and Categories"
+msgstr "Тагови и категорије"
+
+#: widgets/gdsw-related-posts/filter.php:6
+msgid "Categories only"
+msgstr "Само категорије"
+
+#: widgets/gdsw-related-posts/filter.php:7
+msgid "Tags only"
+msgstr "Само тагови"
+
 #: widgets/gdsw-future-posts.php:18
 msgid "Display scheduled posts."
 msgstr "Прикажи заказане чланке."
@@ -436,11 +443,11 @@ msgstr "Проширен виџет са последњим коментарим
 msgid "Expanded widget with recent posts."
 msgstr "Проширен виџет са последњим чланцима."
 
-#: widgets/gdsw-related-posts.php:13
+#: widgets/gdsw-related-posts.php:19
 msgid "Display related posts."
 msgstr "Прикажи сличне чланке."
 
-#: gd-simple-widgets.php:144
+#: gd-simple-widgets.php:152
 msgid "Settings"
 msgstr "Подешавања"
 

@@ -11,6 +11,11 @@
                     <td class="t options"><input<?php if ($options["widgets_recent_comments"] == 1) echo " checked"; ?> type="checkbox" name="widgets_recent_comments" /></td>
                 </tr>
                 <tr>
+                    <td class="first b">gdSW Related Posts</td>
+                    <td class="t"></td>
+                    <td class="t options"><input<?php if ($options["widgets_related_posts"] == 1) echo " checked"; ?>  type="checkbox" name="widgets_related_posts" /></td>
+                </tr>
+                <tr>
                     <td class="first b">gdSW Recent Posts</td>
                     <td class="t"></td>
                     <td class="t options"><input<?php if ($options["widgets_recent_posts"] == 1) echo " checked"; ?>  type="checkbox" name="widgets_recent_posts" /></td>

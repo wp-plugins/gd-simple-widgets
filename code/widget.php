@@ -10,6 +10,10 @@ class gdsw_Widget extends WP_Widget {
         global $gdsr, $userdata;
         extract($args, EXTR_SKIP);
 
+        if ($this->folder_name == "gdsw-related-posts") {
+            if ($instance["show_only_single"] == 1 && !is_single()) return;
+        }
+
         $results = $this->results($instance);
         if (count($results) == 0 && $instance["hide_empty"] == 1) return;
 

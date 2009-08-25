@@ -4,7 +4,7 @@
 Plugin Name: GD Simple Widgets
 Plugin URI: http://www.dev4press.com/plugin/gd-simple-widgets/
 Description: Collection of powerful, easy to use widgets that expand default widgets. Plugin also adds few more must-have widgets for posts, authors and comments.
-Version: 1.3.3
+Version: 1.4.0
 Author: Milan Petrovic
 Author URI: http://www.dev4press.com/
 
@@ -41,6 +41,7 @@ require_once(dirname(__FILE__)."/widgets/gdsw-posts-authors.php");
 require_once(dirname(__FILE__)."/widgets/gdsw-future-posts.php");
 require_once(dirname(__FILE__)."/widgets/gdsw-popular-posts.php");
 require_once(dirname(__FILE__)."/widgets/gdsw-random-posts.php");
+require_once(dirname(__FILE__)."/widgets/gdsw-related-posts.php");
 
 require_once(dirname(__FILE__)."/integration.php");
 
@@ -50,6 +51,7 @@ if (!class_exists('GDSimpleWidgets')) {
         var $plugin_path;
         var $admin_plugin;
         var $admin_page;
+        var $related_post_id;
 
         var $o;
         var $l;
@@ -131,12 +133,17 @@ if (!class_exists('GDSimpleWidgets')) {
             if ($this->o["widgets_future_posts"] == 1) register_widget("gdswFuturePosts");
             if ($this->o["widgets_popular_posts"] == 1) register_widget("gdswPopularPosts");
             if ($this->o["widgets_random_posts"] == 1) register_widget("gdswRandomPosts");
+            if ($this->o["widgets_related_posts"] == 1) register_widget("gdswRelatedPosts");
 
             if ($this->o["default_recent_comments"] == 0) unregister_widget("WP_Widget_Recent_Comments");
             if ($this->o["default_recent_posts"] == 0) unregister_widget("WP_Widget_Recent_Posts");
         }
 
         function wp_head() {
+            global $wp_query;
+            $post_obj = $wp_query->get_queried_object();
+            $this->related_post_id = $post_obj->ID;
+
             if ($this->o["load_default_css"] == 1 && !is_admin()) {
                 echo('<link rel="stylesheet" href="'.$this->plugin_url.'css/simple_widgets.css" type="text/css" media="screen" />');
             }
@@ -175,6 +182,7 @@ if (!class_exists('GDSimpleWidgets')) {
                 $this->save_setting_checkbox("load_default_css");
                 $this->save_setting_checkbox("debug_into_file");
                 $this->save_setting_checkbox("widgets_recent_comments");
+                $this->save_setting_checkbox("widgets_related_posts");
                 $this->save_setting_checkbox("widgets_recent_posts");
                 $this->save_setting_checkbox("widgets_most_commented");
                 $this->save_setting_checkbox("widgets_posts_authors");

@@ -1,8 +1,8 @@
 === GD Simple Widgets ===
 Contributors: gdragon
 Donate link: http://www.dev4press.com/donate/
-Version: 1.3.3
-Tags: gdragon, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter, excerpt, scheduled
+Version: 1.4.0
+Tags: gdragon, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter, excerpt, scheduled, related, future
 Requires at least: 2.8
 Tested up to: 2.8.4
 Stable tag: trunk
@@ -12,14 +12,9 @@ Collection of powerful, easy to use widgets that expand default widgets. Plugin 
 == Description ==
 This plugin contains powerful widgets with simple options to set. Some of them are based on standard WordPress widgets but with extended options and rendering. You can also disable default WordPress widgets if you choose to use Simple Widgets versions.
 
-= List Of Widgets =
-* gdWS Recent Comments
-* gdWS Recent Posts
-* gdWS Most Commented
-* gdWS Post Authors
-* gdWS Future Posts
-* gdWS Popular Posts
-* gdWS Random Posts
+[List Of Widgets](http://info.dev4press.com/gd-simple-widgets/features.html) |
+[Change Log](http://info.dev4press.com/gd-simple-widgets/changelog.html) |
+[Translations](http://info.dev4press.com/simple-widgets/languages.html)
 
 = Warning =
 Plugin will work only with WordPress 2.8. Older versions of WP are not supported.
@@ -45,6 +40,12 @@ Plugin will work only with WordPress 2.8. Older versions of WP are not supported
 4. Popular Posts widget
 
 == Changelog ==
+= 1.4.0 =
+* New widget with related posts
+* Info file with functions reference
+* Polish translation
+* Several changes and fixes
+
 = 1.3.3 =
 * Fixed unwanted echoing of data
 
