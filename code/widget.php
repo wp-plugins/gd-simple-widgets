@@ -39,8 +39,8 @@ class gdsw_Widget extends WP_Widget {
     function prepare($instance, $results) {
         if (count($results) == 0) return array();
         foreach ($results as $r) {
-            if ($instance["display_post_date"] == 1) $r->post_date = mysql2date($instance["display_post_date_format"], $r->post_date);
-            if ($instance["display_excerpt"] == 1) $r->excerpt = $this->get_excerpt($instance, $r);
+            if (isset($instance["display_post_date"]) && $instance["display_post_date"] == 1) $r->post_date = mysql2date($instance["display_post_date_format"], $r->post_date);
+            if (isset($instance["display_excerpt"]) && $instance["display_excerpt"] == 1) $r->excerpt = $this->get_excerpt($instance, $r);
         }
         return $results;
     }

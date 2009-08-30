@@ -1,7 +1,7 @@
 === GD Simple Widgets ===
 Contributors: gdragon
 Donate link: http://www.dev4press.com/donate/
-Version: 1.4.0
+Version: 1.4.1
 Tags: gdragon, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter, excerpt, scheduled, related, future
 Requires at least: 2.8
 Tested up to: 2.8.4
@@ -16,8 +16,8 @@ This plugin contains powerful widgets with simple options to set. Some of them a
 [Change Log](http://info.dev4press.com/gd-simple-widgets/changelog.html) |
 [Translations](http://info.dev4press.com/simple-widgets/languages.html)
 
-= Warning =
-Plugin will work only with WordPress 2.8. Older versions of WP are not supported.
+[Support Forum](http://forum.gdragon.info/viewforum.php?f=26) |
+[Main Plugin Page](http://www.dev4press.com/plugins/gd-simple-widgets/)
 
 == Installation ==
 * Upload folder `gd-simple-widgets` to the `/wp-content/plugins/` directory
@@ -40,6 +40,9 @@ Plugin will work only with WordPress 2.8. Older versions of WP are not supported
 4. Popular Posts widget
 
 == Changelog ==
+= 1.4.1 =
+* Several notices and warnings fixed
+
 = 1.4.0 =
 * New widget with related posts
 * Info file with functions reference
@@ -61,8 +64,7 @@ Plugin will work only with WordPress 2.8. Older versions of WP are not supported
 * Functions for getting data and rendering
 * Fixed some minor bugs and problems
 
-== Configuration ==
-Nothing here yet.
+== Other Notes ==
 
 = Source SVN =
 * svn checkout http://gd-simple-widgets.googlecode.com/svn/trunk/ gd-simple-widgets-read-only
@@ -70,10 +72,6 @@ Nothing here yet.
 = Website =
 * Plugin Home: http://www.dev4press.com/
 * Plugin Page: http://www.dev4press.com/plugins/gd-simple-widgets/
-
-= Support =
-* Forum: http://forum.gdragon.info/viewforum.php?f=24
-* Plugin Infos: http://info.dev4press.com/gd-simple-widgets/
 
 = Communities =
 * Google Code: http://code.google.com/p/gd-simple-widgets/
