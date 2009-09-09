@@ -4,7 +4,7 @@
 Plugin Name: GD Simple Widgets
 Plugin URI: http://www.dev4press.com/plugin/gd-simple-widgets/
 Description: Collection of powerful, easy to use widgets that expand default widgets. Plugin also adds few more must-have widgets for posts, authors and comments.
-Version: 1.4.2
+Version: 1.5.0
 Author: Milan Petrovic
 Author URI: http://www.dev4press.com/
 
@@ -42,6 +42,7 @@ require_once(dirname(__FILE__)."/widgets/gdsw-future-posts.php");
 require_once(dirname(__FILE__)."/widgets/gdsw-popular-posts.php");
 require_once(dirname(__FILE__)."/widgets/gdsw-random-posts.php");
 require_once(dirname(__FILE__)."/widgets/gdsw-related-posts.php");
+require_once(dirname(__FILE__)."/widgets/gdsw-simple-125-ads.php");
 
 require_once(dirname(__FILE__)."/integration.php");
 
@@ -122,7 +123,9 @@ if (!class_exists('GDSimpleWidgets')) {
                 $version = str_replace(".", "", substr(PRESSTOOLS_INSTALLED, 0, 5));
                 if ($version >= 120) $this->o["lock_popular_posts"] = 0;
             }
+
             if ($this->o["lock_popular_posts"] == 1) $this->o["widgets_popular_posts"] = 0;
+            define('GDSIMPLEWIDGETS_ENCODING', get_option("blog_charset"));
         }
 
         function widgets_init() {
@@ -134,6 +137,7 @@ if (!class_exists('GDSimpleWidgets')) {
             if ($this->o["widgets_popular_posts"] == 1) register_widget("gdswPopularPosts");
             if ($this->o["widgets_random_posts"] == 1) register_widget("gdswRandomPosts");
             if ($this->o["widgets_related_posts"] == 1) register_widget("gdswRelatedPosts");
+            if ($this->o["widgets_simple_125_ads"] == 1) register_widget("gdswSimple125Ads");
 
             if ($this->o["default_recent_comments"] == 0) unregister_widget("WP_Widget_Recent_Comments");
             if ($this->o["default_recent_posts"] == 0) unregister_widget("WP_Widget_Recent_Posts");
@@ -190,6 +194,7 @@ if (!class_exists('GDSimpleWidgets')) {
                 $this->save_setting_checkbox("widgets_popular_posts");
                 $this->save_setting_checkbox("widgets_random_posts");
                 $this->save_setting_checkbox("widgets_related_posts");
+                $this->save_setting_checkbox("widgets_simple_125_ads");
                 $this->save_setting_checkbox("default_recent_comments");
                 $this->save_setting_checkbox("default_recent_posts");
                 $this->save_setting_checkbox("default_random_posts");

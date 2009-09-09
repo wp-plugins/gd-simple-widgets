@@ -41,6 +41,11 @@
                     <td class="t options"><input<?php if ($options["widgets_random_posts"] == 1) echo " checked"; ?>  type="checkbox" name="widgets_random_posts" /></td>
                 </tr>
                 <tr>
+                    <td class="first b">gdSW Simple 125 Ads</td>
+                    <td class="t"></td>
+                    <td class="t options"><input<?php if ($options["widgets_simple_125_ads"] == 1) echo " checked"; ?>  type="checkbox" name="widgets_simple_125_ads" /></td>
+                </tr>
+                <tr>
                     <td class="first b<?php if ($options["lock_popular_posts"] == 1) echo " disabled"; ?>">gdSW Popular Posts</td>
                     <td class="t" style="text-align: right;"><?php if ($options["lock_popular_posts"] == 1) { ?>
                         <a href="http://www.dev4press.com/plugins/gd-press-tools/" target="_blank">GD Press Tools</a>

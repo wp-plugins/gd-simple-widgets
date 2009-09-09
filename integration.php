@@ -9,6 +9,9 @@
  */
 function gdws_widget_results($widget, $instance = array()) {
     switch ($widget) {
+        case "simple_125_ads":
+            return "";
+            break;
         case "future_posts":
             return gdws_future_posts_results($instance);
             break;
@@ -46,6 +49,9 @@ function gdws_widget_results($widget, $instance = array()) {
  */
 function gdws_widget_render($widget, $instance = array(), $echo = true) {
     switch ($widget) {
+        case "simple_125_ads":
+            return gdws_simple_125_ads_render($instance, $echo);
+            break;
         case "future_posts":
             return gdws_future_posts_render($instance, $echo);
             break;
@@ -71,6 +77,26 @@ function gdws_widget_render($widget, $instance = array(), $echo = true) {
             return gdws_recent_posts_render($instance, $echo);
             break;
     }
+}
+
+/**
+ * Render results for Simple 125 Adss widget.
+ *
+ * Array with widget settings contains several parameters:
+ * - ad_001: left ad code
+ * - ad_002: right ad code
+ * - encoded: status of ads, html encoded or not. if your ads are clean html, set this to false.
+ * - display_css: additional css class(es) to be added to widget
+ *
+ * @param string $widget widget code name
+ * @param array $instance widget settings
+ * @param bool $echo echo results if true return if false
+ * @return array results
+ */
+function gdws_simple_125_ads_render($instance = array(), $echo = true) {
+    $widget = new gdswFuturePosts();
+    $render = $widget->simple_render($instance);
+    if ($echo) echo $render; else return $render;
 }
 
 /**

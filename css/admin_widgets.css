@@ -17,6 +17,11 @@
     width: 200px;
 }
 
+.gdsw-input-area {
+    width: 300px;
+    height: 65px;
+}
+
 .gdsw-input-number {
     width: 60px;
     text-align: right;

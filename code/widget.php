@@ -17,7 +17,8 @@ class gdsw_Widget extends WP_Widget {
         $results = $this->results($instance);
         if (count($results) == 0 && $instance["hide_empty"] == 1) return;
 
-        echo $before_widget.$before_title.$instance["title"].$after_title;
+        echo $before_widget;
+        if ($instance["title"] != '') echo $before_title.$instance["title"].$after_title;
         echo $this->render($results, $instance);
         echo $after_widget;
     }
@@ -32,7 +33,8 @@ class gdsw_Widget extends WP_Widget {
         $instance = wp_parse_args((array)$instance, $this->defaults);
 
         include(GDSIMPLEWIDGETS_PATH.'widgets/'.$this->folder_name.'/basic.php');
-        include(GDSIMPLEWIDGETS_PATH.'widgets/'.$this->folder_name.'/filter.php');
+        if ($this->folder_name != "gdsw-simple-125-ads") include(GDSIMPLEWIDGETS_PATH.'widgets/'.$this->folder_name.'/filter.php');
+        else include(GDSIMPLEWIDGETS_PATH.'widgets/'.$this->folder_name.'/ads.php');
         include(GDSIMPLEWIDGETS_PATH.'widgets/'.$this->folder_name.'/display.php');
     }
 
@@ -47,9 +49,11 @@ class gdsw_Widget extends WP_Widget {
 
     function update($new_instance, $old_instance) { }
 
-    function results($instance) { }
-
     function render($results, $instance) { }
+
+    function results($instance) {
+        return '';
+    }
 
     function get_excerpt($instance, $r) {
         $text = trim($r->post_excerpt);
