@@ -2,11 +2,11 @@
 
 class GDSWDefaults {
     var $default_options = array(
-        "version" => "1.5.0",
-        "date" => "2009.09.10.",
+        "version" => "1.5.1",
+        "date" => "2009.09.20.",
         "status" => "Stable",
         "product_id" => "gd-simple-widgets",
-        "build" => 68,
+        "build" => 69,
         "edition" => "lite",
         "load_default_css" => 1,
         "debug_into_file" => 0,

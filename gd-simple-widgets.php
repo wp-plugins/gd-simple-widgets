@@ -4,7 +4,7 @@
 Plugin Name: GD Simple Widgets
 Plugin URI: http://www.dev4press.com/plugin/gd-simple-widgets/
 Description: Collection of powerful, easy to use widgets that expand default widgets. Plugin also adds few more must-have widgets for posts, authors and comments.
-Version: 1.5.0
+Version: 1.5.1
 Author: Milan Petrovic
 Author URI: http://www.dev4press.com/
 
@@ -77,7 +77,8 @@ if (!class_exists('GDSimpleWidgets')) {
             if (!is_array($this->o)) {
                 update_option('gd-simple-widgets', $this->default_options);
                 $this->o = get_option('gd-simple-widgets');
-            } else {
+            } else if ($this->o["build"] < $this->default_options["build"] ||
+                $this->o["edition"] != $this->default_options["edition"]) {
                 $this->o = gdFunctionsGDSW::upgrade_settings($this->o, $this->default_options);
 
                 $this->o["version"] = $this->default_options["version"];
