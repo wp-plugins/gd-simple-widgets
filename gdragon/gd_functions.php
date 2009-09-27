@@ -2,14 +2,14 @@
 
 /*
 Name:    gdFunctionsGDSW
-Version: 1.2.0
+Version: 1.4.0
 Author:  Milan Petrovic
 Email:   milan@gdragon.info
 Website: http://www.gdragon.info/
 
 == Copyright ==
 
-Copyright 2008 Milan Petrovic (email : milan@gdragon.info)
+Copyright 2008-2009 Milan Petrovic (email : milan@gdragon.info)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -28,6 +28,14 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 if (!class_exists('gdFunctionsGDSW')) {
     class gdFunctionsGDSW {
+        /**
+         * Gets the url to dev4press update check.
+         *
+         * @global string $wp_version wordpress version
+         * @param array $options plugin settings
+         * @param string $url website url
+         * @return string url to update check
+         */
         function get_update_url($options, $url) {
             global $wp_version;
             $url = sprintf("http://info.dev4press.com/update/index.php?ver=%s&pdt=%s&blg=%s&wpv=%s",
@@ -35,6 +43,13 @@ if (!class_exists('gdFunctionsGDSW')) {
             return $url;
         }
 
+        /**
+         * Trims the text to given number of words.
+         *
+         * @param string $text text to trim
+         * @param int $words_count words to trim to
+         * @return string trimmed text
+         */
         function trim_to_words($text, $words_count = 10) {
             if ($words_count > 0) {
                 $words = explode(' ', $text, $words_count + 1);
@@ -46,6 +61,13 @@ if (!class_exists('gdFunctionsGDSW')) {
             return $text;
         }
 
+        /**
+         * Adds zeroes to set length.
+         *
+         * @param string $text original number
+         * @param int $len max number of zeroes
+         * @return string prefilled text
+         */
         function prefill_zeros($text, $len) {
             $count = strlen($text);
             $zeros = "";
@@ -53,18 +75,31 @@ if (!class_exists('gdFunctionsGDSW')) {
             return $zeros.$text;
         }
 
-        function split_by_length($string, $chunkLength = 1) {
+        /**
+         * Splits string into array on size.
+         *
+         * @param string $string string to split
+         * @param int $chunk lenght of each element
+         * @return array split string
+         */
+        function split_by_length($string, $chunk = 1) {
             $result = array();
-            $strLength = strlen($string);
+            $strlnght = strlen($string);
             $x = 0;
 
-            while($x < ($strLength / $chunkLength)){
-                $result[] = substr($string, ($x * $chunkLength), $chunkLength);
+            while($x < ($strlnght / $chunk)){
+                $result[] = substr($string, ($x * $chunk), $chunk);
                 $x++;
             }
             return $result;
         }
 
+        /**
+         * Finds image url from text.
+         *
+         * @param string $text text to search
+         * @return string image url
+         */
         function get_image_from_text($text) {
             $imageurl = "";
             preg_match('/<\s*img [^\>]*src\s*=\s*[\""\']?([^\""\'>]*)/i', $text, $matches);
@@ -72,6 +107,12 @@ if (!class_exists('gdFunctionsGDSW')) {
             return $imageurl;
         }
 
+        /**
+         * Counts files in a folder.
+         *
+         * @param string $path folder path
+         * @return int number of files in the folder
+         */
         function get_folder_files_count($path) {
             if (!file_exists($path))
                 return 0;
@@ -84,6 +125,12 @@ if (!class_exists('gdFunctionsGDSW')) {
             return $ret;
         }
 
+        /**
+         * Gets folder size.
+         *
+         * @param string $path folder path
+         * @return int folder size
+         */
         function get_folder_size($path) {
             if (!file_exists($path))
                 return 0;
@@ -114,6 +161,16 @@ if (!class_exists('gdFunctionsGDSW')) {
                 closedir($dh);
                 return $files;
             }
+        }
+
+        /**
+         * Gets the folder permissions as a string.
+         *
+         * @param string $path path to file or folder
+         * @return string file permissions
+         */
+        function file_permission($path) {
+            return substr(sprintf('%o', fileperms($path)), -4);
         }
 
         /**
@@ -158,6 +215,13 @@ if (!class_exists('gdFunctionsGDSW')) {
             return $old;
         }
 
+        /**
+         * Adds missing default parameters into parameters array.
+         *
+         * @param array $defaults default parameters
+         * @param array $attributes input parameters
+         * @return array result
+         */
         function prefill_attributes($defaults, $attributes) {
             $attributes = (array)$attributes;
             $result = array();
@@ -168,6 +232,12 @@ if (!class_exists('gdFunctionsGDSW')) {
             return $result;
         }
 
+        /**
+         * Formats byte based size into readable string
+         *
+         * @param int $size size in bytes
+         * @return string formated string
+         */
         function size_format($size) {
             if (strlen($size) <= 9 && strlen($size) >= 7) {
                 $size = number_format($size / 1048576,1);
@@ -181,6 +251,12 @@ if (!class_exists('gdFunctionsGDSW')) {
             } else return "$size B";
         }
 
+        /**
+         * Recalcuates size from weight based string.
+         *
+         * @param string $size input string with k/m/g/t ending
+         * @return int resulting size
+         */
         function recalculate_size($size) {
             switch (strtolower(substr($size, -1))) {
                 case "k":
@@ -199,6 +275,15 @@ if (!class_exists('gdFunctionsGDSW')) {
             return $size;
         }
 
+        /**
+         * Creates a html with pager based on number of pages and position
+         *
+         * @param int $total_pages total pages
+         * @param int $current_page current page in pager
+         * @param string $url base url
+         * @param string $query page element for url query
+         * @return string html for pager
+         */
         function draw_pager($total_pages, $current_page, $url, $query = "page") {
             $pages = array();
             $break_first = -1;
@@ -250,6 +335,14 @@ if (!class_exists('gdFunctionsGDSW')) {
             return $render;
         }
 
+        /**
+         * Internal function used for adding sorting element to a-href.
+         *
+         * @param string $column column name
+         * @param string $sort_order sort order asc/desc
+         * @param string $sort_column column for sorting
+         * @return array array with sort elements to add to a-href tag
+         */
         function column_sort_vars($column, $sort_order, $sort_column) {
             $col["url"] = '&amp;sc='.$column;
             $col["cls"] = '';
@@ -324,6 +417,12 @@ if (!class_exists('gdFunctionsGDSW')) {
     }
 
     if (!function_exists("is_odd")) {
+        /**
+         * Check if the number is odd or even.
+         *
+         * @param int $number number to check
+         * @return bool true for odd, false for even number
+         */
         function is_odd($number) {
             return $number&1;
         }

@@ -2,14 +2,14 @@
 
 /*
 Name:    gdDebugGDSW
-Version: 1.2.0
+Version: 1.4.0
 Author:  Milan Petrovic
 Email:   milan@gdragon.info
-Website: http://wp.gdragon.info/
+Website: http://www.gdragon.info/
 
 == Copyright ==
 
-Copyright 2008 Milan Petrovic (email : milan@gdragon.info)
+Copyright 2008-2009 Milan Petrovic (email: milan@gdragon.info)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -55,6 +55,38 @@ if (!class_exists('gdDebugGDSW')) {
         function truncate() {
             $f = fopen($this->log_file, "w+");
             fclose($f);
+        }
+
+        /**
+         * Prepare array name/value pairs for logging.
+         *
+         * @param array $info value pairs to prepare
+         * @return string results
+         */
+        function prepare_array($info) {
+            $wr = "";
+            foreach ($info as $name => $value) {
+                $wr.= $name.": ".$value."\r\n";
+            }
+            return $wr;
+        }
+
+        /**
+        * Writes log info name/value into the file.
+        *
+        * @param string $msg log entry message
+        * @param mixed $object object to dump
+        * @param string $mode file open mode
+        */
+        function log($msg, $info, $mode = "a+") {
+            if ($this->active) {
+                $info = $this->prepare_array($info);
+                $f = fopen($this->log_file, $mode);
+                fwrite ($f, sprintf("[%s] : %s\r\n", date('Y-m-d h:i:s'), $msg));
+                fwrite ($f, "$info");
+                fwrite ($f, "\r\n");
+                fclose($f);
+            }
         }
 
         /**
