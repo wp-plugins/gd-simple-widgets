@@ -46,7 +46,7 @@ class gdswRandomPosts extends gdsw_Widget {
         global $wpdb, $table_prefix;
 
         $order = "";
-        $select = array("p.ID", "p.post_title");
+        $select = array("p.ID", "p.post_title", "p.post_name", "p.post_type", "'' as post_permalink");
         $from = array(sprintf("%sposts p", $table_prefix));
         $where = array("p.post_status = 'publish'");
         if ($instance["display_post_date"] == 1) $select[] = "p.post_date";
@@ -80,8 +80,16 @@ class gdswRandomPosts extends gdsw_Widget {
             }
             $where[] = sprintf("DATE_SUB(CURDATE(), INTERVAL %s DAY) < p.post_date", $days);
         }
-        $sql = sprintf("SELECT DISTINCT %s FROM %s WHERE %s ORDER BY RAND() LIMIT %s",
-            join(", ", $select), join(" ", $from), join(" AND ", $where), $instance["count"]);
+
+        $sql = $this->prepare_sql($instance,
+            "DISTINCT ".join(", ", $select),
+            join(" ", $from),
+            join(" AND ", $where),
+            "",
+            "RAND()",
+            $instance["count"]
+        );
+
         wp_gdsw_log_sql("widget_gdws_random_posts", $sql);
         return $this->prepare($instance, $wpdb->get_results($sql));
     }
@@ -90,7 +98,7 @@ class gdswRandomPosts extends gdsw_Widget {
         $render = '<div class="gdsw-widget gdsw-random-posts '.$instance["display_css"].'"><ul>';
         foreach ($results as $r) {
             $render.= '<li>';
-            $render.= sprintf('<a href="%s" class="gdsw-url">%s</a>', get_permalink($r->ID), $r->post_title);
+            $render.= sprintf('<a href="%s" class="gdsw-url">%s</a>', $r->post_permalink, $r->post_title);
             if ($instance["display_post_date"] == 1) $render.= sprintf(' <span class="gdws-date">[%s]</span>', $r->post_date);
             if ($instance["display_excerpt"] == 1) $render.= sprintf('<p class="gdws-excerpt">%s</p>', $r->excerpt);
             $render.= '</li>';

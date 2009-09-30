@@ -41,7 +41,7 @@ class gdswFuturePosts extends gdsw_Widget {
     function results($instance) {
         global $wpdb, $table_prefix;
 
-        $select = array("p.ID", "p.post_title");
+        $select = array("p.ID", "p.post_title", "p.post_name", "p.post_type");
         $from = array();
         $where = array();
 
@@ -60,10 +60,15 @@ class gdswFuturePosts extends gdsw_Widget {
             $where[] = sprintf("tt.term_id in (%s)", $instance["filter_category"]);
         }
 
-        $where = count($where) > 0 ? " WHERE ".join(" AND ", $where) : "";
+        $sql = $this->prepare_sql($instance,
+            "DISTINCT ".join(", ", $select),
+            join(" ", $from),
+            join(" AND ", $where),
+            "",
+            "p.post_date_gmt ASC",
+            $instance["count"]
+        );
 
-        $sql = sprintf("SELECT DISTINCT %s FROM %s%s ORDER BY p.post_date_gmt ASC LIMIT %s",
-            join(", ", $select), join(" ", $from), $where, $instance["count"]);
         wp_gdsw_log_sql("widget_gdws_future_posts", $sql);
         return $this->prepare($instance, $wpdb->get_results($sql));
     }

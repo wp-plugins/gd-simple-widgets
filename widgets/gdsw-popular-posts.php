@@ -49,7 +49,7 @@ class gdswPopularPosts extends gdsw_Widget {
         global $wpdb, $table_prefix;
 
         $order = "";
-        $select = array("p.ID", "p.post_title");
+        $select = array("p.ID", "p.post_title", "p.post_name", "p.post_type", "'' as post_permalink");
         $from = array(sprintf("%sposts p inner join %sgdpt_posts_views v on p.ID = v.post_id", $table_prefix, $table_prefix));
         $where = array("p.post_status = 'publish'");
         if ($instance["display_post_date"] == 1) $select[] = "p.post_date";
@@ -103,8 +103,15 @@ class gdswPopularPosts extends gdsw_Widget {
             }
         }
 
-        $sql = sprintf("SELECT DISTINCT %s FROM %s WHERE %s GROUP BY p.ID ORDER BY %s LIMIT %s",
-            join(", ", $select), join(" ", $from), join(" AND ", $where), $order, $instance["count"]);
+        $sql = $this->prepare_sql($instance,
+            "DISTINCT ".join(", ", $select),
+            join(" ", $from),
+            join(" AND ", $where),
+            "p.ID",
+            $order,
+            $instance["count"]
+        );
+
         wp_gdsw_log_sql("widget_gdws_popular_posts", $sql);
         return $this->prepare($instance, $wpdb->get_results($sql));
     }

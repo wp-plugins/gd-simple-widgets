@@ -59,7 +59,8 @@ class gdswRelatedPosts extends gdsw_Widget {
 
         global $gdsw, $wpdb, $table_prefix;
 
-        $select = array("p.ID", "p.post_title", "count(r.object_id) as count");
+        $select = array("p.ID", "p.post_title", "p.post_name", "p.post_type",
+            "count(r.object_id) as count", "'' as post_permalink");
         $where = array("t.term_taxonomy_id = r.term_taxonomy_id", "r.object_id = p.ID", 
             "p.post_type = 'post'", "p.post_status = 'publish'", "p.ID != ".$gdsw->related_post_id);
 
@@ -81,8 +82,16 @@ class gdswRelatedPosts extends gdsw_Widget {
         foreach ($relations as $r) $tags[] = $r->term_id;
         if (count($tags) > 0) $where[] = "t.term_id IN (".join(", ", $tags).")";
 
-        $sql = sprintf("SELECT DISTINCT %s FROM %sterm_taxonomy t, %sterm_relationships r, %sposts p WHERE %s GROUP BY r.object_id ORDER BY RAND() LIMIT %s",
-            join(", ", $select), $table_prefix, $table_prefix, $table_prefix, join(" AND ", $where), $instance["count"]);
+        $sql = $this->prepare_sql($instance,
+            "DISTINCT ".join(", ", $select),
+            sprintf("%sterm_taxonomy t, %sterm_relationships r, %sposts p",
+                $table_prefix, $table_prefix, $table_prefix),
+            join(" AND ", $where), 
+            "r.object_id",
+            "RAND()",
+            $instance["count"]
+        );
+
         wp_gdsw_log_sql("widget_gdws_related_posts", $sql);
         return $this->prepare($instance, $wpdb->get_results($sql));
     }
@@ -91,7 +100,7 @@ class gdswRelatedPosts extends gdsw_Widget {
         echo '<div class="gdsw-related-posts '.$instance["display_css"].'"><ul>';
         foreach ($results as $r) {
             echo '<li>';
-            echo sprintf('<a href="%s" class="gdsw-url">%s</a>', get_permalink($r->ID), $r->post_title);
+            echo sprintf('<a href="%s" class="gdsw-url">%s</a>', $r->post_permalink, $r->post_title);
             if ($instance["display_post_date"] == 1) echo sprintf(' <span class="gdws-date">[%s]</span>', $r->post_date);
             if ($instance["display_excerpt"] == 1) echo sprintf('<p class="gdws-excerpt">%s</p>', $r->excerpt);
             echo '</li>';

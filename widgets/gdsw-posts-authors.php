@@ -43,7 +43,7 @@ class gdswPostsAuthors extends gdsw_Widget {
     function results($instance) {
         global $wpdb, $table_prefix;
 
-        $select = array("u.ID", "u.display_name", "u.user_email", "count(*) as posts");
+        $select = array("u.ID", "u.display_name", "u.user_email", "count(*) as posts", "'' as post_permalink", "'' as author_permalink");
         $from = array();
         $where = array("p.post_status = 'publish'", "p.post_type = 'post'");
 
@@ -60,8 +60,15 @@ class gdswPostsAuthors extends gdsw_Widget {
             $where[] = sprintf("tt.term_id in (%s)", $instance["filter_category"]);
         }
 
-        $sql = sprintf("SELECT DISTINCT %s FROM %s WHERE %s GROUP BY u.ID HAVING count(*) >= %s ORDER BY count(*) DESC LIMIT %s",
-            join(", ", $select), join(" ", $from), join(" AND ", $where), $instance["filter_min_posts"], $instance["count"]);
+        $sql = $this->prepare_sql($instance,
+            "DISTINCT ".join(", ", $select),
+            join(" ", $from),
+            join(" AND ", $where),
+            "u.ID HAVING count(*) >= ".$instance["filter_min_posts"],
+            "count(*) DESC",
+            $instance["count"]
+        );
+
         wp_gdsw_log_sql("widget_gdws_posts_authors", $sql);
         return $this->prepare($instance, $wpdb->get_results($sql));
     }
@@ -72,13 +79,13 @@ class gdswPostsAuthors extends gdsw_Widget {
             $render.= '<li>';
             if ($instance["display_gravatar"] == 1) {
                 $render.= '<table><tr><td>';
-                $render.= sprintf('<a href="%s" class="gdsw-url">%s</a>', get_author_posts_url($r->ID), get_avatar($r->user_email, $instance["display_gravatar_size"]));
+                $render.= sprintf('<a href="%s" class="gdsw-url">%s</a>', $r->author_permalink, get_avatar($r->user_email, $instance["display_gravatar_size"]));
                 $render.= '</td><td>';
             }
             $name = "";
             if ($instance["display_full_name"] == 1) $name = trim($r->first_name." ".$r->last_name);
             if ($name == "") $name = $r->display_name;
-            $render.= sprintf('<a href="%s" class="gdsw-url">%s</a>', get_author_posts_url($r->ID), $name);
+            $render.= sprintf('<a href="%s" class="gdsw-url">%s</a>', $r->author_permalink, $name);
             if ($instance["display_posts_count"] == 1) $render.= sprintf(" [%s]", $r->posts);
             if ($instance["display_gravatar"] == 1) $render.= '</td></tr></table>';
             $render.= '</li>';

@@ -39,7 +39,8 @@ class gdswRecentComments extends gdsw_Widget {
         global $wpdb, $table_prefix;
 
         $select = array("c.comment_ID", "c.comment_author", "c.comment_author_email", 
-            "c.comment_author_url", "p.ID", "p.post_title");
+            "c.comment_author_url", "p.ID", "p.post_title", "p.post_name", "p.post_type",
+            "'' as post_permalink", "'' as comment_permalink");
         $from = array();
         $where = array("comment_approved = '1'");
 
@@ -52,11 +53,15 @@ class gdswRecentComments extends gdsw_Widget {
             $where[] = sprintf("tt.term_id in (%s)", $instance["filter_category"]);
         }
 
-        if (count($where) > 0) $where = " WHERE ".join(" AND ", $where);
-        else $where = "";
+        $sql = $this->prepare_sql($instance,
+            "DISTINCT ".join(", ", $select),
+            join(" ", $from),
+            join(" AND ", $where),
+            "",
+            "c.comment_date_gmt DESC",
+            $instance["count"]
+        );
 
-        $sql = sprintf("SELECT DISTINCT %s FROM %s%s ORDER BY c.comment_date_gmt DESC LIMIT %s",
-            join(", ", $select), join(" ", $from), $where, $instance["count"]);
         wp_gdsw_log_sql("widget_gdws_recent_comments", $sql);
         return $this->prepare($instance, $wpdb->get_results($sql));
     }

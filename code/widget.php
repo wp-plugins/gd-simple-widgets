@@ -23,6 +23,11 @@ class gdsw_Widget extends WP_Widget {
         echo $after_widget;
     }
 
+    function get_filter_name($name = "results") {
+        $base = substr($this->folder_name, 5);
+        return "gdsw_".$name."_".str_replace("-", "", $base);
+    }
+
     function simple_render($instance = array()) {
         $instance = shortcode_atts($this->defaults, $instance);
         $results = $this->results($instance);
@@ -44,7 +49,34 @@ class gdsw_Widget extends WP_Widget {
             if (isset($instance["display_post_date"]) && $instance["display_post_date"] == 1) $r->post_date = mysql2date($instance["display_post_date_format"], $r->post_date);
             if (isset($instance["display_excerpt"]) && $instance["display_excerpt"] == 1) $r->excerpt = $this->get_excerpt($instance, $r);
         }
+        $results = apply_filters($this->get_filter_name(), $results, $instance);
+        return $this->prepare_urls($instance, $results);
+    }
+
+    function prepare_urls($instance, $results) {
+        foreach ($results as $r) {
+            if (property_exists($r, "post_permalink") && $r->post_permalink == "") $r->post_permalink = get_permalink($r->ID);
+            if (property_exists($r, "author_permalink") && $r->author_permalink == "") $r->author_permalink = get_author_posts_url($r->ID);
+            if (property_exists($r, "comment_permalink") && $r->comment_permalink == "") $r->comment_permalink = get_comment_link($r->comment_ID);
+        }
         return $results;
+    }
+
+    function prepare_sql($instance, $select, $from, $where, $group, $order, $limit) {
+        $select = apply_filters($this->get_filter_name("sql_select"), $select, $instance);
+        $from = apply_filters($this->get_filter_name("sql_from"), $from, $instance);
+        $where = apply_filters($this->get_filter_name("sql_where"), $where, $instance);
+        $group = apply_filters($this->get_filter_name("sql_group"), $group, $instance);
+        $order = apply_filters($this->get_filter_name("sql_order"), $order, $instance);
+        $limit = apply_filters($this->get_filter_name("sql_limit"), $limit, $instance);
+
+        $sql = "SELECT ".$select." FROM ".$from;
+        if ($where != "") $sql.= " WHERE ".$where;
+        if ($group != "") $sql.= " GROUP BY ".$group;
+        if ($order != "") $sql.= " ORDER BY ".$order;
+        if ($limit != "") $sql.= " LIMIT ".$limit;
+
+        return $sql;
     }
 
     function update($new_instance, $old_instance) { }

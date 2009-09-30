@@ -40,29 +40,30 @@ class gdswRecentPosts extends gdsw_Widget {
     function results($instance) {
         global $wpdb, $table_prefix;
 
-        $select = array("p.ID", "p.post_title");
-        $from = array();
-        $where = array();
+        $select = array("p.ID", "p.post_title", "p.post_name", "p.post_type", "'' as post_permalink");
+        $from = array(sprintf("%sposts p", $table_prefix));
+        $where = array("p.post_status = 'publish'", "p.post_type = 'post'");
         if ($instance["display_post_date"] == 1) $select[] = "p.post_date";
         if ($instance["display_excerpt"] == 1) {
             $select[] = "p.post_content";
             $select[] = "p.post_excerpt";
             $select[] = "'' as excerpt";
         }
-        $from[] = sprintf("%sposts p", $table_prefix);
-        $where[] = "p.post_status = 'publish'";
-        $where[] = "p.post_type = 'post'";
         if ($instance["filter_category"] != "") {
             $from[] = sprintf("INNER JOIN %sterm_relationships tr ON tr.object_id = p.ID", $table_prefix);
             $from[] = sprintf("INNER JOIN %sterm_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id", $table_prefix);
             $where[] = sprintf("tt.term_id in (%s)", $instance["filter_category"]);
         }
 
-        if (count($where) > 0) $where = " WHERE ".join(" AND ", $where);
-        else $where = "";
+        $sql = $this->prepare_sql($instance,
+            "DISTINCT ".join(", ", $select),
+            join(" ", $from),
+            join(" AND ", $where),
+            "",
+            "p.post_date_gmt DESC",
+            $instance["count"]
+        );
 
-        $sql = sprintf("SELECT DISTINCT %s FROM %s%s ORDER BY p.post_date_gmt DESC LIMIT %s",
-            join(", ", $select), join(" ", $from), $where, $instance["count"]);
         wp_gdsw_log_sql("widget_gdws_recent_posts", $sql);
         return $this->prepare($instance, $wpdb->get_results($sql));
     }
@@ -71,7 +72,7 @@ class gdswRecentPosts extends gdsw_Widget {
         $render = '<div class="gdsw-widget gdsw-recent-posts '.$instance["display_css"].'"><ul>';
         foreach ($results as $r) {
             $render.= '<li>';
-            $render.= sprintf('<a href="%s" class="gdsw-url">%s</a>', get_permalink($r->ID), $r->post_title);
+            $render.= sprintf('<a href="%s" class="gdsw-url">%s</a>', $r->post_permalink, $r->post_title);
             if ($instance["display_post_date"] == 1) $render.= sprintf(' <span class="gdws-date">[%s]</span>', $r->post_date);
             if ($instance["display_excerpt"] == 1) $render.= sprintf('<p class="gdws-excerpt">%s</p>', $r->excerpt);
             $render.= '</li>';

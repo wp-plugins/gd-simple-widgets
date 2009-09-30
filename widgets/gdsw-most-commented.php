@@ -36,7 +36,7 @@ class gdswMostCommented extends gdsw_Widget {
     function results($instance) {
         global $wpdb, $table_prefix;
 
-        $select = array("p.ID", "p.post_title", "p.comment_count");
+        $select = array("p.ID", "p.post_title", "p.post_name", "p.post_type", "p.comment_count", "'' as post_permalink");
         $from = array(sprintf("%sposts p", $table_prefix));
         $where = array("p.post_status = 'publish'", "p.comment_count > 0");
 
@@ -61,8 +61,15 @@ class gdswMostCommented extends gdsw_Widget {
             $where[] = sprintf("DATE_SUB(CURDATE(), INTERVAL %s DAY) < p.post_date", $days);
         }
 
-        $sql = sprintf("SELECT DISTINCT %s FROM %s WHERE %s ORDER BY p.comment_count DESC LIMIT %s",
-            join(", ", $select), join(" ", $from), join(" AND ", $where), $instance["count"]);
+        $sql = $this->prepare_sql($instance,
+            "DISTINCT ".join(", ", $select),
+            join(" ", $from),
+            join(" AND ", $where),
+            "",
+            "p.comment_count DESC",
+            $instance["count"]
+        );
+
         wp_gdsw_log_sql("widget_gdws_popular_posts", $sql);
         return $this->prepare($instance, $wpdb->get_results($sql));
     }
@@ -71,7 +78,7 @@ class gdswMostCommented extends gdsw_Widget {
         $render = '<div class="gdsw-widget gdsw-popular-posts '.$instance["display_css"].'"><ul>';
         foreach ($results as $r) {
             $render.= '<li>';
-            $render.= sprintf('<a href="%s#comments" class="gdsw-url">%s</a>', get_permalink($r->ID), $r->post_title);
+            $render.= sprintf('<a href="%s#comments" class="gdsw-url">%s</a>', $r->post_permalink, $r->post_title);
             if ($instance["display_comments_count"] == 1) $render.= sprintf(" [%s]", $r->comment_count);
             $render.= '</li>';
         }
