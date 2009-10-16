@@ -37,9 +37,9 @@ class gdsw_Widget extends WP_Widget {
     function form($instance) {
         $instance = wp_parse_args((array)$instance, $this->defaults);
 
+        include(GDSIMPLEWIDGETS_PATH.'widgets/shared/shared.php');
         include(GDSIMPLEWIDGETS_PATH.'widgets/'.$this->folder_name.'/basic.php');
-        if ($this->folder_name != "gdsw-simple-125-ads") include(GDSIMPLEWIDGETS_PATH.'widgets/'.$this->folder_name.'/filter.php');
-        else include(GDSIMPLEWIDGETS_PATH.'widgets/'.$this->folder_name.'/ads.php');
+        include(GDSIMPLEWIDGETS_PATH.'widgets/'.$this->folder_name.'/filter.php');
         include(GDSIMPLEWIDGETS_PATH.'widgets/'.$this->folder_name.'/display.php');
     }
 

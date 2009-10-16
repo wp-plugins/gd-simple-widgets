@@ -1,9 +1,5 @@
 <table class="gdsw-table">
     <tr>
-        <td class="tdleft"><?php _e("Title", "gd-simple-widgets"); ?>:</td>
-        <td class="tdright"><input class="widefat gdsw-input-text" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $instance["title"]; ?>" /></td>
-    </tr>
-    <tr>
         <td class="tdleft"><?php _e("Authors to show", "gd-simple-widgets"); ?>:</td>
         <td class="tdright"><input class="widefat gdsw-input-number" id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>" type="text" value="<?php echo $instance["count"]; ?>" /></td>
     </tr>

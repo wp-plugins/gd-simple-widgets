@@ -47,7 +47,7 @@ class gdswPostsAuthors extends gdsw_Widget {
         $from = array();
         $where = array("p.post_status = 'publish'", "p.post_type = 'post'");
 
-        $from[] = sprintf("%susers u inner join %sposts p on p.post_author = u.ID", $table_prefix, $table_prefix);
+        $from[] = sprintf("%s u inner join %sposts p on p.post_author = u.ID", $wpdb->users, $table_prefix);
         if ($instance["display_full_name"] == 1) {
             $select[] = "mf.meta_value as first_name";
             $select[] = "ml.meta_value as last_name";

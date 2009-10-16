@@ -1,8 +1,8 @@
 <?php
 
 /*
-Name:    gdDebugGDSW
-Version: 1.4.0
+Name:    gdDebug
+Version: 1.5.0
 Author:  Milan Petrovic
 Email:   milan@gdragon.info
 Website: http://www.gdragon.info/

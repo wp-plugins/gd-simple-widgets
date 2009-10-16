@@ -75,7 +75,7 @@ class gdswMostCommented extends gdsw_Widget {
     }
 
     function render($results, $instance) {
-        $render = '<div class="gdsw-widget gdsw-popular-posts '.$instance["display_css"].'"><ul>';
+        $render = '<div class="gdsw-widget gdsw-most-commented '.$instance["display_css"].'"><ul>';
         foreach ($results as $r) {
             $render.= '<li>';
             $render.= sprintf('<a href="%s#comments" class="gdsw-url">%s</a>', $r->post_permalink, $r->post_title);
