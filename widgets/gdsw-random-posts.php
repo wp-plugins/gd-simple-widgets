@@ -2,6 +2,7 @@
 
 class gdswRandomPosts extends gdsw_Widget {
     var $folder_name = "gdsw-random-posts";
+    var $cache = array("posts");
     var $defaults = array(
         "title" => "Random Posts",
         "count" => 10,

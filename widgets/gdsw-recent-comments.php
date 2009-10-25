@@ -2,6 +2,7 @@
 
 class gdswRecentComments extends gdsw_Widget {
     var $folder_name = "gdsw-recent-comments";
+    var $cache = array("posts", "comments");
     var $defaults = array(
         "title" => "Recent Comments",
         "count" => 10,

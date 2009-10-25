@@ -2,6 +2,7 @@
 
 class gdswMostCommented extends gdsw_Widget {
     var $folder_name = "gdsw-most-commented";
+    var $cache = array("posts");
     var $defaults = array(
         "title" => "Most Commented",
         "count" => 10,

@@ -2,6 +2,7 @@
 
 class gdswRecentPosts extends gdsw_Widget {
     var $folder_name = "gdsw-recent-posts";
+    var $cache = array("posts");
     var $defaults = array(
         "title" => "Recent Posts",
         "count" => 10,

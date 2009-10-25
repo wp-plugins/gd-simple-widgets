@@ -1,47 +1,47 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: GD Simple Widgets\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
+"PO-Revision-Date: 2009-10-21 09:16+0800\n"
 "Last-Translator: \n"
-"Language-Team: \n"
+"Language-Team:  <awuitcn@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Serbian\n"
-"X-Poedit-Country: SERBIA\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
 
 #: admin/info.php:3
 msgid "Info"
-msgstr "Инфо"
+msgstr "信息"
 
 #: admin/info.php:7
 msgid "Version"
-msgstr "Верзија"
+msgstr "版本"
 
 #: admin/info.php:8
 msgid "release date"
-msgstr "датум објављивања"
+msgstr "发布日期"
 
 #: admin/info.php:12
 msgid "Change Log"
-msgstr "Лист Измена"
+msgstr "更新日志"
 
 #: admin/info.php:13
 msgid "detailed list of changes"
-msgstr "детаљна листа измена"
+msgstr "详细的更新列表"
 
 #: admin/info.php:14
 msgid "show"
-msgstr "прикажи"
+msgstr "查看"
 
 #: admin/info.php:18
 msgid "Links"
-msgstr "Линкови"
+msgstr "相关链接"
 
 #: admin/info.php:23
 msgid "official plugin page"
-msgstr "официјална плагин страна"
+msgstr "插件官方页面"
 
 #: admin/info.php:24
 #: admin/info.php:29
@@ -53,99 +53,99 @@ msgstr "официјална плагин страна"
 #: admin/info.php:78
 #: admin/info.php:83
 msgid "visit"
-msgstr "посети"
+msgstr "访问"
 
 #: admin/info.php:28
 msgid "discussions group"
-msgstr "дискусиона група"
+msgstr "讨论小组"
 
 #: admin/info.php:33
 msgid "wordpress plugin page"
-msgstr "вордпрес плагин страна"
+msgstr "wordpress插件页面"
 
 #: admin/info.php:37
 msgid "Donate"
-msgstr "Донирај"
+msgstr "捐助"
 
 #: admin/info.php:38
 msgid "help further development"
-msgstr "помозите даљи развој"
+msgstr "赞助作者开发"
 
 #: admin/info.php:43
 msgid "Pro Edition"
-msgstr "Про Верзија"
+msgstr "专业版"
 
 #: admin/info.php:47
 #: admin/info.php:61
 msgid "Official Website"
-msgstr "Официјални Вебсајт"
+msgstr "官方网站"
 
 #: admin/info.php:48
 msgid "extended premium version"
-msgstr "допуњена премијум верзија"
+msgstr "扩展的高级版本"
 
 #: admin/info.php:62
 msgid "golden dragon official web portal"
-msgstr "голден драгон официјални веб портал"
+msgstr "golden dragon official web portal"
 
 #: admin/info.php:67
 msgid "a wordpress rating system"
-msgstr "вордпресс рејтинг систем"
+msgstr "a wordpress rating system"
 
 #: admin/info.php:72
 msgid "wordpress development"
-msgstr "вордпрес развој"
+msgstr "wordpress development"
 
 #: admin/info.php:76
 msgid "Support Forum"
-msgstr "Форум За Подршку"
+msgstr "Support Forum"
 
 #: admin/info.php:77
 msgid "development discussion forum"
-msgstr "форум за разговоре о развоју"
+msgstr "development discussion forum"
 
 #: admin/info.php:82
 msgid "announcements and theme demo"
-msgstr "најаве и демо теме"
+msgstr "announcements and theme demo"
 
 #: admin/panel.php:8
 msgid "collection of simple sidebar widgets"
-msgstr "колекција једноставних сајдбар виџета"
+msgstr "边栏小工具的集合"
 
 #: admin/settings.php:2
 msgid "Available Widgets"
-msgstr "Расположиви Виџети"
+msgstr "可用的小工具"
 
 #: admin/settings.php:4
 #: admin/settings.php:64
 msgid "Unchecked widgets will not be available on the Widgets panel."
-msgstr "Виџети који нису селектовани неће бити видљиви на Виџет панелу."
+msgstr "未选中的小工具在边栏是不可用的."
 
 #: admin/settings.php:51
 msgid "is required."
-msgstr "је неопходан"
+msgstr "是必需的."
 
 #: admin/settings.php:57
 #: admin/settings.php:80
 #: admin/settings.php:102
 msgid "Save"
-msgstr "Сними"
+msgstr "保存"
 
 #: admin/settings.php:62
 msgid "Default WordPress Widgets"
-msgstr "Стандардни Вордпресс Виџети"
+msgstr "默认的WordPress小工具"
 
 #: admin/settings.php:85
 msgid "Other Settings"
-msgstr "Друга подешавања"
+msgstr "其他设置"
 
 #: admin/settings.php:90
 msgid "Load default CSS file"
-msgstr "Учитај ЦСС фајл"
+msgstr "加载默认的CSS文件"
 
 #: admin/settings.php:95
 msgid "Write debug info into file"
-msgstr "Упиши дебаг информације у фајл"
+msgstr "写入调试信息到文件"
 
 #: widgets/gdsw-future-posts/basic.php:2
 #: widgets/gdsw-most-commented/basic.php:2
@@ -154,7 +154,7 @@ msgstr "Упиши дебаг информације у фајл"
 #: widgets/gdsw-recent-posts/basic.php:2
 #: widgets/gdsw-related-posts/basic.php:2
 msgid "Posts to show"
-msgstr "Чланка за приказ"
+msgstr "显示文章数"
 
 #: widgets/gdsw-future-posts/basic.php:8
 #: widgets/gdsw-most-commented/basic.php:8
@@ -165,7 +165,7 @@ msgstr "Чланка за приказ"
 #: widgets/gdsw-recent-posts/basic.php:8
 #: widgets/gdsw-related-posts/basic.php:8
 msgid "Hide widget if no results found"
-msgstr "Сакриј виџет ако нема резултата"
+msgstr "如果没有文章自动隐藏小工具"
 
 #: widgets/gdsw-future-posts/display.php:2
 #: widgets/gdsw-most-commented/display.php:2
@@ -177,7 +177,7 @@ msgstr "Сакриј виџет ако нема резултата"
 #: widgets/gdsw-related-posts/display.php:2
 #: widgets/gdsw-simple-125-ads/display.php:2
 msgid "Additional CSS class"
-msgstr "Додана ЦСС класа"
+msgstr "附加的CSS类"
 
 #: widgets/gdsw-future-posts/display.php:6
 #: widgets/gdsw-popular-posts/display.php:12
@@ -185,7 +185,7 @@ msgstr "Додана ЦСС класа"
 #: widgets/gdsw-recent-posts/display.php:6
 #: widgets/gdsw-related-posts/display.php:6
 msgid "Short excerpt from the post"
-msgstr "Прикажи кратак текст чланка"
+msgstr "显示文章短的摘要"
 
 #: widgets/gdsw-future-posts/display.php:12
 #: widgets/gdsw-popular-posts/display.php:18
@@ -193,7 +193,7 @@ msgstr "Прикажи кратак текст чланка"
 #: widgets/gdsw-recent-posts/display.php:12
 #: widgets/gdsw-related-posts/display.php:12
 msgid "Excerpt words limit"
-msgstr "Број речи у тексту"
+msgstr "摘要字数限制:"
 
 #: widgets/gdsw-future-posts/display.php:16
 #: widgets/gdsw-popular-posts/display.php:22
@@ -201,7 +201,7 @@ msgstr "Број речи у тексту"
 #: widgets/gdsw-recent-posts/display.php:16
 #: widgets/gdsw-related-posts/display.php:16
 msgid "Display post date"
-msgstr "Прикажи датум чланка"
+msgstr "显示文章日期"
 
 #: widgets/gdsw-future-posts/display.php:22
 #: widgets/gdsw-popular-posts/display.php:28
@@ -209,7 +209,7 @@ msgstr "Прикажи датум чланка"
 #: widgets/gdsw-recent-posts/display.php:22
 #: widgets/gdsw-related-posts/display.php:22
 msgid "Post date format"
-msgstr "Формат датума"
+msgstr "文章日期格式"
 
 #: widgets/gdsw-future-posts/filter.php:2
 #: widgets/gdsw-most-commented/filter.php:13
@@ -219,7 +219,7 @@ msgstr "Формат датума"
 #: widgets/gdsw-recent-comments/filter.php:12
 #: widgets/gdsw-recent-posts/filter.php:2
 msgid "Filter by category"
-msgstr "Филтер категорије"
+msgstr "按分类筛选"
 
 #: widgets/gdsw-future-posts/filter.php:7
 #: widgets/gdsw-most-commented/filter.php:17
@@ -229,7 +229,7 @@ msgstr "Филтер категорије"
 #: widgets/gdsw-recent-comments/filter.php:16
 #: widgets/gdsw-recent-posts/filter.php:6
 msgid "comma separated list of category ids"
-msgstr "зарезом раздвојена листа ид-ијева категорија"
+msgstr "多个分类ID之间用逗号隔开"
 
 #: widgets/gdsw-future-posts/filter.php:8
 #: widgets/gdsw-most-commented/filter.php:18
@@ -239,225 +239,225 @@ msgstr "зарезом раздвојена листа ид-ијева кате�
 #: widgets/gdsw-recent-comments/filter.php:17
 #: widgets/gdsw-recent-posts/filter.php:7
 msgid "leave empty to include all categories"
-msgstr "оставите празно да укључи све категорије"
+msgstr "留空则包含所有的分类"
 
 #: widgets/gdsw-most-commented/display.php:6
 msgid "Show comments count"
-msgstr "Прикажи број коментара"
+msgstr "显示评论数"
 
 #: widgets/gdsw-most-commented/filter.php:2
 msgid "Filter by post publish date"
-msgstr "Филтер по датуму објављивања"
+msgstr "按发布日期筛选"
 
 #: widgets/gdsw-most-commented/filter.php:5
 msgid "All posts"
-msgstr "Сви постови"
+msgstr "所有文章"
 
 #: widgets/gdsw-most-commented/filter.php:6
 #: widgets/gdsw-popular-posts/filter.php:8
 #: widgets/gdsw-random-posts/filter.php:7
 msgid "Last week"
-msgstr "Последња недеља"
+msgstr "最近一周"
 
 #: widgets/gdsw-most-commented/filter.php:7
 #: widgets/gdsw-popular-posts/filter.php:9
 #: widgets/gdsw-random-posts/filter.php:8
 msgid "Last month"
-msgstr "Последњи месец"
+msgstr "最近一个月"
 
 #: widgets/gdsw-most-commented/filter.php:8
 #: widgets/gdsw-popular-posts/filter.php:10
 #: widgets/gdsw-random-posts/filter.php:9
 msgid "Last year"
-msgstr "Последња година"
+msgstr "最近一年"
 
 #: widgets/gdsw-popular-posts/display.php:6
 msgid "Show number of views"
-msgstr "Прикажи број посета"
+msgstr "显示查看数"
 
 #: widgets/gdsw-popular-posts/filter.php:2
 #: widgets/gdsw-random-posts/filter.php:2
 msgid "Filter by date"
-msgstr "Филтер по датуму"
+msgstr "按日期筛选"
 
 #: widgets/gdsw-popular-posts/filter.php:5
 #: widgets/gdsw-random-posts/filter.php:5
 msgid "All time"
-msgstr "Сви чланци"
+msgstr "所的"
 
 #: widgets/gdsw-popular-posts/filter.php:6
 msgid "Today only"
-msgstr "Само данас"
+msgstr "仅今天"
 
 #: widgets/gdsw-popular-posts/filter.php:7
 #: widgets/gdsw-random-posts/filter.php:6
 msgid "Last 24 hours"
-msgstr "Последњих 24 сата"
+msgstr "最近24小时"
 
 #: widgets/gdsw-popular-posts/filter.php:15
 #: widgets/gdsw-random-posts/filter.php:14
 #: widgets/gdsw-recent-comments/filter.php:2
 msgid "Filter by type"
-msgstr "Филтер по типу"
+msgstr "按类型筛选"
 
 #: widgets/gdsw-popular-posts/filter.php:18
 #: widgets/gdsw-random-posts/filter.php:17
 msgid "Both posts and pages"
-msgstr "И чланци и стране"
+msgstr "文章和页面"
 
 #: widgets/gdsw-popular-posts/filter.php:19
 #: widgets/gdsw-random-posts/filter.php:18
 msgid "Only posts"
-msgstr "Само чланци"
+msgstr "仅文章"
 
 #: widgets/gdsw-popular-posts/filter.php:20
 #: widgets/gdsw-random-posts/filter.php:19
 msgid "Only pages"
-msgstr "Само стране"
+msgstr "仅页面"
 
 #: widgets/gdsw-popular-posts/filter.php:31
 msgid "using this will eliminate all pages from results"
-msgstr "ова опција ће елиминисати све стране из резултата"
+msgstr "使用这个将会在搜索中除去所有的页面"
 
 #: widgets/gdsw-popular-posts/filter.php:35
 msgid "Include views from"
-msgstr "Укључи посете од"
+msgstr "包括查看数来自于"
 
 #: widgets/gdsw-popular-posts/filter.php:38
 msgid "Both users and visitors"
-msgstr "И корисника и посетилаца"
+msgstr "用户和游客"
 
 #: widgets/gdsw-popular-posts/filter.php:39
 msgid "Only users"
-msgstr "Само корисници"
+msgstr "仅用户"
 
 #: widgets/gdsw-popular-posts/filter.php:40
 msgid "Only visitors"
-msgstr "Само посетиоци"
+msgstr "仅游客"
 
 #: widgets/gdsw-posts-authors/basic.php:2
 msgid "Authors to show"
-msgstr "Аутора за приказ"
+msgstr "显示的作者数"
 
 #: widgets/gdsw-posts-authors/display.php:6
 #: widgets/gdsw-recent-comments/display.php:6
 msgid "Display author's gravatar"
-msgstr "Прикажи граватар аутора"
+msgstr "显示作者的头像"
 
 #: widgets/gdsw-posts-authors/display.php:12
 #: widgets/gdsw-recent-comments/display.php:12
 msgid "Gravatar dimension (px)"
-msgstr "Димензије граватара (px)"
+msgstr "头像大小(px)"
 
 #: widgets/gdsw-posts-authors/display.php:16
 msgid "Show posts count"
-msgstr "Прикажи број чланака"
+msgstr "显示文章数"
 
 #: widgets/gdsw-posts-authors/display.php:22
 msgid "Show author's full name"
-msgstr "Прикажи пуно име аутора"
+msgstr "查看作者的全名"
 
 #: widgets/gdsw-posts-authors/filter.php:11
 msgid "Minimum published posts"
-msgstr "Минимум објављених чланака"
+msgstr "至少发布的文章数"
 
 #: widgets/gdsw-recent-comments/basic.php:2
 msgid "Comments to show"
-msgstr "Коментара за приказ"
+msgstr "评论显示数:"
 
 #: widgets/gdsw-recent-comments/filter.php:5
 msgid "Comments only"
-msgstr "Само коментари"
+msgstr "仅评论"
 
 #: widgets/gdsw-recent-comments/filter.php:6
 msgid "Pings only"
-msgstr "Само пингови"
+msgstr "仅Pings"
 
 #: widgets/gdsw-recent-comments/filter.php:7
 msgid "Comments and pings"
-msgstr "Коментари и пингови"
+msgstr "评论和Pings"
 
 #: widgets/gdsw-related-posts/basic.php:14
 msgid "Show only on single post page"
-msgstr "Само на страни са чланком"
+msgstr "仅仅在单个文章页面显示"
 
 #: widgets/gdsw-related-posts/filter.php:2
 msgid "Use to get relations"
-msgstr "Користи за релације"
+msgstr "获取相关日志方式"
 
 #: widgets/gdsw-related-posts/filter.php:5
 msgid "Tags and Categories"
-msgstr "Тагови и категорије"
+msgstr "标签和分类"
 
 #: widgets/gdsw-related-posts/filter.php:6
 msgid "Categories only"
-msgstr "Само категорије"
+msgstr "仅分类"
 
 #: widgets/gdsw-related-posts/filter.php:7
 msgid "Tags only"
-msgstr "Само тагови"
+msgstr "仅标签"
 
 #: widgets/gdsw-simple-125-ads/filter.php:2
 msgid "Ad left"
-msgstr "Реклама лево"
+msgstr "左边AD"
 
 #: widgets/gdsw-simple-125-ads/filter.php:6
 msgid "Ad right"
-msgstr "Реклама десно"
+msgstr "右边AD"
 
 #: widgets/shared/shared.php:2
 msgid "Title"
-msgstr "Наслов"
+msgstr "标题"
 
 #: widgets/shared/shared.php:7
 msgid "leave empty to skip rendering title"
-msgstr "оставите празно и наслов се неће рендеровати"
+msgstr "留空则使用默认的标题"
 
 #: widgets/gdsw-future-posts.php:18
 msgid "Display scheduled posts."
-msgstr "Прикажи заказане чланке."
+msgstr "显示计划的文章."
 
 #: widgets/gdsw-most-commented.php:15
 msgid "Most commented posts."
-msgstr "Чланци са највише кометара"
+msgstr "最多评论的文章."
 
 #: widgets/gdsw-popular-posts.php:21
 msgid "Display popular posts."
-msgstr "Прикажи популарне чланке."
+msgstr "显示热门文章."
 
 #: widgets/gdsw-popular-posts.php:123
 msgid "view"
-msgstr "посета"
+msgstr "查看"
 
 #: widgets/gdsw-popular-posts.php:123
 msgid "views"
-msgstr "посете"
+msgstr "查看数"
 
 #: widgets/gdsw-posts-authors.php:18
 msgid "List of posts authors."
-msgstr "Листа аутора чланака."
+msgstr "文章作者列表"
 
 #: widgets/gdsw-random-posts.php:20
 msgid "Display random posts."
-msgstr "Прикажи случајне чланке."
+msgstr "显示随机文章"
 
 #: widgets/gdsw-recent-comments.php:16
 msgid "Expanded widget with recent comments."
-msgstr "Проширен виџет са последњим коментарима."
+msgstr "最近评论的扩展小工具"
 
 #: widgets/gdsw-recent-posts.php:17
 msgid "Expanded widget with recent posts."
-msgstr "Проширен виџет са последњим чланцима."
+msgstr "最新文章的扩展小工具"
 
 #: widgets/gdsw-related-posts.php:19
 msgid "Display related posts."
-msgstr "Прикажи сличне чланке."
+msgstr "显示相关文章."
 
 #: widgets/gdsw-simple-125-ads.php:14
 msgid "Display two 125x125 ads."
-msgstr "Прикажи две 125x125 рекламе."
+msgstr "显示两个125x125的广告."
 
 #: gd-simple-widgets.php:157
 msgid "Settings"
-msgstr "Подешавања"
+msgstr "设置"
 

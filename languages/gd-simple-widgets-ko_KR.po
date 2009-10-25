@@ -1,47 +1,48 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: GD Simple Widgets\n"
+"Project-Id-Version: GD Simple Widget 1.5.4\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"Last-Translator: Nod <contact@nod.pe.kr>\n"
+"Language-Team: Minjae Kim <contact@nod.pe.kr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Serbian\n"
-"X-Poedit-Country: SERBIA\n"
+"Plural-Forms: nplurals=2;plural=n != 1;\n"
+"X-Poedit-Language: Korean\n"
+"X-Poedit-Country: KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF\n"
 
 #: admin/info.php:3
 msgid "Info"
-msgstr "Инфо"
+msgstr "정보"
 
 #: admin/info.php:7
 msgid "Version"
-msgstr "Верзија"
+msgstr "판"
 
 #: admin/info.php:8
 msgid "release date"
-msgstr "датум објављивања"
+msgstr "출시일"
 
 #: admin/info.php:12
 msgid "Change Log"
-msgstr "Лист Измена"
+msgstr "수정 기록"
 
 #: admin/info.php:13
 msgid "detailed list of changes"
-msgstr "детаљна листа измена"
+msgstr "자세한 수정 기록"
 
 #: admin/info.php:14
 msgid "show"
-msgstr "прикажи"
+msgstr "보기"
 
 #: admin/info.php:18
 msgid "Links"
-msgstr "Линкови"
+msgstr "바깥고리"
 
 #: admin/info.php:23
 msgid "official plugin page"
-msgstr "официјална плагин страна"
+msgstr "공식 확장기능 페이지"
 
 #: admin/info.php:24
 #: admin/info.php:29
@@ -53,99 +54,99 @@ msgstr "официјална плагин страна"
 #: admin/info.php:78
 #: admin/info.php:83
 msgid "visit"
-msgstr "посети"
+msgstr "방문"
 
 #: admin/info.php:28
 msgid "discussions group"
-msgstr "дискусиона група"
+msgstr "의견교환 그룹"
 
 #: admin/info.php:33
 msgid "wordpress plugin page"
-msgstr "вордпрес плагин страна"
+msgstr "워드프레스 확장기능 페이지"
 
 #: admin/info.php:37
 msgid "Donate"
-msgstr "Донирај"
+msgstr "기부"
 
 #: admin/info.php:38
 msgid "help further development"
-msgstr "помозите даљи развој"
+msgstr "계속 확장기능을 개발하는데 도움이 됩니다."
 
 #: admin/info.php:43
 msgid "Pro Edition"
-msgstr "Про Верзија"
+msgstr "유료 판"
 
 #: admin/info.php:47
 #: admin/info.php:61
 msgid "Official Website"
-msgstr "Официјални Вебсајт"
+msgstr "공식 웹사이트"
 
 #: admin/info.php:48
 msgid "extended premium version"
-msgstr "допуњена премијум верзија"
+msgstr "기능이 확장된 유료 판"
 
 #: admin/info.php:62
 msgid "golden dragon official web portal"
-msgstr "голден драгон официјални веб портал"
+msgstr "골든 드래곤 공식 웹 포탈"
 
 #: admin/info.php:67
 msgid "a wordpress rating system"
-msgstr "вордпресс рејтинг систем"
+msgstr "워드프레스 평가 시스템"
 
 #: admin/info.php:72
 msgid "wordpress development"
-msgstr "вордпрес развој"
+msgstr "워드프레스 개발"
 
 #: admin/info.php:76
 msgid "Support Forum"
-msgstr "Форум За Подршку"
+msgstr "지원 포럼"
 
 #: admin/info.php:77
 msgid "development discussion forum"
-msgstr "форум за разговоре о развоју"
+msgstr "개발에 관련된 의견교환 포럼"
 
 #: admin/info.php:82
 msgid "announcements and theme demo"
-msgstr "најаве и демо теме"
+msgstr "새 소식과 테마 데모"
 
 #: admin/panel.php:8
 msgid "collection of simple sidebar widgets"
-msgstr "колекција једноставних сајдбар виџета"
+msgstr "간단한 사이드바 위젯 모음"
 
 #: admin/settings.php:2
 msgid "Available Widgets"
-msgstr "Расположиви Виџети"
+msgstr "사용가능한 위젯"
 
 #: admin/settings.php:4
 #: admin/settings.php:64
 msgid "Unchecked widgets will not be available on the Widgets panel."
-msgstr "Виџети који нису селектовани неће бити видљиви на Виџет панелу."
+msgstr "선택하지 않은 위젯은 위젯 설정에서 이용할 수 없습니다."
 
 #: admin/settings.php:51
 msgid "is required."
-msgstr "је неопходан"
+msgstr "를 설치하셔야 됩니다."
 
 #: admin/settings.php:57
 #: admin/settings.php:80
 #: admin/settings.php:102
 msgid "Save"
-msgstr "Сними"
+msgstr "저장"
 
 #: admin/settings.php:62
 msgid "Default WordPress Widgets"
-msgstr "Стандардни Вордпресс Виџети"
+msgstr "기본 워드프레스 위젯"
 
 #: admin/settings.php:85
 msgid "Other Settings"
-msgstr "Друга подешавања"
+msgstr "기타 설정"
 
 #: admin/settings.php:90
 msgid "Load default CSS file"
-msgstr "Учитај ЦСС фајл"
+msgstr "기본 CSS 파일 이용"
 
 #: admin/settings.php:95
 msgid "Write debug info into file"
-msgstr "Упиши дебаг информације у фајл"
+msgstr "디버그 정보를 파일로 기록"
 
 #: widgets/gdsw-future-posts/basic.php:2
 #: widgets/gdsw-most-commented/basic.php:2
@@ -154,7 +155,7 @@ msgstr "Упиши дебаг информације у фајл"
 #: widgets/gdsw-recent-posts/basic.php:2
 #: widgets/gdsw-related-posts/basic.php:2
 msgid "Posts to show"
-msgstr "Чланка за приказ"
+msgstr "보여줄 글 수"
 
 #: widgets/gdsw-future-posts/basic.php:8
 #: widgets/gdsw-most-commented/basic.php:8
@@ -165,7 +166,7 @@ msgstr "Чланка за приказ"
 #: widgets/gdsw-recent-posts/basic.php:8
 #: widgets/gdsw-related-posts/basic.php:8
 msgid "Hide widget if no results found"
-msgstr "Сакриј виџет ако нема резултата"
+msgstr "보여줄 결과가 없으면 위젯 숨기기"
 
 #: widgets/gdsw-future-posts/display.php:2
 #: widgets/gdsw-most-commented/display.php:2
@@ -177,7 +178,7 @@ msgstr "Сакриј виџет ако нема резултата"
 #: widgets/gdsw-related-posts/display.php:2
 #: widgets/gdsw-simple-125-ads/display.php:2
 msgid "Additional CSS class"
-msgstr "Додана ЦСС класа"
+msgstr "추가 CSS 클래스"
 
 #: widgets/gdsw-future-posts/display.php:6
 #: widgets/gdsw-popular-posts/display.php:12
@@ -185,7 +186,7 @@ msgstr "Додана ЦСС класа"
 #: widgets/gdsw-recent-posts/display.php:6
 #: widgets/gdsw-related-posts/display.php:6
 msgid "Short excerpt from the post"
-msgstr "Прикажи кратак текст чланка"
+msgstr "글 요약 보여주기"
 
 #: widgets/gdsw-future-posts/display.php:12
 #: widgets/gdsw-popular-posts/display.php:18
@@ -193,7 +194,7 @@ msgstr "Прикажи кратак текст чланка"
 #: widgets/gdsw-recent-posts/display.php:12
 #: widgets/gdsw-related-posts/display.php:12
 msgid "Excerpt words limit"
-msgstr "Број речи у тексту"
+msgstr "글 요약 단어 수 제한"
 
 #: widgets/gdsw-future-posts/display.php:16
 #: widgets/gdsw-popular-posts/display.php:22
@@ -201,7 +202,7 @@ msgstr "Број речи у тексту"
 #: widgets/gdsw-recent-posts/display.php:16
 #: widgets/gdsw-related-posts/display.php:16
 msgid "Display post date"
-msgstr "Прикажи датум чланка"
+msgstr "글 작성일 보여주기"
 
 #: widgets/gdsw-future-posts/display.php:22
 #: widgets/gdsw-popular-posts/display.php:28
@@ -209,7 +210,7 @@ msgstr "Прикажи датум чланка"
 #: widgets/gdsw-recent-posts/display.php:22
 #: widgets/gdsw-related-posts/display.php:22
 msgid "Post date format"
-msgstr "Формат датума"
+msgstr "글 작성일 표시 형식"
 
 #: widgets/gdsw-future-posts/filter.php:2
 #: widgets/gdsw-most-commented/filter.php:13
@@ -219,7 +220,7 @@ msgstr "Формат датума"
 #: widgets/gdsw-recent-comments/filter.php:12
 #: widgets/gdsw-recent-posts/filter.php:2
 msgid "Filter by category"
-msgstr "Филтер категорије"
+msgstr "분류로 걸러내기"
 
 #: widgets/gdsw-future-posts/filter.php:7
 #: widgets/gdsw-most-commented/filter.php:17
@@ -229,7 +230,7 @@ msgstr "Филтер категорије"
 #: widgets/gdsw-recent-comments/filter.php:16
 #: widgets/gdsw-recent-posts/filter.php:6
 msgid "comma separated list of category ids"
-msgstr "зарезом раздвојена листа ид-ијева категорија"
+msgstr "분류 고유번호(ID)를 쉼표(,)로 구분하세요"
 
 #: widgets/gdsw-future-posts/filter.php:8
 #: widgets/gdsw-most-commented/filter.php:18
@@ -239,225 +240,225 @@ msgstr "зарезом раздвојена листа ид-ијева кате�
 #: widgets/gdsw-recent-comments/filter.php:17
 #: widgets/gdsw-recent-posts/filter.php:7
 msgid "leave empty to include all categories"
-msgstr "оставите празно да укључи све категорије"
+msgstr "전체 분류를 포함하려면 비워두세요"
 
 #: widgets/gdsw-most-commented/display.php:6
 msgid "Show comments count"
-msgstr "Прикажи број коментара"
+msgstr "댓글 수 보여주기"
 
 #: widgets/gdsw-most-commented/filter.php:2
 msgid "Filter by post publish date"
-msgstr "Филтер по датуму објављивања"
+msgstr "발행일로 걸러내기"
 
 #: widgets/gdsw-most-commented/filter.php:5
 msgid "All posts"
-msgstr "Сви постови"
+msgstr "전체 글"
 
 #: widgets/gdsw-most-commented/filter.php:6
 #: widgets/gdsw-popular-posts/filter.php:8
 #: widgets/gdsw-random-posts/filter.php:7
 msgid "Last week"
-msgstr "Последња недеља"
+msgstr "지난 주"
 
 #: widgets/gdsw-most-commented/filter.php:7
 #: widgets/gdsw-popular-posts/filter.php:9
 #: widgets/gdsw-random-posts/filter.php:8
 msgid "Last month"
-msgstr "Последњи месец"
+msgstr "지난 달"
 
 #: widgets/gdsw-most-commented/filter.php:8
 #: widgets/gdsw-popular-posts/filter.php:10
 #: widgets/gdsw-random-posts/filter.php:9
 msgid "Last year"
-msgstr "Последња година"
+msgstr "지난 해"
 
 #: widgets/gdsw-popular-posts/display.php:6
 msgid "Show number of views"
-msgstr "Прикажи број посета"
+msgstr "조회 수 보여주기"
 
 #: widgets/gdsw-popular-posts/filter.php:2
 #: widgets/gdsw-random-posts/filter.php:2
 msgid "Filter by date"
-msgstr "Филтер по датуму"
+msgstr "날짜로 걸러내기"
 
 #: widgets/gdsw-popular-posts/filter.php:5
 #: widgets/gdsw-random-posts/filter.php:5
 msgid "All time"
-msgstr "Сви чланци"
+msgstr "전체 기간"
 
 #: widgets/gdsw-popular-posts/filter.php:6
 msgid "Today only"
-msgstr "Само данас"
+msgstr "오늘만"
 
 #: widgets/gdsw-popular-posts/filter.php:7
 #: widgets/gdsw-random-posts/filter.php:6
 msgid "Last 24 hours"
-msgstr "Последњих 24 сата"
+msgstr "지난 24시간"
 
 #: widgets/gdsw-popular-posts/filter.php:15
 #: widgets/gdsw-random-posts/filter.php:14
 #: widgets/gdsw-recent-comments/filter.php:2
 msgid "Filter by type"
-msgstr "Филтер по типу"
+msgstr "글 유형으로 걸러내기"
 
 #: widgets/gdsw-popular-posts/filter.php:18
 #: widgets/gdsw-random-posts/filter.php:17
 msgid "Both posts and pages"
-msgstr "И чланци и стране"
+msgstr "글과 고정글 모두"
 
 #: widgets/gdsw-popular-posts/filter.php:19
 #: widgets/gdsw-random-posts/filter.php:18
 msgid "Only posts"
-msgstr "Само чланци"
+msgstr "글만"
 
 #: widgets/gdsw-popular-posts/filter.php:20
 #: widgets/gdsw-random-posts/filter.php:19
 msgid "Only pages"
-msgstr "Само стране"
+msgstr "고정글만"
 
 #: widgets/gdsw-popular-posts/filter.php:31
 msgid "using this will eliminate all pages from results"
-msgstr "ова опција ће елиминисати све стране из резултата"
+msgstr "분류로 걸러내면 고정글은 보여지지 않습니다"
 
 #: widgets/gdsw-popular-posts/filter.php:35
 msgid "Include views from"
-msgstr "Укључи посете од"
+msgstr "보여줄 글 조회수"
 
 #: widgets/gdsw-popular-posts/filter.php:38
 msgid "Both users and visitors"
-msgstr "И корисника и посетилаца"
+msgstr "로그인한 사용자와 일반 방문자 모두"
 
 #: widgets/gdsw-popular-posts/filter.php:39
 msgid "Only users"
-msgstr "Само корисници"
+msgstr "로그인한 사용자만"
 
 #: widgets/gdsw-popular-posts/filter.php:40
 msgid "Only visitors"
-msgstr "Само посетиоци"
+msgstr "일반 방문자만"
 
 #: widgets/gdsw-posts-authors/basic.php:2
 msgid "Authors to show"
-msgstr "Аутора за приказ"
+msgstr "보여줄 글 작성자 수"
 
 #: widgets/gdsw-posts-authors/display.php:6
 #: widgets/gdsw-recent-comments/display.php:6
 msgid "Display author's gravatar"
-msgstr "Прикажи граватар аутора"
+msgstr "글쓴이의 그라바타 표시"
 
 #: widgets/gdsw-posts-authors/display.php:12
 #: widgets/gdsw-recent-comments/display.php:12
 msgid "Gravatar dimension (px)"
-msgstr "Димензије граватара (px)"
+msgstr "그라바타 크기 (픽센 단위)"
 
 #: widgets/gdsw-posts-authors/display.php:16
 msgid "Show posts count"
-msgstr "Прикажи број чланака"
+msgstr "발행한 글 수 보여주기"
 
 #: widgets/gdsw-posts-authors/display.php:22
 msgid "Show author's full name"
-msgstr "Прикажи пуно име аутора"
+msgstr "글쓴이의 이름 표시"
 
 #: widgets/gdsw-posts-authors/filter.php:11
 msgid "Minimum published posts"
-msgstr "Минимум објављених чланака"
+msgstr "최소 발행한 글 수"
 
 #: widgets/gdsw-recent-comments/basic.php:2
 msgid "Comments to show"
-msgstr "Коментара за приказ"
+msgstr "보여줄 댓글"
 
 #: widgets/gdsw-recent-comments/filter.php:5
 msgid "Comments only"
-msgstr "Само коментари"
+msgstr "댓글만"
 
 #: widgets/gdsw-recent-comments/filter.php:6
 msgid "Pings only"
-msgstr "Само пингови"
+msgstr "엮인글과 고리글만"
 
 #: widgets/gdsw-recent-comments/filter.php:7
 msgid "Comments and pings"
-msgstr "Коментари и пингови"
+msgstr "댓글과 엮인글, 고리글 모두"
 
 #: widgets/gdsw-related-posts/basic.php:14
 msgid "Show only on single post page"
-msgstr "Само на страни са чланком"
+msgstr "낱글(Single Post)에서만 위젯 보여주기"
 
 #: widgets/gdsw-related-posts/filter.php:2
 msgid "Use to get relations"
-msgstr "Користи за релације"
+msgstr "연관 글 측정 기준"
 
 #: widgets/gdsw-related-posts/filter.php:5
 msgid "Tags and Categories"
-msgstr "Тагови и категорије"
+msgstr "꼬리표와 분류"
 
 #: widgets/gdsw-related-posts/filter.php:6
 msgid "Categories only"
-msgstr "Само категорије"
+msgstr "분류만"
 
 #: widgets/gdsw-related-posts/filter.php:7
 msgid "Tags only"
-msgstr "Само тагови"
+msgstr "꼬리표만"
 
 #: widgets/gdsw-simple-125-ads/filter.php:2
 msgid "Ad left"
-msgstr "Реклама лево"
+msgstr "왼쪽 광고"
 
 #: widgets/gdsw-simple-125-ads/filter.php:6
 msgid "Ad right"
-msgstr "Реклама десно"
+msgstr "오른쪽 광고"
 
 #: widgets/shared/shared.php:2
 msgid "Title"
-msgstr "Наслов"
+msgstr "위젯 이름"
 
 #: widgets/shared/shared.php:7
 msgid "leave empty to skip rendering title"
-msgstr "оставите празно и наслов се неће рендеровати"
+msgstr "위젯에 이름을 달지 않으시려면 비워 두세요."
 
 #: widgets/gdsw-future-posts.php:18
 msgid "Display scheduled posts."
-msgstr "Прикажи заказане чланке."
+msgstr "발행 예약된 글 표시"
 
 #: widgets/gdsw-most-commented.php:15
 msgid "Most commented posts."
-msgstr "Чланци са највише кометара"
+msgstr "댓글이 많이 달린 글"
 
 #: widgets/gdsw-popular-posts.php:21
 msgid "Display popular posts."
-msgstr "Прикажи популарне чланке."
+msgstr "인기 글 표시"
 
 #: widgets/gdsw-popular-posts.php:123
 msgid "view"
-msgstr "посета"
+msgstr "조회"
 
 #: widgets/gdsw-popular-posts.php:123
 msgid "views"
-msgstr "посете"
+msgstr "번 조회"
 
 #: widgets/gdsw-posts-authors.php:18
 msgid "List of posts authors."
-msgstr "Листа аутора чланака."
+msgstr "글쓴이 목록"
 
 #: widgets/gdsw-random-posts.php:20
 msgid "Display random posts."
-msgstr "Прикажи случајне чланке."
+msgstr "무작위로 글 목록 표시"
 
 #: widgets/gdsw-recent-comments.php:16
 msgid "Expanded widget with recent comments."
-msgstr "Проширен виџет са последњим коментарима."
+msgstr "확장된 최근 댓글 위젯"
 
 #: widgets/gdsw-recent-posts.php:17
 msgid "Expanded widget with recent posts."
-msgstr "Проширен виџет са последњим чланцима."
+msgstr "확장된 최근 글 위젯"
 
 #: widgets/gdsw-related-posts.php:19
 msgid "Display related posts."
-msgstr "Прикажи сличне чланке."
+msgstr "연관 글 보여주기"
 
 #: widgets/gdsw-simple-125-ads.php:14
 msgid "Display two 125x125 ads."
-msgstr "Прикажи две 125x125 рекламе."
+msgstr "125x125 픽셀 광고 2개 표시"
 
 #: gd-simple-widgets.php:157
 msgid "Settings"
-msgstr "Подешавања"
+msgstr "설정"
 

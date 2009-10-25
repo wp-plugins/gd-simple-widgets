@@ -2,6 +2,7 @@
 
 class gdswPopularPosts extends gdsw_Widget {
     var $folder_name = "gdsw-popular-posts";
+    var $cache = array("posts");
     var $defaults = array(
         "title" => "Popular Posts",
         "count" => 10,
@@ -49,7 +50,7 @@ class gdswPopularPosts extends gdsw_Widget {
         global $wpdb, $table_prefix;
 
         $order = "";
-        $select = array("p.ID", "p.post_title", "p.post_name", "p.post_type", "'' as post_permalink");
+        $select = array("v.post_id as ID", "p.post_title", "p.post_name", "p.post_type", "'' as post_permalink");
         $from = array(sprintf("%sposts p inner join %sgdpt_posts_views v on p.ID = v.post_id", $table_prefix, $table_prefix));
         $where = array("p.post_status = 'publish'");
         if ($instance["display_post_date"] == 1) $select[] = "p.post_date";
@@ -76,10 +77,11 @@ class gdswPopularPosts extends gdsw_Widget {
         }
 
         if ($instance["filter_category"] != "") {
-            $from[] = sprintf("INNER JOIN %sterm_relationships tr ON tr.object_id = p.ID", $table_prefix);
+            $from[] = sprintf("INNER JOIN %sterm_relationships tr ON tr.object_id = v.post_id", $table_prefix);
             $from[] = sprintf("INNER JOIN %sterm_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id", $table_prefix);
             $where[] = sprintf("tt.term_id in (%s)", $instance["filter_category"]);
         }
+
         if ($instance["filter_recency"] != "allp") {
             $days = 0;
             if ($instance["filter_recency"] == "tday") {
@@ -107,7 +109,7 @@ class gdswPopularPosts extends gdsw_Widget {
             "DISTINCT ".join(", ", $select),
             join(" ", $from),
             join(" AND ", $where),
-            "p.ID",
+            "v.post_id",
             $order,
             $instance["count"]
         );

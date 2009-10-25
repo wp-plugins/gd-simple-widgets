@@ -480,7 +480,7 @@ if (!class_exists("gdSortObjectsArray")) {
                 } else return 0;
             }
 
-            if (strtolower($this->order) == "asc")
+            if (strtolower($order) == "asc")
                 return ($one->$column < $two->$column) ? -1 : 1;
             else
                 return ($one->$column < $two->$column) ? 1 : -1;

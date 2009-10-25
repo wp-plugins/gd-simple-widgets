@@ -4,7 +4,7 @@
 Plugin Name: GD Simple Widgets
 Plugin URI: http://www.dev4press.com/plugin/gd-simple-widgets/
 Description: Collection of powerful, easy to use widgets that expand default widgets. Plugin also adds few more must-have widgets for posts, authors and comments.
-Version: 1.5.4
+Version: 1.5.5
 Author: Milan Petrovic
 Author URI: http://www.dev4press.com/
 
@@ -53,6 +53,12 @@ if (!class_exists('GDSimpleWidgets')) {
         var $admin_plugin;
         var $admin_page;
         var $related_post_id;
+        var $cache_active = false;
+        var $cached = array(
+            "posts" => array(),
+            "authors" => array(),
+            "comments" => array()
+        );
 
         var $o;
         var $l;
@@ -90,6 +96,8 @@ if (!class_exists('GDSimpleWidgets')) {
 
                 update_option('gd-simple-widgets', $this->o);
             }
+
+            $this->cache_active = $this->o["cache_data"] == 1;
         }
 
         function plugin_path_url() {
@@ -185,6 +193,7 @@ if (!class_exists('GDSimpleWidgets')) {
         function settings_operations() {
             if (isset($_POST['widgets_saving'])) {
                 $this->save_setting_checkbox("load_default_css");
+                $this->save_setting_checkbox("cache_data");
                 $this->save_setting_checkbox("debug_into_file");
                 $this->save_setting_checkbox("widgets_recent_comments");
                 $this->save_setting_checkbox("widgets_related_posts");

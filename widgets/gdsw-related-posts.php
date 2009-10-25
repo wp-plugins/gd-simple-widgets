@@ -2,6 +2,7 @@
 
 class gdswRelatedPosts extends gdsw_Widget {
     var $folder_name = "gdsw-related-posts";
+    var $cache = array("posts");
     var $defaults = array(
         "title" => "Related Posts",
         "count" => 10,

@@ -93,6 +93,11 @@
                     <td class="t options"><input<?php if ($options["load_default_css"] == 1) echo " checked"; ?> type="checkbox" name="load_default_css" /></td>
                 </tr>
                 <tr>
+                    <td class="first b"><?php _e("Cache data to minimize number of database queries", "gd-simple-widgets"); ?></td>
+                    <td class="t"></td>
+                    <td class="t options"><input<?php if ($options["cache_data"] == 1) echo " checked"; ?> type="checkbox" name="cache_data" /></td>
+                </tr>
+                <tr>
                     <td class="first b"><?php _e("Write debug info into file", "gd-simple-widgets"); ?></td>
                     <td class="t"></td>
                     <td class="t options"><input<?php if ($options["debug_into_file"] == 1) echo " checked"; ?> type="checkbox" name="debug_into_file" /></td>

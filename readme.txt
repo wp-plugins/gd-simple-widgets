@@ -1,7 +1,7 @@
 === GD Simple Widgets ===
 Contributors: gdragon
 Donate link: http://www.dev4press.com/donate/
-Version: 1.5.4
+Version: 1.5.5
 Tags: gdragon, ad, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter, excerpt, scheduled, related, future
 Requires at least: 2.8
 Tested up to: 2.9-rare
@@ -11,6 +11,8 @@ Collection of powerful, easy to use widgets that expand default widgets. Plugin 
 
 == Description ==
 This plugin contains powerful widgets with simple options to set. Some of them are based on standard WordPress widgets but with extended options and rendering. You can also disable default WordPress widgets if you choose to use Simple Widgets versions.
+
+Supported languages: english, serbian, spanish, danish, chinese, korean, polish
 
 [List Of Widgets](http://info.dev4press.com/gd-simple-widgets/features.html) |
 [Change Log](http://info.dev4press.com/gd-simple-widgets/changelog.html) |
@@ -41,6 +43,11 @@ This plugin contains powerful widgets with simple options to set. Some of them a
 4. Popular Posts widget
 
 == Changelog ==
+= 1.5.5 =
+* Pre-caching of data to minimize the number of queries
+* Added chinese translation
+* Added korean translation
+
 = 1.5.4 =
 * Updated basic widget class and forms loading
 * Fixed missing or invalid CSS classes
@@ -71,10 +78,3 @@ This plugin contains powerful widgets with simple options to set. Some of them a
 * Info file with functions reference
 * Polish translation
 * Several changes and fixes
-
-= 1.3.3 =
-* Fixed unwanted echoing of data
-
-= 1.3.2 =
-* Fixes to popular posts widgets
-* Some small changes

@@ -2,6 +2,7 @@
 
 class gdsw_Widget extends WP_Widget {
     var $folder_name = "";
+    var $cache = array();
     var $defaults = array();
 
     function gdsw_Widget() { }
@@ -43,8 +44,83 @@ class gdsw_Widget extends WP_Widget {
         include(GDSIMPLEWIDGETS_PATH.'widgets/'.$this->folder_name.'/display.php');
     }
 
+    function cache_authors($authors) {
+        global $wpdb;
+        $_authors = $wpdb->get_results(sprintf("SELECT * FROM $wpdb->users WHERE ID in (%s)", join(", ", $authors)));
+        foreach ($_authors as $_auth) {
+            wp_cache_add($_auth->ID, $_auth, "users");
+        }
+    }
+
+    function cache_comments($comments) {
+        global $wpdb;
+        $_comments = $wpdb->get_results(sprintf("SELECT * FROM $wpdb->comments WHERE comment_ID in (%s)", join(", ", $comments)));
+        foreach ($_comments as $_cmm) {
+            wp_cache_add($_cmm->comment_ID, $_cmm, "comment");
+        }
+    }
+
+    function cache_posts($posts) {
+        global $wpdb;
+
+        $permalink = get_option('permalink_structure');
+        $authors = $categories = array();
+        $_posts = $wpdb->get_results(sprintf("SELECT * FROM $wpdb->posts WHERE ID in (%s)", join(", ", $posts)));
+        foreach ($_posts as $_post) {
+            wp_cache_add($_post->ID, $_post, "posts");
+            if (!in_array($post->post_author, $authors)) $authors[] = $post->post_author;
+        }
+
+        if ($permalink != '' && strpos($permalink, '%author%') !== false) {
+            $this->cache_authors($authors);
+        } if ($permalink != '' && strpos($permalink, '%category%') !== false) {
+            $_cats = $wpdb->get_results(sprintf("SELECT t.*, tt.*, tr.object_id FROM $wpdb->terms AS t INNER JOIN $wpdb->term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN $wpdb->term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('category') AND tr.object_id IN (%s) ORDER BY t.name ASC", join(", ", $posts)));
+            foreach ($_cats as $c) $categories[$c->object_id][] = $c;
+            foreach ($categories as $post_id => $cats) wp_cache_add($post_id, $cats, "category_relationships");
+        }
+    }
+
+    function cache_objects($results) {
+        global $gdsw;
+
+        if ($gdsw->cache_active) {
+            if (in_array("posts", $this->cache)) {
+                $posts = array();
+                foreach ($results as $p) {
+                    if (!in_array($p->ID, $gdsw->cached["posts"])) {
+                        $posts[] = $p->ID;
+                        $gdsw->cached["posts"][] = $p->ID;
+                    }
+                }
+                $this->cache_posts($posts);
+            }
+            if (in_array("comments", $this->cache)) {
+                $comments = array();
+                foreach ($results as $p) {
+                    if (!in_array($p->ID, $gdsw->cached["comments"])) {
+                        $comments[] = $p->comment_ID;
+                        $gdsw->cached["comments"][] = $p->comment_ID;
+                    }
+                }
+                $this->cache_comments($comments);
+            }
+            if (in_array("authors", $this->cache)) {
+                $authors = array();
+                foreach ($results as $p) {
+                    if (!in_array($p->ID, $gdsw->cached["authors"])) {
+                        $authors[] = $p->ID;
+                        $gdsw->cached["authors"][] = $p->ID;
+                    }
+                }
+                $this->cache_authors($authors);
+            }
+        }
+    }
+
     function prepare($instance, $results) {
         if (count($results) == 0) return array();
+        if (count($this->cache) > 0) $this->cache_objects($results);
+
         foreach ($results as $r) {
             if (isset($instance["display_post_date"]) && $instance["display_post_date"] == 1) $r->post_date = mysql2date($instance["display_post_date_format"], $r->post_date);
             if (isset($instance["display_excerpt"]) && $instance["display_excerpt"] == 1) $r->excerpt = $this->get_excerpt($instance, $r);

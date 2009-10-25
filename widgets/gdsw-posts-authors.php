@@ -2,6 +2,7 @@
 
 class gdswPostsAuthors extends gdsw_Widget {
     var $folder_name = "gdsw-posts-authors";
+    var $cache = array("authors");
     var $defaults = array(
         "title" => "Posts Authors",
         "count" => 10,

@@ -104,64 +104,53 @@ msgid "Available Widgets"
 msgstr ""
 
 #: admin/settings.php:4
-#: admin/settings.php:59
+#: admin/settings.php:64
 msgid "Unchecked widgets will not be available on the Widgets panel."
 msgstr ""
 
-#: admin/settings.php:46
+#: admin/settings.php:51
 msgid "is required."
 msgstr ""
 
-#: admin/settings.php:52
-#: admin/settings.php:75
-#: admin/settings.php:97
+#: admin/settings.php:57
+#: admin/settings.php:80
+#: admin/settings.php:102
 msgid "Save"
 msgstr ""
 
-#: admin/settings.php:57
+#: admin/settings.php:62
 msgid "Default WordPress Widgets"
 msgstr ""
 
-#: admin/settings.php:80
+#: admin/settings.php:85
 msgid "Other Settings"
 msgstr ""
 
-#: admin/settings.php:85
+#: admin/settings.php:90
 msgid "Load default CSS file"
 msgstr ""
 
-#: admin/settings.php:90
+#: admin/settings.php:95
 msgid "Write debug info into file"
 msgstr ""
 
 #: widgets/gdsw-future-posts/basic.php:2
 #: widgets/gdsw-most-commented/basic.php:2
 #: widgets/gdsw-popular-posts/basic.php:2
-#: widgets/gdsw-posts-authors/basic.php:2
 #: widgets/gdsw-random-posts/basic.php:2
-#: widgets/gdsw-recent-comments/basic.php:2
 #: widgets/gdsw-recent-posts/basic.php:2
 #: widgets/gdsw-related-posts/basic.php:2
-msgid "Title"
-msgstr ""
-
-#: widgets/gdsw-future-posts/basic.php:6
-#: widgets/gdsw-most-commented/basic.php:6
-#: widgets/gdsw-popular-posts/basic.php:6
-#: widgets/gdsw-random-posts/basic.php:6
-#: widgets/gdsw-recent-posts/basic.php:6
-#: widgets/gdsw-related-posts/basic.php:6
 msgid "Posts to show"
 msgstr ""
 
-#: widgets/gdsw-future-posts/basic.php:12
-#: widgets/gdsw-most-commented/basic.php:12
-#: widgets/gdsw-popular-posts/basic.php:12
-#: widgets/gdsw-posts-authors/basic.php:12
-#: widgets/gdsw-random-posts/basic.php:12
-#: widgets/gdsw-recent-comments/basic.php:12
-#: widgets/gdsw-recent-posts/basic.php:12
-#: widgets/gdsw-related-posts/basic.php:12
+#: widgets/gdsw-future-posts/basic.php:8
+#: widgets/gdsw-most-commented/basic.php:8
+#: widgets/gdsw-popular-posts/basic.php:8
+#: widgets/gdsw-posts-authors/basic.php:8
+#: widgets/gdsw-random-posts/basic.php:8
+#: widgets/gdsw-recent-comments/basic.php:8
+#: widgets/gdsw-recent-posts/basic.php:8
+#: widgets/gdsw-related-posts/basic.php:8
 msgid "Hide widget if no results found"
 msgstr ""
 
@@ -173,6 +162,7 @@ msgstr ""
 #: widgets/gdsw-recent-comments/display.php:2
 #: widgets/gdsw-recent-posts/display.php:2
 #: widgets/gdsw-related-posts/display.php:2
+#: widgets/gdsw-simple-125-ads/display.php:2
 msgid "Additional CSS class"
 msgstr ""
 
@@ -218,7 +208,7 @@ msgstr ""
 msgid "Filter by category"
 msgstr ""
 
-#: widgets/gdsw-future-posts/filter.php:6
+#: widgets/gdsw-future-posts/filter.php:7
 #: widgets/gdsw-most-commented/filter.php:17
 #: widgets/gdsw-popular-posts/filter.php:29
 #: widgets/gdsw-posts-authors/filter.php:6
@@ -228,7 +218,7 @@ msgstr ""
 msgid "comma separated list of category ids"
 msgstr ""
 
-#: widgets/gdsw-future-posts/filter.php:7
+#: widgets/gdsw-future-posts/filter.php:8
 #: widgets/gdsw-most-commented/filter.php:18
 #: widgets/gdsw-popular-posts/filter.php:30
 #: widgets/gdsw-posts-authors/filter.php:7
@@ -332,7 +322,7 @@ msgstr ""
 msgid "Only visitors"
 msgstr ""
 
-#: widgets/gdsw-posts-authors/basic.php:6
+#: widgets/gdsw-posts-authors/basic.php:2
 msgid "Authors to show"
 msgstr ""
 
@@ -358,7 +348,7 @@ msgstr ""
 msgid "Minimum published posts"
 msgstr ""
 
-#: widgets/gdsw-recent-comments/basic.php:6
+#: widgets/gdsw-recent-comments/basic.php:2
 msgid "Comments to show"
 msgstr ""
 
@@ -374,7 +364,7 @@ msgstr ""
 msgid "Comments and pings"
 msgstr ""
 
-#: widgets/gdsw-related-posts/basic.php:18
+#: widgets/gdsw-related-posts/basic.php:14
 msgid "Show only on single post page"
 msgstr ""
 
@@ -394,6 +384,22 @@ msgstr ""
 msgid "Tags only"
 msgstr ""
 
+#: widgets/gdsw-simple-125-ads/filter.php:2
+msgid "Ad left"
+msgstr ""
+
+#: widgets/gdsw-simple-125-ads/filter.php:6
+msgid "Ad right"
+msgstr ""
+
+#: widgets/shared/shared.php:2
+msgid "Title"
+msgstr ""
+
+#: widgets/shared/shared.php:7
+msgid "leave empty to skip rendering title"
+msgstr ""
+
 #: widgets/gdsw-future-posts.php:18
 msgid "Display scheduled posts."
 msgstr ""
@@ -406,11 +412,11 @@ msgstr ""
 msgid "Display popular posts."
 msgstr ""
 
-#: widgets/gdsw-popular-posts.php:116
+#: widgets/gdsw-popular-posts.php:123
 msgid "view"
 msgstr ""
 
-#: widgets/gdsw-popular-posts.php:116
+#: widgets/gdsw-popular-posts.php:123
 msgid "views"
 msgstr ""
 
@@ -434,7 +440,11 @@ msgstr ""
 msgid "Display related posts."
 msgstr ""
 
-#: gd-simple-widgets.php:152
+#: widgets/gdsw-simple-125-ads.php:14
+msgid "Display two 125x125 ads."
+msgstr ""
+
+#: gd-simple-widgets.php:157
 msgid "Settings"
 msgstr ""
 
