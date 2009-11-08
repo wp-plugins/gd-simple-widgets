@@ -68,7 +68,7 @@ class gdsw_Widget extends WP_Widget {
         $_posts = $wpdb->get_results(sprintf("SELECT * FROM $wpdb->posts WHERE ID in (%s)", join(", ", $posts)));
         foreach ($_posts as $_post) {
             wp_cache_add($_post->ID, $_post, "posts");
-            if (!in_array($post->post_author, $authors)) $authors[] = $post->post_author;
+            if (!in_array($_post->post_author, $authors)) $authors[] = $_post->post_author;
         }
 
         if ($permalink != '' && strpos($permalink, '%author%') !== false) {
@@ -92,7 +92,7 @@ class gdsw_Widget extends WP_Widget {
                         $gdsw->cached["posts"][] = $p->ID;
                     }
                 }
-                $this->cache_posts($posts);
+                if (count($posts) > 0) $this->cache_posts($posts);
             }
             if (in_array("comments", $this->cache)) {
                 $comments = array();
@@ -102,7 +102,7 @@ class gdsw_Widget extends WP_Widget {
                         $gdsw->cached["comments"][] = $p->comment_ID;
                     }
                 }
-                $this->cache_comments($comments);
+                if (count($comments) > 0) $this->cache_comments($comments);
             }
             if (in_array("authors", $this->cache)) {
                 $authors = array();
@@ -112,7 +112,7 @@ class gdsw_Widget extends WP_Widget {
                         $gdsw->cached["authors"][] = $p->ID;
                     }
                 }
-                $this->cache_authors($authors);
+                if (count($authors) > 0) $this->cache_authors($authors);
             }
         }
     }
