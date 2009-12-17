@@ -78,7 +78,7 @@ class gdswFuturePosts extends gdsw_Widget {
         foreach ($results as $r) {
             $render.= '<li>';
             $render.= $r->post_title;
-            if ($instance["display_post_date"] == 1) $render.= sprintf(' <span class="gdws-date">[%s]</span>', $r->post_date);
+            if ($instance["display_post_date"] == 1) $render.= sprintf(' <span class="gdws-date">%s</span>', $r->post_date);
             if ($instance["display_excerpt"] == 1) $render.= sprintf('<p class="gdws-excerpt">%s</p>', $r->excerpt);
             $render.= '</li>';
         }

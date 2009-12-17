@@ -124,7 +124,7 @@ class gdswPopularPosts extends gdsw_Widget {
             $render.= '<li>';
             $render.= sprintf('<a href="%s" class="gdsw-url">%s</a>', get_permalink($r->ID), $r->post_title);
             if ($instance["display_views"] == 1) $render.= sprintf(" (%s %s)", $r->views, $r->views == 1 ? __("view", "gd-simple-widgets") : __("views", "gd-simple-widgets"));
-            if ($instance["display_post_date"] == 1) $render.= sprintf(' <span class="gdws-date">[%s]</span>', $r->post_date);
+            if ($instance["display_post_date"] == 1) $render.= sprintf(' <span class="gdws-date">%s</span>', $r->post_date);
             if ($instance["display_excerpt"] == 1) $render.= sprintf('<p class="gdws-excerpt">%s</p>', $r->excerpt);
             $render.= '</li>';
         }

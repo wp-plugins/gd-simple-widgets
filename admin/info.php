@@ -34,21 +34,6 @@
                     <td class="t"><?php _e("wordpress plugin page", "gd-simple-widgets"); ?></td>
                     <td class="t options"><a href="http://wordpress.org/extend/plugins/gd-simple-widgets" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
                 </tr>
-                <tr>
-                    <td class="first b"><span style="color: red"><?php _e("Donate", "gd-simple-widgets"); ?></span></td>
-                    <td class="t"><?php _e("help further development", "gd-simple-widgets"); ?></td>
-                    <td class="t options"><a href="http://www.dev4press.com/donate/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
-                </tr>
-            </tbody></table>
-        </div>
-        <p class="sub"><?php _e("Pro Edition", "gd-simple-widgets"); ?></p>
-        <div class="table">
-            <table><tbody>
-                <tr class="first">
-                    <td class="first b"><?php _e("Official Website", "gd-simple-widgets"); ?></td>
-                    <td class="t"><?php _e("extended premium version", "gd-simple-widgets"); ?></td>
-                    <td class="b options" style="color: red; font-weight: bold;">soon</td>
-                </tr>
             </tbody></table>
         </div>
     </div>
@@ -72,6 +57,11 @@
                     <td class="first b">Dev4Press</td>
                     <td class="t"><?php _e("wordpress development", "gd-simple-widgets"); ?></td>
                     <td class="t options"><a href="http://www.dev4press.com/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
+                </tr>
+                <tr>
+                    <td class="first b" style="color: navy;">TVScape</td>
+                    <td class="t"><?php _e("tv shows reviews and news", "gd-taxonomies-tools"); ?></td>
+                    <td class="t options"><a href="http://www.tvscape.net/" target="_blank"><?php _e("visit", "gd-taxonomies-tools"); ?></a></td>
                 </tr>
                 <tr>
                     <td class="first b"><?php _e("Support Forum", "gd-simple-widgets"); ?></td>

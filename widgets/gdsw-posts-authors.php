@@ -87,7 +87,7 @@ class gdswPostsAuthors extends gdsw_Widget {
             if ($instance["display_full_name"] == 1) $name = trim($r->first_name." ".$r->last_name);
             if ($name == "") $name = $r->display_name;
             $render.= sprintf('<a href="%s" class="gdsw-url">%s</a>', $r->author_permalink, $name);
-            if ($instance["display_posts_count"] == 1) $render.= sprintf(" [%s]", $r->posts);
+            if ($instance["display_posts_count"] == 1) $render.= sprintf(" %s", $r->posts);
             if ($instance["display_gravatar"] == 1) $render.= '</td></tr></table>';
             $render.= '</li>';
         }

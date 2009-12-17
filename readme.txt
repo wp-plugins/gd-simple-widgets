@@ -1,10 +1,9 @@
 === GD Simple Widgets ===
 Contributors: gdragon
-Donate link: http://www.dev4press.com/donate/
-Version: 1.5.6
+Version: 1.5.7
 Tags: gdragon, ad, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter, excerpt, scheduled, related, future
 Requires at least: 2.8
-Tested up to: 2.9-rare
+Tested up to: 2.9
 Stable tag: trunk
 
 Collection of powerful, easy to use widgets that expand default widgets. Plugin also adds few more must-have widgets for posts, authors and comments.
@@ -43,6 +42,10 @@ Supported languages: english, serbian, spanish, danish, chinese, korean, polish
 4. Popular Posts widget
 
 == Changelog ==
+= 1.5.7 =
+* Changed default post widget rendering
+* Small changes for WP 2.9
+
 = 1.5.6 =
 * Several bugs fixed
 

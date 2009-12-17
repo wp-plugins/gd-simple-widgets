@@ -80,7 +80,7 @@ class gdswMostCommented extends gdsw_Widget {
         foreach ($results as $r) {
             $render.= '<li>';
             $render.= sprintf('<a href="%s#comments" class="gdsw-url">%s</a>', $r->post_permalink, $r->post_title);
-            if ($instance["display_comments_count"] == 1) $render.= sprintf(" [%s]", $r->comment_count);
+            if ($instance["display_comments_count"] == 1) $render.= sprintf(" %s", $r->comment_count);
             $render.= '</li>';
         }
         $render.= '</ul></div>';
