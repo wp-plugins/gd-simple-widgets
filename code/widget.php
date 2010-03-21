@@ -132,7 +132,7 @@ class gdsw_Widget extends WP_Widget {
     function prepare_urls($instance, $results) {
         foreach ($results as $r) {
             if (property_exists($r, "post_permalink") && $r->post_permalink == "") $r->post_permalink = get_permalink($r->ID);
-            if (property_exists($r, "author_permalink") && $r->author_permalink == "") $r->author_permalink = get_author_posts_url($r->ID);
+            if (property_exists($r, "author_permalink") && $r->author_permalink == "") $r->author_permalink = get_author_posts_url($r->post_author);
             if (property_exists($r, "comment_permalink") && $r->comment_permalink == "") $r->comment_permalink = get_comment_link($r->comment_ID);
         }
         return $results;
@@ -159,16 +159,16 @@ class gdsw_Widget extends WP_Widget {
 
     function render($results, $instance) { }
 
-    function results($instance) {
-        return '';
-    }
+    function results($instance) { return ''; }
 
     function get_excerpt($instance, $r) {
         $text = trim($r->post_excerpt);
 
         if ($text == "") {
-            $text = str_replace(']]>', ']]&gt;', $r->post_content);
+            $text = strip_shortcodes($r->post_content);
+            $text = str_replace(']]>', ']]&gt;', $text);
             $text = strip_tags($text);
+            $text = str_replace('"', '\'', $text);
         }
 
         $text = gdFunctionsGDSW::trim_to_words($text, $instance["display_excerpt_length"]);

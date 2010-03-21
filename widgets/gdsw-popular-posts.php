@@ -46,12 +46,13 @@ class gdswPopularPosts extends gdsw_Widget {
         return $instance;
     }
 
-    function results($instance) {
+    function inner_select($instance) {
         global $wpdb, $table_prefix;
 
-        $order = "";
-        $select = array("v.post_id as ID", "p.post_title", "p.post_name", "p.post_type", "'' as post_permalink");
-        $from = array(sprintf("%sposts p inner join %sgdpt_posts_views v on p.ID = v.post_id", $table_prefix, $table_prefix));
+        $select = array("p.ID", "p.post_title", "p.post_name", "p.post_type", "'' as post_permalink");
+        $from = array(
+            sprintf("%s p", $wpdb->posts),
+            sprintf("INNER JOIN %s u ON u.ID = p.post_author", $wpdb->users));
         $where = array("p.post_status = 'publish'");
         if ($instance["display_post_date"] == 1) $select[] = "p.post_date";
         if ($instance["display_excerpt"] == 1) {
@@ -60,6 +61,31 @@ class gdswPopularPosts extends gdsw_Widget {
             $select[] = "'' as excerpt";
         }
         if ($instance["filter_type"] != "postpage") $where[] = sprintf("p.post_type = '%s'", $instance["filter_type"]);
+
+        if ($instance["filter_category"] != "") {
+            $from[] = sprintf("INNER JOIN %sterm_relationships tr ON tr.object_id = p.ID", $table_prefix);
+            $from[] = sprintf("INNER JOIN %sterm_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id", $table_prefix);
+            $where[] = sprintf("tt.term_id in (%s)", $instance["filter_category"]);
+        }
+
+        $sql = $this->prepare_sql($instance,
+            "DISTINCT ".join(", ", $select),
+            join(" ", $from),
+            join(" AND ", $where),
+            "", "", ""
+        );
+
+        return $sql;
+    }
+
+    function results($instance) {
+        global $wpdb, $table_prefix;
+        $inner_sql = $this->inner_select($instance);
+
+        $order = "";
+        $select = array("x.*");
+        $from = array(sprintf("%sgdpt_posts_views v",  $wpdb->prefix), sprintf("INNER JOIN (%s) x ON x.ID = v.post_id", $inner_sql));
+        $where = array();
 
         switch ($instance["filter_views"]) {
             case "all":
@@ -74,12 +100,6 @@ class gdswPopularPosts extends gdsw_Widget {
                 $select[] = "sum(v.vst_views) AS views";
                 $order = "sum(v.vst_views) DESC";
                 break;
-        }
-
-        if ($instance["filter_category"] != "") {
-            $from[] = sprintf("INNER JOIN %sterm_relationships tr ON tr.object_id = v.post_id", $table_prefix);
-            $from[] = sprintf("INNER JOIN %sterm_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id", $table_prefix);
-            $where[] = sprintf("tt.term_id in (%s)", $instance["filter_category"]);
         }
 
         if ($instance["filter_recency"] != "allp") {
@@ -109,7 +129,7 @@ class gdswPopularPosts extends gdsw_Widget {
             "DISTINCT ".join(", ", $select),
             join(" ", $from),
             join(" AND ", $where),
-            "v.post_id",
+            "x.ID",
             $order,
             $instance["count"]
         );
