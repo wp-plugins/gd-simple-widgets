@@ -20,11 +20,6 @@
         <div class="table">
             <table><tbody>
                 <tr class="first">
-                    <td class="first b">GD Simple Widgets</td>
-                    <td class="t"><?php _e("official plugin page", "gd-simple-widgets"); ?></td>
-                    <td class="t options"><a href="http://www.dev4press.com/plugin/gd-simple-widgets/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
-                </tr>
-                <tr>
                     <td class="first b">Google Groups</td>
                     <td class="t"><?php _e("discussions group", "gd-simple-widgets"); ?></td>
                     <td class="t options"><a href="http://groups.google.com/group/dev4press" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
@@ -36,11 +31,31 @@
                 </tr>
             </tbody></table>
         </div>
+        <p class="sub"><?php _e("Pro Edition", "gd-simple-widgets"); ?></p>
+        <div class="table">
+            <table><tbody>
+                <tr class="first">
+                    <td class="first b">GD Simple Widgets</td>
+                    <td class="t"><?php _e("official plugin page", "gd-simple-widgets"); ?></td>
+                    <td class="t options"><a href="http://www.dev4press.com/plugins/gd-simple-widgets/features/" target="_blank"><?php _e("compare", "gd-simple-widgets"); ?></a></td>
+                </tr>
+            </tbody></table>
+        </div>
     </div>
 </div>
 <div id="gdpt_server" class="postbox gdrgrid frontright">
     <h3 class="hndle"><span>Dev4Press</span></h3>
     <div class="inside">
+        <p class="sub"><?php _e("Themes", "gd-simple-widgets"); ?></p>
+        <div class="table">
+            <table><tbody>
+                <tr class="first">
+                    <td class="first b">xScape Themes</td>
+                    <td class="t"><?php _e("advanced theme framework", "gd-simple-widgets"); ?></td>
+                    <td class="t options"><a href="http://www.dev4press.com/themes/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
+                </tr>
+            </tbody></table>
+        </div>
         <p class="sub"><?php _e("Plugins", "gd-simple-widgets"); ?></p>
         <div class="table">
             <table><tbody>
@@ -55,14 +70,14 @@
                     <td class="t options"><a href="http://www.dev4press.com/plugins/gd-press-tools/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
                 </tr>
                 <tr>
-                    <td class="first b">GD Affiliate Center</td>
-                    <td class="t"><?php _e("ad management control", "gd-simple-widgets"); ?></td>
-                    <td class="t options"><a href="http://www.gdaffiliatecenter.com/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
-                </tr>
-                <tr>
                     <td class="first b">GD Taxonomies Tools</td>
                     <td class="t"><?php _e("custom taxonomies managment", "gd-simple-widgets"); ?></td>
                     <td class="t options"><a href="http://www.dev4press.com/plugins/gd-taxonomies-tools/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
+                </tr>
+                <tr>
+                    <td class="first b">GD Affiliate Center</td>
+                    <td class="t"><?php _e("ad management control", "gd-simple-widgets"); ?></td>
+                    <td class="t options"><a href="http://www.gdaffiliatecenter.com/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
                 </tr>
             </tbody></table>
         </div>
@@ -78,16 +93,6 @@
                     <td class="first b">GD LinkedIn Badge</td>
                     <td class="t"><?php _e("widget to add linkedin badge", "gd-simple-widgets"); ?></td>
                     <td class="t options"><a href="http://wordpress.org/extend/plugins/gd-linkedin-badge/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
-                </tr>
-            </tbody></table>
-        </div>
-        <p class="sub"><?php _e("Themes", "gd-simple-widgets"); ?></p>
-        <div class="table">
-            <table><tbody>
-                <tr class="first">
-                    <td class="first b">xScape Themes</td>
-                    <td class="t"><?php _e("advanced theme framework", "gd-simple-widgets"); ?></td>
-                    <td class="t options"><a href="http://www.dev4press.com/themes/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
                 </tr>
             </tbody></table>
         </div>

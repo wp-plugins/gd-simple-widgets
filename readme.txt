@@ -1,6 +1,6 @@
 === GD Simple Widgets ===
 Contributors: gdragon
-Version: 1.5.8
+Version: 1.5.9
 Tags: gdragon, ad, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter, excerpt, scheduled, related, future
 Requires at least: 2.8
 Tested up to: 3.0
@@ -17,7 +17,7 @@ Supported languages: english, serbian, spanish, danish, chinese, korean, polish
 [Change Log](http://info.dev4press.com/gd-simple-widgets/changelog.html) |
 [Translations](http://info.dev4press.com/simple-widgets/languages.html)
 
-[Support Forum](http://forum.gdragon.info/viewforum.php?f=26) |
+[Free Support Forum](http://forum.gdragon.info/viewforum.php?f=26) |
 [Google Groups](http://groups.google.com/group/dev4press) |
 [Main Plugin Page](http://www.dev4press.com/plugins/gd-simple-widgets/)
 
@@ -42,6 +42,9 @@ Supported languages: english, serbian, spanish, danish, chinese, korean, polish
 4. Popular Posts widget
 
 == Changelog ==
+= 1.5.9 =
+* Fixed invalid author link for the authors widget
+
 = 1.5.8 =
 * Small updates
 * Number of bugs fixed

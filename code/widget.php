@@ -132,8 +132,13 @@ class gdsw_Widget extends WP_Widget {
     function prepare_urls($instance, $results) {
         foreach ($results as $r) {
             if (property_exists($r, "post_permalink") && $r->post_permalink == "") $r->post_permalink = get_permalink($r->ID);
-            if (property_exists($r, "author_permalink") && $r->author_permalink == "") $r->author_permalink = get_author_posts_url($r->post_author);
             if (property_exists($r, "comment_permalink") && $r->comment_permalink == "") $r->comment_permalink = get_comment_link($r->comment_ID);
+            if (property_exists($r, "author_permalink") && $r->author_permalink == "") {
+                if ($this->folder_name == "gdsw-posts-authors")
+                    $r->author_permalink = get_author_posts_url($r->ID);
+                else
+                    $r->author_permalink = get_author_posts_url($r->post_author);
+            }
         }
         return $results;
     }
