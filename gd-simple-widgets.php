@@ -4,13 +4,13 @@
 Plugin Name: GD Simple Widgets
 Plugin URI: http://www.dev4press.com/plugin/gd-simple-widgets/
 Description: Collection of powerful, easy to use widgets that expand default widgets. Plugin also adds few more must-have widgets for posts, authors and comments.
-Version: 1.5.9
+Version: 1.6.0
 Author: Milan Petrovic
 Author URI: http://www.dev4press.com/
 
 == Copyright ==
 
-Copyright 2009 Milan Petrovic (email: milan@gdragon.info)
+Copyright 2008-2010 Milan Petrovic (email: milan@gdragon.info)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

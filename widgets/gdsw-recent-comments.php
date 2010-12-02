@@ -52,6 +52,7 @@ class gdswRecentComments extends gdsw_Widget {
             $from[] = sprintf("INNER JOIN %sterm_relationships tr ON tr.object_id = p.ID", $table_prefix);
             $from[] = sprintf("INNER JOIN %sterm_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id", $table_prefix);
             $where[] = sprintf("tt.term_id in (%s)", $instance["filter_category"]);
+            $where[] = sprintf("tt.taxonomy = 'category'", $instance["filter_category"]);
         }
 
         $sql = $this->prepare_sql($instance,

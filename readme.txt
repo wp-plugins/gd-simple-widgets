@@ -1,9 +1,9 @@
 === GD Simple Widgets ===
 Contributors: gdragon
-Version: 1.5.9
+Version: 1.6.0
 Tags: gdragon, ad, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter, excerpt, scheduled, related, future
 Requires at least: 2.8
-Tested up to: 3.0
+Tested up to: 3.1
 Stable tag: trunk
 
 Collection of powerful, easy to use widgets that expand default widgets. Plugin also adds few more must-have widgets for posts, authors and comments.
@@ -35,13 +35,32 @@ Supported languages: english, serbian, spanish, danish, chinese, korean, polish
 = Widgets =
 * gdWS Popular Posts widget requires GD Press Tools 2.0.0 or later.
 
+== Frequently Asked Questions ==
+
+= Does plugin works with WPMU and WordPress MultiSite installations? =
+Yes.
+
+= I need support for using this plugin and some of it's features? =
+Lite version is regularly maintained, but it doesn't include any kind of support beyond bug fixing. If you need support, upgrade plugin to PRO edition and get much more additional features.
+
+= I want to translate the plugin to my language, or to improve existing translations? =
+You only need POEdit program that works on Windows, Linux and MacOS. Instructions on how to make or update translations are here: http://dv4p.com/wa.
+
 == Screenshots ==
 1. Main settings panel
 2. Recent Comments widget
 3. Posts Authors widget
 4. Popular Posts widget
 
+== Upgrade Notice ==
+= 1.6.0 =
+Some minor code cleanup and updates. Fixed problem with category filters for some widgets.
+
 == Changelog ==
+= 1.6.0 =
+* Some minor code cleanup and updates
+* Fixed problem with category filters for some widgets
+
 = 1.5.9 =
 * Fixed invalid author link for the authors widget
 

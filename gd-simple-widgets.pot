@@ -27,71 +27,107 @@ msgid "Links"
 msgstr ""
 
 #: admin/info.php:23
-msgid "official plugin page"
+msgid "discussions group"
 msgstr ""
 
 #: admin/info.php:24
 #: admin/info.php:29
-#: admin/info.php:34
-#: admin/info.php:39
-#: admin/info.php:63
-#: admin/info.php:68
-#: admin/info.php:73
-#: admin/info.php:78
-#: admin/info.php:83
+#: admin/info.php:54
+#: admin/info.php:64
+#: admin/info.php:69
+#: admin/info.php:74
+#: admin/info.php:79
+#: admin/info.php:89
+#: admin/info.php:94
+#: admin/info.php:108
+#: admin/info.php:113
+#: admin/info.php:118
+#: admin/info.php:123
+#: admin/info.php:128
 msgid "visit"
 msgstr ""
 
 #: admin/info.php:28
-msgid "discussions group"
-msgstr ""
-
-#: admin/info.php:33
 msgid "wordpress plugin page"
 msgstr ""
 
-#: admin/info.php:37
-msgid "Donate"
-msgstr ""
-
-#: admin/info.php:38
-msgid "help further development"
-msgstr ""
-
-#: admin/info.php:43
+#: admin/info.php:33
 msgid "Pro Edition"
 msgstr ""
 
-#: admin/info.php:47
-#: admin/info.php:61
-msgid "Official Website"
+#: admin/info.php:38
+msgid "official plugin page"
+msgstr ""
+
+#: admin/info.php:39
+msgid "compare"
 msgstr ""
 
 #: admin/info.php:48
-msgid "extended premium version"
+msgid "Themes"
 msgstr ""
 
-#: admin/info.php:62
+#: admin/info.php:53
+msgid "advanced theme framework"
+msgstr ""
+
+#: admin/info.php:58
+msgid "Plugins"
+msgstr ""
+
+#: admin/info.php:63
+msgid "wordpress ratings system"
+msgstr ""
+
+#: admin/info.php:68
+msgid "a wordpress administration addon"
+msgstr ""
+
+#: admin/info.php:73
+msgid "custom taxonomies managment"
+msgstr ""
+
+#: admin/info.php:78
+msgid "ad management control"
+msgstr ""
+
+#: admin/info.php:83
+msgid "Old Plugins"
+msgstr ""
+
+#: admin/info.php:88
+msgid "advanced pages widget"
+msgstr ""
+
+#: admin/info.php:93
+msgid "widget to add linkedin badge"
+msgstr ""
+
+#: admin/info.php:106
+msgid "Official Website"
+msgstr ""
+
+#: admin/info.php:107
 msgid "golden dragon official web portal"
 msgstr ""
 
-#: admin/info.php:67
-msgid "a wordpress rating system"
-msgstr ""
-
-#: admin/info.php:72
+#: admin/info.php:112
 msgid "wordpress development"
 msgstr ""
 
-#: admin/info.php:76
+#: admin/info.php:117
+msgid "tv shows reviews and news"
+msgstr ""
+
+#: admin/info.php:121
 msgid "Support Forum"
 msgstr ""
 
-#: admin/info.php:77
+#: admin/info.php:122
 msgid "development discussion forum"
 msgstr ""
 
-#: admin/info.php:82
+#: admin/info.php:127
 msgid "announcements and theme demo"
 msgstr ""
 
@@ -114,7 +150,7 @@ msgstr ""
 
 #: admin/settings.php:57
 #: admin/settings.php:80
-#: admin/settings.php:102
+#: admin/settings.php:107
 msgid "Save"
 msgstr ""
 
@@ -131,6 +167,10 @@ msgid "Load default CSS file"
 msgstr ""
 
 #: admin/settings.php:95
+msgid "Cache data to minimize number of database queries"
+msgstr ""
+
+#: admin/settings.php:100
 msgid "Write debug info into file"
 msgstr ""
 
@@ -404,39 +444,39 @@ msgstr ""
 msgid "Display scheduled posts."
 msgstr ""
 
-#: widgets/gdsw-most-commented.php:15
+#: widgets/gdsw-most-commented.php:16
 msgid "Most commented posts."
 msgstr ""
 
-#: widgets/gdsw-popular-posts.php:21
+#: widgets/gdsw-popular-posts.php:22
 msgid "Display popular posts."
 msgstr ""
 
-#: widgets/gdsw-popular-posts.php:123
+#: widgets/gdsw-popular-posts.php:145
 msgid "view"
 msgstr ""
 
-#: widgets/gdsw-popular-posts.php:123
+#: widgets/gdsw-popular-posts.php:145
 msgid "views"
 msgstr ""
 
-#: widgets/gdsw-posts-authors.php:18
+#: widgets/gdsw-posts-authors.php:19
 msgid "List of posts authors."
 msgstr ""
 
-#: widgets/gdsw-random-posts.php:20
+#: widgets/gdsw-random-posts.php:21
 msgid "Display random posts."
 msgstr ""
 
-#: widgets/gdsw-recent-comments.php:16
+#: widgets/gdsw-recent-comments.php:17
 msgid "Expanded widget with recent comments."
 msgstr ""
 
-#: widgets/gdsw-recent-posts.php:17
+#: widgets/gdsw-recent-posts.php:18
 msgid "Expanded widget with recent posts."
 msgstr ""
 
-#: widgets/gdsw-related-posts.php:19
+#: widgets/gdsw-related-posts.php:20
 msgid "Display related posts."
 msgstr ""
 
@@ -444,7 +484,7 @@ msgstr ""
 msgid "Display two 125x125 ads."
 msgstr ""
 
-#: gd-simple-widgets.php:157
+#: gd-simple-widgets.php:165
 msgid "Settings"
 msgstr ""
 

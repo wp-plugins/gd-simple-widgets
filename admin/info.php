@@ -37,7 +37,7 @@
                 <tr class="first">
                     <td class="first b">GD Simple Widgets</td>
                     <td class="t"><?php _e("official plugin page", "gd-simple-widgets"); ?></td>
-                    <td class="t options"><a href="http://www.dev4press.com/plugins/gd-simple-widgets/features/" target="_blank"><?php _e("compare", "gd-simple-widgets"); ?></a></td>
+                    <td class="t options"><a href="http://www.dev4press.com/plugins/gd-simple-widgets/editions/" target="_blank"><?php _e("compare", "gd-simple-widgets"); ?></a></td>
                 </tr>
             </tbody></table>
         </div>
@@ -70,7 +70,7 @@
                     <td class="t options"><a href="http://www.dev4press.com/plugins/gd-press-tools/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
                 </tr>
                 <tr>
-                    <td class="first b">GD Taxonomies Tools</td>
+                    <td class="first b">GD CPT Tools</td>
                     <td class="t"><?php _e("custom taxonomies managment", "gd-simple-widgets"); ?></td>
                     <td class="t options"><a href="http://www.dev4press.com/plugins/gd-taxonomies-tools/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
                 </tr>

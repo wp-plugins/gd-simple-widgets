@@ -40,71 +40,107 @@ msgid "Links"
 msgstr "Линкови"
 
 #: admin/info.php:23
-msgid "official plugin page"
-msgstr "официјална плагин страна"
+msgid "discussions group"
+msgstr "дискусиона група"
 
 #: admin/info.php:24
 #: admin/info.php:29
-#: admin/info.php:34
-#: admin/info.php:39
-#: admin/info.php:63
-#: admin/info.php:68
-#: admin/info.php:73
-#: admin/info.php:78
-#: admin/info.php:83
+#: admin/info.php:54
+#: admin/info.php:64
+#: admin/info.php:69
+#: admin/info.php:74
+#: admin/info.php:79
+#: admin/info.php:89
+#: admin/info.php:94
+#: admin/info.php:108
+#: admin/info.php:113
+#: admin/info.php:118
+#: admin/info.php:123
+#: admin/info.php:128
 msgid "visit"
 msgstr "посети"
 
 #: admin/info.php:28
-msgid "discussions group"
-msgstr "дискусиона група"
-
-#: admin/info.php:33
 msgid "wordpress plugin page"
 msgstr "вордпрес плагин страна"
 
-#: admin/info.php:37
-msgid "Donate"
-msgstr "Донирај"
-
-#: admin/info.php:38
-msgid "help further development"
-msgstr "помозите даљи развој"
-
-#: admin/info.php:43
+#: admin/info.php:33
 msgid "Pro Edition"
 msgstr "Про Верзија"
 
-#: admin/info.php:47
-#: admin/info.php:61
+#: admin/info.php:38
+msgid "official plugin page"
+msgstr "официјална плагин страна"
+
+#: admin/info.php:39
+msgid "compare"
+msgstr "упореди"
+
+#: admin/info.php:48
+msgid "Themes"
+msgstr "Теме"
+
+#: admin/info.php:53
+msgid "advanced theme framework"
+msgstr "напредни фрејмворк тема"
+
+#: admin/info.php:58
+msgid "Plugins"
+msgstr "Плагинови"
+
+#: admin/info.php:63
+msgid "wordpress ratings system"
+msgstr "вордпресс рејтинг систем"
+
+#: admin/info.php:68
+msgid "a wordpress administration addon"
+msgstr "вордпресс админ додатак"
+
+#: admin/info.php:73
+msgid "custom taxonomies managment"
+msgstr ""
+
+#: admin/info.php:78
+msgid "ad management control"
+msgstr ""
+
+#: admin/info.php:83
+msgid "Old Plugins"
+msgstr "Стари плагинови"
+
+#: admin/info.php:88
+msgid "advanced pages widget"
+msgstr ""
+
+#: admin/info.php:93
+msgid "widget to add linkedin badge"
+msgstr ""
+
+#: admin/info.php:106
 msgid "Official Website"
 msgstr "Официјални Вебсајт"
 
-#: admin/info.php:48
-msgid "extended premium version"
-msgstr "допуњена премијум верзија"
-
-#: admin/info.php:62
+#: admin/info.php:107
 msgid "golden dragon official web portal"
 msgstr "голден драгон официјални веб портал"
 
-#: admin/info.php:67
-msgid "a wordpress rating system"
-msgstr "вордпресс рејтинг систем"
-
-#: admin/info.php:72
+#: admin/info.php:112
 msgid "wordpress development"
 msgstr "вордпрес развој"
 
-#: admin/info.php:76
+#: admin/info.php:117
+msgid "tv shows reviews and news"
+msgstr ""
+
+#: admin/info.php:121
 msgid "Support Forum"
 msgstr "Форум За Подршку"
 
-#: admin/info.php:77
+#: admin/info.php:122
 msgid "development discussion forum"
 msgstr "форум за разговоре о развоју"
 
-#: admin/info.php:82
+#: admin/info.php:127
 msgid "announcements and theme demo"
 msgstr "најаве и демо теме"
 
@@ -127,7 +163,7 @@ msgstr "је неопходан"
 
 #: admin/settings.php:57
 #: admin/settings.php:80
-#: admin/settings.php:102
+#: admin/settings.php:107
 msgid "Save"
 msgstr "Сними"
 
@@ -144,6 +180,10 @@ msgid "Load default CSS file"
 msgstr "Учитај ЦСС фајл"
 
 #: admin/settings.php:95
+msgid "Cache data to minimize number of database queries"
+msgstr ""
+
+#: admin/settings.php:100
 msgid "Write debug info into file"
 msgstr "Упиши дебаг информације у фајл"
 
@@ -417,39 +457,39 @@ msgstr "оставите празно и наслов се неће рендер
 msgid "Display scheduled posts."
 msgstr "Прикажи заказане чланке."
 
-#: widgets/gdsw-most-commented.php:15
+#: widgets/gdsw-most-commented.php:16
 msgid "Most commented posts."
 msgstr "Чланци са највише кометара"
 
-#: widgets/gdsw-popular-posts.php:21
+#: widgets/gdsw-popular-posts.php:22
 msgid "Display popular posts."
 msgstr "Прикажи популарне чланке."
 
-#: widgets/gdsw-popular-posts.php:123
+#: widgets/gdsw-popular-posts.php:145
 msgid "view"
 msgstr "посета"
 
-#: widgets/gdsw-popular-posts.php:123
+#: widgets/gdsw-popular-posts.php:145
 msgid "views"
 msgstr "посете"
 
-#: widgets/gdsw-posts-authors.php:18
+#: widgets/gdsw-posts-authors.php:19
 msgid "List of posts authors."
 msgstr "Листа аутора чланака."
 
-#: widgets/gdsw-random-posts.php:20
+#: widgets/gdsw-random-posts.php:21
 msgid "Display random posts."
 msgstr "Прикажи случајне чланке."
 
-#: widgets/gdsw-recent-comments.php:16
+#: widgets/gdsw-recent-comments.php:17
 msgid "Expanded widget with recent comments."
 msgstr "Проширен виџет са последњим коментарима."
 
-#: widgets/gdsw-recent-posts.php:17
+#: widgets/gdsw-recent-posts.php:18
 msgid "Expanded widget with recent posts."
 msgstr "Проширен виџет са последњим чланцима."
 
-#: widgets/gdsw-related-posts.php:19
+#: widgets/gdsw-related-posts.php:20
 msgid "Display related posts."
 msgstr "Прикажи сличне чланке."
 
@@ -457,7 +497,15 @@ msgstr "Прикажи сличне чланке."
 msgid "Display two 125x125 ads."
 msgstr "Прикажи две 125x125 рекламе."
 
-#: gd-simple-widgets.php:157
+#: gd-simple-widgets.php:165
 msgid "Settings"
 msgstr "Подешавања"
 
+#~ msgid "Donate"
+#~ msgstr "Донирај"
+
+#~ msgid "help further development"
+#~ msgstr "помозите даљи развој"
+
+#~ msgid "extended premium version"
+#~ msgstr "допуњена премијум верзија"
