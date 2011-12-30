@@ -14,22 +14,22 @@ class gdswMostCommented extends gdsw_Widget {
     );
 
     function gdswMostCommented() {
-        $widget_ops = array('classname' => 'widget_gdsw_mostcommented', 'description' => __("Most commented posts.", "gd-simple-widgets"));
-        $control_ops = array('width' => 400);
-        $this->WP_Widget('gdswmostcommented', 'gdSW Most Commented', $widget_ops, $control_ops);
+        $widget_ops = array("classname" => "widget_gdsw_mostcommented", "description" => __("Most commented posts.", "gd-simple-widgets"));
+        $control_ops = array("width" => 400);
+        $this->WP_Widget("gdswmostcommented", "gdSW Most Commented", $widget_ops, $control_ops);
     }
 
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
 
-        $instance['title'] = strip_tags(stripslashes($new_instance['title']));
-        $instance['count'] = intval(strip_tags(stripslashes($new_instance['count'])));
-        $instance['hide_empty'] = isset($new_instance['hide_empty']) ? 1 : 0;
-        $instance['display_css'] = trim(strip_tags(stripslashes($new_instance['display_css'])));
+        $instance["title"] = strip_tags(stripslashes($new_instance["title"]));
+        $instance["count"] = intval(strip_tags(stripslashes($new_instance["count"])));
+        $instance["hide_empty"] = isset($new_instance["hide_empty"]) ? 1 : 0;
+        $instance["display_css"] = trim(strip_tags(stripslashes($new_instance["display_css"])));
 
-        $instance['filter_published'] = $new_instance['filter_published'];
-        $instance['filter_category'] = strip_tags(stripslashes($new_instance['filter_category']));
-        $instance['display_comments_count'] = isset($new_instance['display_comments_count']) ? 1 : 0;
+        $instance["filter_published"] = $new_instance["filter_published"];
+        $instance["filter_category"] = strip_tags(stripslashes($new_instance["filter_category"]));
+        $instance["display_comments_count"] = isset($new_instance["display_comments_count"]) ? 1 : 0;
 
         return $instance;
     }

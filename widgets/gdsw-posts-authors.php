@@ -17,26 +17,26 @@ class gdswPostsAuthors extends gdsw_Widget {
     );
 
     function gdswPostsAuthors() {
-        $widget_ops = array('classname' => 'widget_gdsw_postsauthors', 'description' => __("List of posts authors.", "gd-simple-widgets"));
-        $control_ops = array('width' => 400);
-        $this->WP_Widget('gdswpostsauthors', 'gdSW Posts Authors', $widget_ops, $control_ops);
+        $widget_ops = array("classname" => "widget_gdsw_postsauthors", "description" => __("List of posts authors.", "gd-simple-widgets"));
+        $control_ops = array("width" => 400);
+        $this->WP_Widget("gdswpostsauthors", "gdSW Posts Authors", $widget_ops, $control_ops);
     }
 
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
 
-        $instance['title'] = strip_tags(stripslashes($new_instance['title']));
-        $instance['count'] = intval(strip_tags(stripslashes($new_instance['count'])));
-        $instance['hide_empty'] = isset($new_instance['hide_empty']) ? 1 : 0;
-        $instance['display_css'] = trim(strip_tags(stripslashes($new_instance['display_css'])));
+        $instance["title"] = strip_tags(stripslashes($new_instance["title"]));
+        $instance["count"] = intval(strip_tags(stripslashes($new_instance["count"])));
+        $instance["hide_empty"] = isset($new_instance["hide_empty"]) ? 1 : 0;
+        $instance["display_css"] = trim(strip_tags(stripslashes($new_instance["display_css"])));
 
-        $instance['filter_category'] = strip_tags(stripslashes($new_instance['filter_category']));
-        $instance['filter_min_posts'] = intval(strip_tags(stripslashes($new_instance['filter_min_posts'])));
-        if ($instance['filter_min_posts'] < 1) $instance['filter_min_posts'] = 1;
-        $instance['display_gravatar'] = isset($new_instance['display_gravatar']) ? 1 : 0;
-        $instance['display_gravatar_size'] = intval(strip_tags(stripslashes($new_instance['display_gravatar_size'])));
-        $instance['display_posts_count'] = isset($new_instance['display_posts_count']) ? 1 : 0;
-        $instance['display_full_name'] = isset($new_instance['display_full_name']) ? 1 : 0;
+        $instance["filter_category"] = strip_tags(stripslashes($new_instance["filter_category"]));
+        $instance["filter_min_posts"] = intval(strip_tags(stripslashes($new_instance["filter_min_posts"])));
+        if ($instance["filter_min_posts"] < 1) $instance["filter_min_posts"] = 1;
+        $instance["display_gravatar"] = isset($new_instance["display_gravatar"]) ? 1 : 0;
+        $instance["display_gravatar_size"] = intval(strip_tags(stripslashes($new_instance["display_gravatar_size"])));
+        $instance["display_posts_count"] = isset($new_instance["display_posts_count"]) ? 1 : 0;
+        $instance["display_full_name"] = isset($new_instance["display_full_name"]) ? 1 : 0;
 
         return $instance;
     }

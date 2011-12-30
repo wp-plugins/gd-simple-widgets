@@ -11,22 +11,22 @@ class gdswSimple125Ads extends gdsw_Widget {
     );
 
     function gdswSimple125Ads() {
-        $widget_ops = array('classname' => 'widget_gdsw_simple125ads',
-            'description' => __("Display two 125x125 ads.", "gd-simple-widgets"));
-        $control_ops = array('width' => 400);
-        $this->WP_Widget('gdswsimple125ads', 'gdSW Simple 125 Ads', $widget_ops, $control_ops);
+        $widget_ops = array("classname" => "widget_gdsw_simple125ads",
+            "description" => __("Display two 125x125 ads.", "gd-simple-widgets"));
+        $control_ops = array("width" => 400);
+        $this->WP_Widget("gdswsimple125ads", "gdSW Simple 125 Ads", $widget_ops, $control_ops);
     }
 
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
 
-        $instance['encoded'] = true;
-        $instance['title'] = strip_tags(stripslashes($new_instance['title']));
+        $instance["encoded"] = true;
+        $instance["title"] = strip_tags(stripslashes($new_instance["title"]));
 
-        $instance['ad_001'] = stripslashes(htmlentities($new_instance['ad_001'], ENT_QUOTES, GDSIMPLEWIDGETS_ENCODING));
-        $instance['ad_002'] = stripslashes(htmlentities($new_instance['ad_002'], ENT_QUOTES, GDSIMPLEWIDGETS_ENCODING));
+        $instance["ad_001"] = stripslashes(htmlentities($new_instance["ad_001"], ENT_QUOTES, GDSIMPLEWIDGETS_ENCODING));
+        $instance["ad_002"] = stripslashes(htmlentities($new_instance["ad_002"], ENT_QUOTES, GDSIMPLEWIDGETS_ENCODING));
 
-        $instance['display_css'] = trim(strip_tags(stripslashes($new_instance['display_css'])));
+        $instance["display_css"] = trim(strip_tags(stripslashes($new_instance["display_css"])));
 
         return $instance;
     }

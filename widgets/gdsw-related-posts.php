@@ -17,26 +17,26 @@ class gdswRelatedPosts extends gdsw_Widget {
     );
 
     function gdswRelatedPosts() {
-        $widget_ops = array('classname' => 'widget_gdsw_relatedposts',
-            'description' => __("Display related posts.", "gd-simple-widgets"));
-        $control_ops = array('width' => 400);
-        $this->WP_Widget('gdswrelatedposts', 'gdSW Related Posts', $widget_ops, $control_ops);
+        $widget_ops = array("classname" => "widget_gdsw_relatedposts",
+            "description" => __("Display related posts.", "gd-simple-widgets"));
+        $control_ops = array("width" => 400);
+        $this->WP_Widget("gdswrelatedposts", "gdSW Related Posts", $widget_ops, $control_ops);
     }
 
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
 
-        $instance['title'] = strip_tags(stripslashes($new_instance['title']));
-        $instance['count'] = intval(strip_tags(stripslashes($new_instance['count'])));
-        $instance['hide_empty'] = isset($new_instance['hide_empty']) ? 1 : 0;
-        $instance['show_only_single'] = isset($new_instance['show_only_single']) ? 1 : 0;
-        $instance['display_css'] = trim(strip_tags(stripslashes($new_instance['display_css'])));
+        $instance["title"] = strip_tags(stripslashes($new_instance["title"]));
+        $instance["count"] = intval(strip_tags(stripslashes($new_instance["count"])));
+        $instance["hide_empty"] = isset($new_instance["hide_empty"]) ? 1 : 0;
+        $instance["show_only_single"] = isset($new_instance["show_only_single"]) ? 1 : 0;
+        $instance["display_css"] = trim(strip_tags(stripslashes($new_instance["display_css"])));
 
-        $instance['filter_related'] = strip_tags(stripslashes($new_instance['filter_related']));
-        $instance['display_excerpt'] = isset($new_instance['display_excerpt']) ? 1 : 0;
-        $instance['display_excerpt_length'] = intval(strip_tags(stripslashes($new_instance['display_excerpt_length'])));
-        $instance['display_post_date'] = isset($new_instance['display_post_date']) ? 1 : 0;
-        $instance['display_post_date_format'] = trim(strip_tags(stripslashes($new_instance['display_post_date_format'])));
+        $instance["filter_related"] = strip_tags(stripslashes($new_instance["filter_related"]));
+        $instance["display_excerpt"] = isset($new_instance["display_excerpt"]) ? 1 : 0;
+        $instance["display_excerpt_length"] = intval(strip_tags(stripslashes($new_instance["display_excerpt_length"])));
+        $instance["display_post_date"] = isset($new_instance["display_post_date"]) ? 1 : 0;
+        $instance["display_post_date_format"] = trim(strip_tags(stripslashes($new_instance["display_post_date_format"])));
 
         return $instance;
     }

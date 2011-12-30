@@ -1,25 +1,23 @@
 === GD Simple Widgets ===
-Contributors: gdragon
-Version: 1.6.0
-Tags: gdragon, ad, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter, excerpt, scheduled, related, future
+Contributors: GDragoN
+Version: 1.6.5
+Tags: gdragon, ad, dev4press, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter, excerpt, scheduled, related, future
 Requires at least: 2.8
-Tested up to: 3.1
+Tested up to: 3.3
 Stable tag: trunk
 
-Collection of powerful, easy to use widgets that expand default widgets. Plugin also adds few more must-have widgets for posts, authors and comments.
+Collection of powerful, easy to use widgets that expand default widgets with few more must-have widgets for posts, authors and comments.
 
 == Description ==
 This plugin contains powerful widgets with simple options to set. Some of them are based on standard WordPress widgets but with extended options and rendering. You can also disable default WordPress widgets if you choose to use Simple Widgets versions.
 
 Supported languages: english, serbian, spanish, danish, chinese, korean, polish
 
-[List Of Widgets](http://info.dev4press.com/gd-simple-widgets/features.html) |
-[Change Log](http://info.dev4press.com/gd-simple-widgets/changelog.html) |
-[Translations](http://info.dev4press.com/simple-widgets/languages.html)
-
-[Free Support Forum](http://forum.gdragon.info/viewforum.php?f=26) |
-[Google Groups](http://groups.google.com/group/dev4press) |
-[Main Plugin Page](http://www.dev4press.com/plugins/gd-simple-widgets/)
+[Plugin Home](http://www.dev4press.com/plugins/gd-simple-widgets/) |
+[Support Forum](http://www.dev4press.com/forums/forum/free-plugins/gd-simple-widgets/) |
+[Feedburner](http://feeds2.feedburner.com/dev4press) |
+[Twitter](http://twitter.com/milangd) |
+[Facebook Page](http://www.facebook.com/dev4press)
 
 == Installation ==
 * Upload folder `gd-simple-widgets` to the `/wp-content/plugins/` directory
@@ -53,10 +51,16 @@ You only need POEdit program that works on Windows, Linux and MacOS. Instruction
 4. Popular Posts widget
 
 == Upgrade Notice ==
-= 1.6.0 =
-Some minor code cleanup and updates. Fixed problem with category filters for some widgets.
+= 1.6.5 =
+Compatibility with WordPress 3.3. Using capability for the plugin menu. Removed obsolete update notification code. Several minor updates.
 
 == Changelog ==
+= 1.6.5 =
+* Compatibility with WordPress 3.3
+* Using capability for the plugin menu
+* Removed obsolete update notification code
+* Several minor updates
+
 = 1.6.0 =
 * Some minor code cleanup and updates
 * Fixed problem with category filters for some widgets

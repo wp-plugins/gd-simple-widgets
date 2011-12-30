@@ -10,23 +10,13 @@
                     <td class="b options" style="color: red; font-weight: bold;"><?php echo $options["version"]; ?></td>
                 </tr>
                 <tr>
-                    <td class="first b" style="width: 133px;"><?php _e("Change Log", "gd-simple-widgets"); ?></td>
-                    <td class="t"><?php _e("detailed list of changes", "gd-simple-widgets"); ?></td>
-                    <td class="t options"><a href="<?php echo GDSIMPLEWIDGETS_URL; ?>info/changelog.html" target="_blank"><?php _e("show", "gd-simple-widgets"); ?></a></td>
-                </tr>
-            </tbody></table>
-        </div>
-        <p class="sub"><?php _e("Links", "gd-simple-widgets"); ?></p>
-        <div class="table">
-            <table><tbody>
-                <tr class="first">
-                    <td class="first b">Google Groups</td>
-                    <td class="t"><?php _e("discussions group", "gd-simple-widgets"); ?></td>
-                    <td class="t options"><a href="http://groups.google.com/group/dev4press" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
+                    <td class="first b" style="width: 133px;"><?php _e("Home Page", "gd-simple-widgets"); ?></td>
+                    <td class="t"><?php _e("dev4press plugin page", "gd-simple-widgets"); ?></td>
+                    <td class="t options"><a href="http://www.dev4press.com/plugins/gd-simple-widgets/" target="_blank"><?php _e("show", "gd-simple-widgets"); ?></a></td>
                 </tr>
                 <tr>
-                    <td class="first b">WordPress Extend</td>
-                    <td class="t"><?php _e("wordpress plugin page", "gd-simple-widgets"); ?></td>
+                    <td class="first b">WordPress.org</td>
+                    <td class="t"><?php _e("wordpress repository page", "gd-simple-widgets"); ?></td>
                     <td class="t options"><a href="http://wordpress.org/extend/plugins/gd-simple-widgets" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
                 </tr>
             </tbody></table>
@@ -37,7 +27,7 @@
                 <tr class="first">
                     <td class="first b">GD Simple Widgets</td>
                     <td class="t"><?php _e("official plugin page", "gd-simple-widgets"); ?></td>
-                    <td class="t options"><a href="http://www.dev4press.com/plugins/gd-simple-widgets/editions/" target="_blank"><?php _e("compare", "gd-simple-widgets"); ?></a></td>
+                    <td class="t options"><a href="http://www.dev4press.com/plugins/gd-simple-widgets/nuy/" target="_blank"><?php _e("compare", "gd-simple-widgets"); ?></a></td>
                 </tr>
             </tbody></table>
         </div>
@@ -70,6 +60,11 @@
                     <td class="t options"><a href="http://www.dev4press.com/plugins/gd-press-tools/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
                 </tr>
                 <tr>
+                    <td class="first b">GD Products Center</td>
+                    <td class="t"><?php _e("product management and comparison", "gd-simple-widgets"); ?></td>
+                    <td class="t options"><a href="http://www.dev4press.com/plugins/gd-products-center/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
+                </tr>
+                <tr>
                     <td class="first b">GD CPT Tools</td>
                     <td class="t"><?php _e("custom taxonomies managment", "gd-simple-widgets"); ?></td>
                     <td class="t options"><a href="http://www.dev4press.com/plugins/gd-taxonomies-tools/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
@@ -79,12 +74,7 @@
                     <td class="t"><?php _e("ad management control", "gd-simple-widgets"); ?></td>
                     <td class="t options"><a href="http://www.gdaffiliatecenter.com/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
                 </tr>
-            </tbody></table>
-        </div>
-        <p class="sub"><?php _e("Old Plugins", "gd-simple-widgets"); ?></p>
-        <div class="table">
-            <table><tbody>
-                <tr class="first">
+                <tr>
                     <td class="first b">GD Pages Navigator</td>
                     <td class="t"><?php _e("advanced pages widget", "gd-simple-widgets"); ?></td>
                     <td class="t options"><a href="http://wordpress.org/extend/plugins/gd-pages-navigator/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
@@ -117,16 +107,6 @@
                     <td class="first b" style="color: navy;">TVScape</td>
                     <td class="t"><?php _e("tv shows reviews and news", "gd-simple-widgets"); ?></td>
                     <td class="t options"><a href="http://www.tvscape.net/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
-                </tr>
-                <tr>
-                    <td class="first b"><?php _e("Support Forum", "gd-simple-widgets"); ?></td>
-                    <td class="t"><?php _e("development discussion forum", "gd-simple-widgets"); ?></td>
-                    <td class="t options"><a href="http://forum.gdragon.info/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
-                </tr>
-                <tr>
-                    <td class="first b">Starscape Theme</td>
-                    <td class="t"><?php _e("announcements and theme demo", "gd-simple-widgets"); ?></td>
-                    <td class="t options"><a href="http://blog.starscapetheme.com/" target="_blank"><?php _e("visit", "gd-simple-widgets"); ?></a></td>
                 </tr>
             </tbody></table>
         </div>

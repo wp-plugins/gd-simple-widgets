@@ -2,15 +2,15 @@
 
 /*
 Plugin Name: GD Simple Widgets
-Plugin URI: http://www.dev4press.com/plugin/gd-simple-widgets/
-Description: Collection of powerful, easy to use widgets that expand default widgets. Plugin also adds few more must-have widgets for posts, authors and comments.
-Version: 1.6.0
+Plugin URI: http://www.dev4press.com/plugins/gd-simple-widgets/
+Description: Collection of powerful, easy to use widgets that expand default widgets with few more must-have widgets for posts, authors and comments.
+Version: 1.6.5
 Author: Milan Petrovic
 Author URI: http://www.dev4press.com/
 
 == Copyright ==
 
-Copyright 2008-2010 Milan Petrovic (email: milan@gdragon.info)
+Copyright 2008 - 2012 Milan Petrovic (email: milan@gdragon.info)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -50,6 +50,7 @@ if (!class_exists('GDSimpleWidgets')) {
     class GDSimpleWidgets {
         var $plugin_url;
         var $plugin_path;
+        var $plugin_name;
         var $admin_plugin;
         var $admin_page;
         var $related_post_id;
@@ -66,9 +67,11 @@ if (!class_exists('GDSimpleWidgets')) {
         var $default_options;
 
         function GDSimpleWidgets() {
+            $this->plugin_name = plugin_basename(__FILE__);
+
             $gdd = new GDSWDefaults();
             $this->default_options = $gdd->default_options;
-            define('GDSIMPLEWIDGETS_INSTALLED',$this->default_options["edition"]."_". $this->default_options["version"]." ".$this->default_options["status"]);
+            define("GDSIMPLEWIDGETS_INSTALLED",$this->default_options["edition"]."_". $this->default_options["version"]." ".$this->default_options["status"]);
 
             $this->install_plugin();
             $this->plugin_path_url();
@@ -78,11 +81,11 @@ if (!class_exists('GDSimpleWidgets')) {
         }
 
         function install_plugin() {
-            $this->o = get_option('gd-simple-widgets');
+            $this->o = get_option("gd-simple-widgets");
 
             if (!is_array($this->o)) {
-                update_option('gd-simple-widgets', $this->default_options);
-                $this->o = get_option('gd-simple-widgets');
+                update_option("gd-simple-widgets", $this->default_options);
+                $this->o = get_option("gd-simple-widgets");
             } else if ($this->o["build"] < $this->default_options["build"] ||
                 $this->o["edition"] != $this->default_options["edition"]) {
                 $this->o = gdFunctionsGDSW::upgrade_settings($this->o, $this->default_options);
@@ -94,30 +97,30 @@ if (!class_exists('GDSimpleWidgets')) {
                 $this->o["edition"] = $this->default_options["edition"];
                 $this->o["product_id"] = $this->default_options["product_id"];
 
-                update_option('gd-simple-widgets', $this->o);
+                update_option("gd-simple-widgets", $this->o);
             }
 
             $this->cache_active = $this->o["cache_data"] == 1;
         }
 
         function plugin_path_url() {
-            $this->plugin_url = WP_PLUGIN_URL.'/gd-simple-widgets/';
+            $this->plugin_url = WP_PLUGIN_URL."/gd-simple-widgets/";
             $this->plugin_path = dirname(__FILE__)."/";
 
-            define('GDSIMPLEWIDGETS_URL', $this->plugin_url);
-            define('GDSIMPLEWIDGETS_PATH', $this->plugin_path);
+            define("GDSIMPLEWIDGETS_URL", $this->plugin_url);
+            define("GDSIMPLEWIDGETS_PATH", $this->plugin_path);
         }
 
         function actions_filters() {
-            add_action('init', array(&$this, 'init'));
-            add_action('wp_head', array(&$this, 'wp_head'));
-            add_action('admin_init', array(&$this, 'admin_init'));
-            add_action('admin_menu', array(&$this, 'admin_menu'));
-            add_action('admin_head', array(&$this, 'admin_head'));
-            add_action('widgets_init', array(&$this, 'widgets_init'));
+            add_filter("plugin_row_meta", array(&$this, "plugin_links"), 10, 2);
+            add_filter("plugin_action_links", array(&$this, "plugin_actions"), 10, 2);
 
-            add_filter('plugin_action_links_gd-simple-widgets/gd-simple-widgets.php', array(&$this, 'plugin_links'), 10, 2 );
-            add_action('after_plugin_row_gd-simple-widgets/gd-simple-widgets.php', array(&$this,'plugin_check_version'), 10, 2);
+            add_action("init", array(&$this, "init"));
+            add_action("wp_head", array(&$this, "wp_head"));
+            add_action("admin_init", array(&$this, "admin_init"));
+            add_action("admin_menu", array(&$this, "admin_menu"));
+            add_action("admin_head", array(&$this, "admin_head"));
+            add_action("widgets_init", array(&$this, "widgets_init"));
         }
 
         function init() {
@@ -134,7 +137,7 @@ if (!class_exists('GDSimpleWidgets')) {
             }
 
             if ($this->o["lock_popular_posts"] == 1) $this->o["widgets_popular_posts"] = 0;
-            define('GDSIMPLEWIDGETS_ENCODING', get_option("blog_charset"));
+            define("GDSIMPLEWIDGETS_ENCODING", get_option("blog_charset"));
         }
 
         function widgets_init() {
@@ -163,20 +166,33 @@ if (!class_exists('GDSimpleWidgets')) {
         }
 
         function plugin_links($links, $file) {
-            $settings_link = '<a href="admin.php?page=gd-simple-widgets">'.__("Settings", "gd-simple-widgets").'</a>';
-            array_unshift($links, $settings_link);
+            static $this_plugin;
+            global $gdtt;
+
+            if (!$this_plugin) {
+                $this_plugin = $this->plugin_name;
+            }
+
+            if ($file == $this_plugin){
+                $links[] = '<a href="http://www.dev4press.com/plugins/gd-simple-widgets/faq/">'.__("FAQ", "gd-simple-widgets").'</a>';
+                $links[] = '<a target="_blank" style="color: #cc0000; font-weight: bold;" href="http://www.dev4press.com/plugins/gd-simple-widgets/buy/">'.__("Upgrade to PRO", "gd-taxonomies-tools").'</a>';
+            }
             return $links;
         }
 
-        function plugin_check_version($file, $plugin_data) {
-            $current = get_transient('update_plugins');
-            if (!isset($current->response[$file])) return false;
+        function plugin_actions($links, $file) {
+            static $this_plugin;
+            global $gdtt;
 
-            $url = gdFunctionsGDSW::get_update_url($this->o, get_option('home'));
-            $update = wp_remote_fopen($url);
-            echo '<td colspan="3" class="gdr-plugin-update"><div class="gdr-plugin-update-message">';
-            echo $update;
-            echo '</div></td>';
+            if (!$this_plugin) {
+                $this_plugin = $this->plugin_name;
+            }
+
+            if ($file == $this_plugin){
+                $settings_link = '<a href="admin.php?page=gd-simple-widgets">'.__("Settings", "gd-simple-widgets").'</a>';
+                array_unshift($links, $settings_link);
+            }
+            return $links;
         }
 
         function admin_init() {
@@ -191,7 +207,7 @@ if (!class_exists('GDSimpleWidgets')) {
         }
 
         function settings_operations() {
-            if (isset($_POST['widgets_saving'])) {
+            if (isset($_POST["widgets_saving"])) {
                 $this->save_setting_checkbox("load_default_css");
                 $this->save_setting_checkbox("cache_data");
                 $this->save_setting_checkbox("debug_into_file");
@@ -220,12 +236,11 @@ if (!class_exists('GDSimpleWidgets')) {
         }
 
         function admin_menu() {
-            add_options_page('GD Simple Widgets', 'GD Simple Widgets', 9, 'gd-simple-widgets', array(&$this,"admin_widgets_panel"));
+            add_options_page("GD Simple Widgets", "GD Simple Widgets", "activate_plugins", "gd-simple-widgets", array(&$this, "admin_widgets_panel"));
         }
 
         function admin_head() {
             if ($this->admin_plugin) {
-                wp_admin_css('css/dashboard');
                 echo('<link rel="stylesheet" href="'.$this->plugin_url.'css/admin_main.css" type="text/css" media="screen" />');
             }
             if ($this->admin_page == "widgets.php" || $this->admin_page == "themes.php" || $this->admin_page == "plugins.php") {
@@ -235,7 +250,7 @@ if (!class_exists('GDSimpleWidgets')) {
 
         function admin_widgets_panel() {
             $options = $this->o;
-            include($this->plugin_path.'admin/panel.php');
+            include($this->plugin_path."admin/panel.php");
         }
     }
 
