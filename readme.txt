@@ -1,7 +1,7 @@
 === GD Simple Widgets ===
 Contributors: GDragoN
 Version: 1.6.5
-Tags: gdragon, ad, dev4press, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter, excerpt, scheduled, related, future
+Tags: gdragon, ad, dev4press, widget, ads, sidebar, simple, comments, gravatar, authors, recent, posts, filter, excerpt, scheduled, related, future
 Requires at least: 2.8
 Tested up to: 3.3
 Stable tag: trunk
