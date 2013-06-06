@@ -1,10 +1,12 @@
 === GD Simple Widgets ===
 Contributors: GDragoN
-Version: 1.6.5
-Tags: gdragon, ad, dev4press, widget, ads, sidebar, simple, comments, gravatar, authors, recent, posts, filter, excerpt, scheduled, related, future
-Requires at least: 2.8
-Tested up to: 3.3
+Donate link: http://www.dev4press.com/
+Version: 1.7
+Tags: gdragon, ad, dev4press, widget, sidebar, simple, comments, gravatar, authors, recent, posts, filter, excerpt, scheduled, related, future
+Requires at least: 3.0
+Tested up to: 3.6
 Stable tag: trunk
+License: GPLv2 or later
 
 Collection of powerful, easy to use widgets that expand default widgets with few more must-have widgets for posts, authors and comments.
 
@@ -26,9 +28,9 @@ Supported languages: english, serbian, spanish, danish, chinese, korean, polish
 * Activated widgets on the settings panel will be visible on widgets panel
 
 = Requirements =
-* PHP: 4.4.x or 5.x.x
-* mySQL: 4.0, 4.1 or 5.x
-* WordPress: 2.8.0 or newer
+* PHP: 5.0 or newer
+* mySQL: 5.0 or newer
+* WordPress: 3.0 or newer
 
 = Widgets =
 * gdWS Popular Posts widget requires GD Press Tools 2.0.0 or later.
@@ -37,9 +39,6 @@ Supported languages: english, serbian, spanish, danish, chinese, korean, polish
 
 = Does plugin works with WPMU and WordPress MultiSite installations? =
 Yes.
-
-= I need support for using this plugin and some of it's features? =
-Lite version is regularly maintained, but it doesn't include any kind of support beyond bug fixing. If you need support, upgrade plugin to PRO edition and get much more additional features.
 
 = I want to translate the plugin to my language, or to improve existing translations? =
 You only need POEdit program that works on Windows, Linux and MacOS. Instructions on how to make or update translations are here: http://dv4p.com/wa.
@@ -51,10 +50,18 @@ You only need POEdit program that works on Windows, Linux and MacOS. Instruction
 4. Popular Posts widget
 
 == Upgrade Notice ==
-= 1.6.5 =
-Compatibility with WordPress 3.3. Using capability for the plugin menu. Removed obsolete update notification code. Several minor updates.
+= 1.7 =
+Compatibility with WordPress 3.6. Proper use of enqueue files functions. Improved and cleaned plugin code. Improved widgets loading and initialization. Improved rendering for some widgets. Dropped support for WordPress 2.8 and 2.9. 
 
 == Changelog ==
+= 1.7 =
+* Compatibility with WordPress 3.6
+* Proper use of enqueue files functions
+* Improved and cleaned plugin code
+* Improved widgets loading and initialization
+* Improved rendering for some widgets
+* Dropped support for WordPress 2.8 and 2.9
+
 = 1.6.5 =
 * Compatibility with WordPress 3.3
 * Using capability for the plugin menu
@@ -102,15 +109,3 @@ Compatibility with WordPress 3.3. Using capability for the plugin menu. Removed 
 
 = 1.5.0 =
 * New widget with two 125x125 ads
-
-= 1.4.2 =
-* Invalid urls for most commented widget
-
-= 1.4.1 =
-* Several notices and warnings fixed
-
-= 1.4.0 =
-* New widget with related posts
-* Info file with functions reference
-* Polish translation
-* Several changes and fixes

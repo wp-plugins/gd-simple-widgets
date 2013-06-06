@@ -9,31 +9,31 @@
  */
 function gdws_widget_results($widget, $instance = array()) {
     switch ($widget) {
-        case "simple_125_ads":
-            return "";
+        case 'simple_125_ads':
+            return '';
             break;
-        case "future_posts":
+        case 'future_posts':
             return gdws_future_posts_results($instance);
             break;
-        case "related_posts":
+        case 'related_posts':
             return gdws_related_posts_results($instance);
             break;
-        case "most_commented":
+        case 'most_commented':
             return gdws_most_commented_results($instance);
             break;
-        case "popular_posts":
+        case 'popular_posts':
             return gdws_popular_posts_results($instance);
             break;
-        case "post_authors":
+        case 'post_authors':
             return gdws_post_authors_results($instance);
             break;
-        case "random_posts":
+        case 'random_posts':
             return gdws_random_posts_results($instance);
             break;
-        case "recent_comments":
+        case 'recent_comments':
             return gdws_recent_comments_results($instance);
             break;
-        case "recent_posts":
+        case 'recent_posts':
             return gdws_recent_posts_results($instance);
             break;
     }
@@ -49,31 +49,31 @@ function gdws_widget_results($widget, $instance = array()) {
  */
 function gdws_widget_render($widget, $instance = array(), $echo = true) {
     switch ($widget) {
-        case "simple_125_ads":
+        case 'simple_125_ads':
             return gdws_simple_125_ads_render($instance, $echo);
             break;
-        case "future_posts":
+        case 'future_posts':
             return gdws_future_posts_render($instance, $echo);
             break;
-        case "related_posts":
+        case 'related_posts':
             return gdws_related_posts_render($instance, $echo);
             break;
-        case "most_commented":
+        case 'most_commented':
             return gdws_most_commented_render($instance, $echo);
             break;
-        case "popular_posts":
+        case 'popular_posts':
             return gdws_popular_posts_render($instance, $echo);
             break;
-        case "post_authors":
+        case 'post_authors':
             return gdws_post_authors_render($instance, $echo);
             break;
-        case "random_posts":
+        case 'random_posts':
             return gdws_random_posts_render($instance, $echo);
             break;
-        case "recent_comments":
+        case 'recent_comments':
             return gdws_recent_comments_render($instance, $echo);
             break;
-        case "recent_posts":
+        case 'recent_posts':
             return gdws_recent_posts_render($instance, $echo);
             break;
     }
